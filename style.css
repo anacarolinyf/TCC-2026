@@ -1,53 +1,62 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
+
 
 body {
-  background-color: #f4f1ea;
+  font-family: 'Playfair Display', serif;
+  background-color: #f8f6f2;
+  line-height: 1.6;
 }
 
+/* HEADER */
 header {
-  background-color: #9fc3a7;
-  padding: 12px 40px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #67A665;
+  color: #fff;
 }
 
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 22px;
-  font-weight: 600;
 }
 
 .logo img {
   width: 40px;
   height: 40px;
-  object-fit: contain;
 }
 
-nav {
+.logo span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* MENU */
+nav ul {
   display: flex;
+  list-style: none;
   gap: 25px;
 }
 
 nav a {
   text-decoration: none;
-  color: black;
-  font-size: 15px;
+  color: #fff;
+  font-size: 16px;
   transition: 0.3s;
 }
 
 nav a:hover {
-  opacity: 0.6;
+  color: #cce3dc;
 }
 
+/* ICONS */
 .icons {
   display: flex;
   gap: 15px;
@@ -56,12 +65,52 @@ nav a:hover {
 }
 
 .icons i:hover {
-  opacity: 0.6;
+  color: #cce3dc;
 }
 
-/* Responsivo */
+/* MAIN */
+main {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* TÍTULOS */
+main h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #202d12;
+}
+
+main h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* TEXTO */
+main p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  nav {
-    display: none;
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main h1 {
+    font-size: 32px;
+  }
+
+  main h2 {
+    font-size: 22px;
   }
 }
