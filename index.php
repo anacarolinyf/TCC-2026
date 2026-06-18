@@ -9,9 +9,7 @@
         </h1>
 
         <p>
-            Encontre conteúdos confiáveis sobre o Transtorno do
-            Espectro Autista (TEA), direitos, profissionais de apoio
-            e orientações para cada etapa da jornada.
+            Sabemos que cada jornada é única, por isso criamos um espaço para apoiar famílias e responsáveis com informações confiáveis sobre o TEA, acesso a recursos, direitos e orientações que promovam inclusão e qualidade de vida.
         </p>
 
         <div class="botoes">

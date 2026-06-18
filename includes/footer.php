@@ -13,7 +13,7 @@
         <div class="footer-contato">
             <h3>Contato</h3>
 
-            <p>fortea@etec.com</p>
+            <p>projetofortea@gmail.com</p>
 
             <div class="redes">
                 <i class="fa-brands fa-instagram"></i>

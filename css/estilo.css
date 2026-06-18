@@ -13,12 +13,19 @@ body{
 /* HEADER */
 
 header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+}
+
+
+
+
+/* PRIMEIRA LINHA */
+.topo{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
-    background:white;
-    box-shadow:0 2px 10px rgba(0,0,0,.05);
+    padding:15px 8%;
 }
 
 .logo{
@@ -28,20 +35,53 @@ header{
 }
 
 .logo img{
-    width:50px;
+    height:60px;
+    width:auto;
 }
 
-nav ul{
+.acoes{
     display:flex;
-    list-style:none;
-    gap:25px;
+    align-items:center;
+    gap:15px;
 }
 
-nav a{
+.pesquisa input{
+    width:220px;
+    padding:10px 20px;
+    border:1px solid #ddd;
+    border-radius:30px;
+}
+
+/* SEGUNDA LINHA */
+.menu{
+    border-top:1px solid #eee;
+}
+
+.menu ul{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+
+    list-style:none;
+    padding:15px 0;
+}
+
+.menu a{
     text-decoration:none;
     color:#1c2b50;
     font-weight:500;
 }
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    height:85px;
+    width:auto;
+}
+
 
 .btn-login{
     background:#1c4ed8;
@@ -149,6 +189,20 @@ nav a{
     border-radius:20px;
 }
 
+.apoio h2{
+    margin-bottom: 15px;
+}
+
+.apoio p{
+    margin-bottom: 25px;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.apoio .btn-principal{
+    display: inline-block;
+}
+
 
 
 
@@ -200,4 +254,97 @@ footer{
     text-align:center;
     padding:20px;
     border-top:1px solid rgba(255,255,255,.2);
+}
+
+.sobre-banner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:60px 8%;
+    gap:50px;
+
+    background:#eef4ff;
+}
+
+.sobre-texto{
+    flex:1;
+}
+
+.sobre-texto h1{
+    font-size:2.8rem;
+    margin:20px 0;
+}
+
+.sobre-texto p{
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.breadcrumb{
+    color:#7a86a3;
+}
+
+.sobre-imagem{
+    flex:1;
+}
+
+.sobre-imagem img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:25px;
+}
+
+.conteudo-tea{
+    display:flex;
+    gap:40px;
+
+    padding:60px 8%;
+}
+
+.menu-lateral{
+    width:260px;
+
+    background:white;
+    padding:25px;
+
+    border-radius:15px;
+    height:fit-content;
+
+    position:sticky;
+    top:20px;
+}
+
+.menu-lateral a{
+    display:block;
+    margin-top:15px;
+
+    color:#1c2b50;
+    text-decoration:none;
+}
+
+.conteudo-principal{
+    flex:1;
+}
+
+.conteudo-principal section{
+    margin-bottom:60px;
+}
+
+.cards-info,
+.cards-niveis{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.info-card,
+.nivel-card{
+    background:white;
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
 }
