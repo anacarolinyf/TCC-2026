@@ -14,7 +14,7 @@
     <div class="topo">
 
         <div class="logo">
-            <img src="img/logo.png" alt="Logo">
+            <img src="img/logoo.png" alt="Logo">
             <h2>ForTEA</h2>
         </div>
 
