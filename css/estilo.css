@@ -8,7 +8,7 @@
 
 body {
     background: #f8fafc;
-    color: #eff6ff; /* Azul escuro principal para os textos do site */
+    color: #eff6ff; 
     line-height: 1.6;
 }
 
@@ -92,7 +92,6 @@ header {
 
 .btn-login {
     background: white;
-    color: #1e40af;
     padding: 10px 22px;
     border-radius: 6px;
     text-decoration: none;
@@ -187,7 +186,7 @@ header {
 
 .card, .info-card, .nivel-card {
     background: white;
-    color: #1e293b; /* Garante que os textos dentro dos cards fiquem azul escuro */
+    color: #1e293b; 
     padding: 30px;
     border-radius: 16px;
     border: 1px solid #e2e8f0;
@@ -215,7 +214,6 @@ header {
     align-items: center;
     gap: 60px;
     padding: 80px 8%;
-    background: #f0fdf4;
 }
 
 .sobre-texto, .sobre-imagem {
@@ -301,8 +299,8 @@ header {
 
 /* FOOTER */
 footer {
-    background: #0f172a;
-    color: #94a3b8;
+    background: #1e40af;
+    color: #ffff;
     margin-top: 80px;
 }
 
@@ -360,4 +358,7 @@ footer {
     padding: 25px;
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+ body{
+    background:red !important;
 }

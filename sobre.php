@@ -16,7 +16,7 @@
     </div>
 
     <div class="sobre-imagem">
-        <img src="img/familia-tea.jpg" alt="Família">
+        <img src="img/familiasobre.png" alt="Família">
     </div>
 
 </section>

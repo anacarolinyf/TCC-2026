@@ -34,25 +34,25 @@
     <div class="card">
         <i class="fa-solid fa-puzzle-piece"></i>
         <h3>Entenda o TEA</h3>
-        <p>Informações básicas sobre autismo.</p>
+        <p>Conheça as características do autismo com informações confiáveis.</p>
     </div>
 
     <div class="card">
         <i class="fa-solid fa-users"></i>
         <h3>Guia para Famílias</h3>
-        <p>Orientações para o dia a dia.</p>
+        <p>Descubra orientações para seu dia a dia com mais segurança.</p>
     </div>
 
     <div class="card">
         <i class="fa-solid fa-scale-balanced"></i>
         <h3>Direitos</h3>
-        <p>Leis e benefícios garantidos.</p>
+        <p>Saiba quais são as leis e benefícios garantidos às pessoas com TEA e como acessá-los.</p>
     </div>
 
     <div class="card">
         <i class="fa-solid fa-book"></i>
         <h3>Biblioteca</h3>
-        <p>Materiais e conteúdos úteis.</p>
+        <p>Acesse notícias,depoimentos e conteúdos preparados para apoiar sua jornada. </p>
     </div>
 
 </section>
