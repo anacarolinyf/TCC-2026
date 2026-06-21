@@ -2,32 +2,55 @@
 
     <div class="footer-container">
 
-        <div class="footer-sobre">
+        <div class="footer-coluna">
             <h2>ForTEA</h2>
 
             <p>
-                Juntos na jornada pelo desenvolvimento e inclusão no TEA. Conectando famílias e compartilhando saberes.
+               Juntos na jornada pelo desenvolvimento e inclusão no TEA.
+                Conectando famílias e compartilhando saberes.
             </p>
+                  <p class="slogan">
+    Informação • Inclusão • Acolhimento
+</p>
         </div>
 
-        <div class="footer-contato">
+
+
+        <div class="footer-coluna">
+            <h3>Projeto</h3>
+
+            <ul>
+                <li><a href="projeto.php">Conheça o ForTEA</a></li>
+                <li><a href="sobre.php">Sobre o TEA</a></li>
+                <li><a href="faq.php">Perguntas Frequentes</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-coluna">
             <h3>Contato</h3>
 
             <p>projetofortea@gmail.com</p>
 
+
             <div class="redes">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
+    <a href="#">
+        <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="#">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="mailto:projetofortea@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+</div>
         </div>
 
     </div>
 
     <div class="footer-copy">
-        <p>
-            © 2026 ForTEA • Trabalho de Conclusão de Curso
-        </p>
+        <p>© 2026 ForTEA • Trabalho de Conclusão de Curso</p>
     </div>
 
 </footer>

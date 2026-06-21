@@ -1,16 +1,17 @@
 <?php include 'includes/header.php';?>
+
+<link rel="stylesheet" href="css/estilo.css">
+
 <main>
-    <section class="sobre-banner">
+
+<section class="sobre-banner">
 
     <div class="sobre-texto">
-
 
         <h1>Sobre o Transtorno do Espectro Autista</h1>
 
         <p>
-            Conheça mais sobre o autismo, seus sinais,
-            diagnóstico, níveis de suporte e a importância
-            da inclusão para uma sociedade mais acolhedora.
+            Conheça mais sobre o Transtorno do Espectro Autista, seus principais sinais, níveis de suporte, diagnóstico precoce e a importância da inclusão em todas as fases da vida. Compreender suas características é fundamental para promover um ambiente mais inclusivo e acolhedor para as pessoas autistas e suas famílias.
         </p>
 
     </div>
@@ -30,9 +31,7 @@
         <a href="#oque">O que é o TEA?</a>
         <a href="#sinais">Primeiros sinais</a>
         <a href="#diagnostico">Diagnóstico precoce</a>
-        <a href="#caracteristicas">Características</a>
         <a href="#niveis">Níveis de suporte</a>
-        <a href="#mitos">Mitos e verdades</a>
 
     </div>
 
@@ -42,34 +41,66 @@
             <h2>O que é o TEA?</h2>
 
             <p>
-                O Transtorno do Espectro Autista (TEA) é uma condição
-                do neurodesenvolvimento que influencia a comunicação,
-                interação social e comportamento.
+              O Transtorno do Espectro Autista (TEA) é uma condição do
+              <span class="tooltip-termo" onclick="toggleTooltip(this)">
+                neurodesenvolvimento
+                <span class="tooltip-text">
+                  Processo de crescimento e organização do sistema nervoso, é responsável por moldar e estruturar as habilidades motoras, cognitivas, sensoriais, comunicativas e emocionais do indivíduo.
+                </span>
+              </span>
+             que influencia a forma como a pessoa se comunica, interage socialmente e percebe o mundo ao seu redor.
+
+            Cada pessoa autista é única, com suas próprias habilidades, características e necessidades.
+
+O TEA acompanha o indivíduo ao longo da vida, fazendo parte da sua forma de compreender o mundo.
+
+Com apoio, informação e inclusão, pessoas autistas podem desenvolver seu potencial, conquistar autonomia e ter qualidade de vida.
             </p>
         </section>
 
         <section id="sinais">
             <h2>Primeiros sinais</h2>
+                <p>
+                   Os sinais do TEA podem ser percebidos ainda nos primeiros anos de vida. Em alguns bebês, já no primeiro ano, enquanto em outras crianças eles se tornam mais evidentes entre 18 e 24 meses, quando os marcos de comunicação e interação social começam a se desenvolver.
 
-            <div class="cards-info">
+Em alguns casos, pessoas com características mais leves podem não receber o diagnóstico na infância, sendo identificadas apenas mais tarde, já na vida escolar ou até na vida adulta. Por isso, o TEA pode se manifestar de formas diferentes ao longo do espectro.
+Entre os principais sinais observados estão:
+            
+<section class="sinais-tea">
 
-                <div class="info-card">
-                    <h3>Contato visual</h3>
-                    <p>Pouco contato visual ou dificuldade em manter o olhar.</p>
-                </div>
+  <h2>Primeiros sinais</h2>
 
-                <div class="info-card">
-                    <h3>Comunicação</h3>
-                    <p>Atraso na fala ou dificuldade de comunicação.</p>
-                </div>
+  <p>
+    Os sinais do Transtorno do Espectro Autista (TEA) podem ser observados ainda nos primeiros anos de vida,
+    variando de acordo com cada pessoa.
+  </p>
 
-                <div class="info-card">
-                    <h3>Interação</h3>
-                    <p>Menor interesse em brincadeiras compartilhadas.</p>
-                </div>
+  <h3>Comunicação e interação social</h3>
+  <ul>
+    <li>Dificuldade em manter contato visual e interagir socialmente</li>
+    <li>Dificuldade em demonstrar ou compartilhar emoções</li>
+    <li>Tendência ao isolamento social</li>
+  </ul>
 
-            </div>
-        </section>
+  <h3>Comunicação verbal</h3>
+  <ul>
+    <li>Atraso na fala ou perda de palavras já adquiridas</li>
+    <li>Ecolalia (repetição de palavras ou frases)</li>
+  </ul>
+
+  <h3>Comportamento</h3>
+  <ul>
+    <li>Apego a rotinas e interesses restritos</li>
+    <li>Movimentos repetitivos como balançar o corpo ou bater as mãos</li>
+  </ul>
+
+  <h3>Aspectos sensoriais</h3>
+  <ul>
+    <li>Sensibilidade a sons, luzes, texturas ou cheiros</li>
+    <li>Seletividade alimentar</li>
+  </ul>
+
+</section>
 
         <section id="diagnostico">
             <h2>Diagnóstico precoce</h2>
@@ -108,5 +139,24 @@
     </div>
 
 </section>
+
+<script>
+function toggleTooltip(el) {
+  el.classList.toggle("active");
+}
+
+/* fecha tooltip ao clicar fora */
+document.addEventListener("click", function (e) {
+  const tooltips = document.querySelectorAll(".tooltip-termo");
+
+  tooltips.forEach(t => {
+    if (!t.contains(e.target)) {
+      t.classList.remove("active");
+    }
+  });
+});
+</script>
+
 </main>
+
 <?php include 'includes/footer.php'; ?>
