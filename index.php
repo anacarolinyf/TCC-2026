@@ -29,6 +29,9 @@
 
 </section>
 
+
+</div>
+
 <section class="cards">
 
     <div class="card">
@@ -52,8 +55,38 @@
     <div class="card">
         <i class="fa-solid fa-book"></i>
         <h3>Biblioteca</h3>
-        <p>Acesse notícias,depoimentos e conteúdos preparados para apoiar sua jornada. </p>
+        <p>Acesse notícias, depoimentos e conteúdos preparados para apoiar sua jornada. </p>
     </div>
+
+</section>
+</section>
+
+<section class="sobre-projeto">
+
+
+<div class="texto">
+
+<h2>
+Por que criamos o ForTEA?
+</h2>
+
+<p>
+
+O ForTEA nasceu da necessidade de reunir em um único lugar informações confiáveis sobre o Transtorno do Espectro Autista. Nosso objetivo é oferecer orientação, apoio e recursos para famílias, educadores e pessoas com TEA, promovendo inclusão, conhecimento e qualidade de vida.
+
+</p>
+
+<a href="paginas/projeto.php" class="btn-secundario">
+Conheça o projeto
+</a>
+
+</div>
+
+<div class="icone">
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
 
 </section>
 

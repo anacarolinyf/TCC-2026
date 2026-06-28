@@ -33,7 +33,7 @@
 
 
             <div class="redes">
-    <a href="#">
+    <a href="https://github.com/anacarolinyf/TCC-2026">
         <i class="fa-brands fa-github"></i>
     </a>
 

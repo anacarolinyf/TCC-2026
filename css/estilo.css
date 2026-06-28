@@ -13,7 +13,7 @@ body {
     background: white;
     color: #475569;
     line-height: 1.6;
-    padding-top: 180px;
+    padding-top: 160px;
 }
 
 a,
@@ -102,6 +102,47 @@ header a {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     background: #1e40af;
 }
+
+
+
+.menu a{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 12px 6px;
+    font-weight: 600;
+    transition:.3s;
+}
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-6px;
+
+    width:0;
+    height:3px;
+
+    background:#8a92ff;
+
+    border-radius:50px;
+
+    transition:.35s;
+
+    transform:translateX(-50%);
+
+}
+
+.menu a:hover::after{
+
+    width:80%;
+
+}
+
+
 
 .menu ul {
     display: flex;
@@ -197,6 +238,7 @@ header a {
 
 .hero-imagem {
     flex: 1;
+    transition: .5s;
 }
 
 .hero-imagem img {
@@ -205,6 +247,11 @@ header a {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    transition:.5s;
+}
+
+.hero-imagem img:hover{
+    transform:scale(1.02);
 }
 
 /* Cards */
@@ -525,9 +572,10 @@ footer {
     margin:auto;
     display:flex;
     justify-content:space-between;
-    gap:60px;
-    padding:50px 8%;
+    gap:40px;
+    padding:35px 8%;
 }
+
 
 .footer-coluna {
     flex:1;
@@ -536,12 +584,12 @@ footer {
 .footer-coluna h2,
 .footer-coluna h3 {
     color:white;
-    margin-bottom:15px;
+    margin-bottom:10px;
 }
 
 .footer-coluna p {
     color:#dbeafe;
-    line-height:1.7;
+    line-height:1.5;
 }
 
 .footer-coluna ul {
@@ -549,7 +597,7 @@ footer {
 }
 
 .footer-coluna li {
-    margin-bottom:10px;
+    margin-bottom:6px;
 }
 
 .footer-coluna a {
@@ -564,7 +612,7 @@ footer {
 .redes {
     display:flex;
     gap:15px;
-    margin-top:15px;
+    margin-top:10px;
     font-size:1.6rem;
 }
 
@@ -587,7 +635,7 @@ footer {
 
 .footer-copy {
     text-align:center;
-    padding:25px;
+    padding:15px;
     font-size:.9rem;
     border-top:1px solid rgba(255,255,255,.05);
 }
@@ -596,8 +644,113 @@ footer {
     color:#bfdbfe;
 }
 
+.footer-coluna:first-child{
+    flex:1.5;
+}
+
+.footer-coluna{
+    flex:1;
+}
+
 .slogan {
     margin-top:20px;
     font-weight:600;
     color:#dbeafe;
 }
+
+
+
+
+.hero-beneficios{
+    display:flex;
+    gap:30px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.hero-beneficios div{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    font-size:15px;
+    color:#334155;
+    font-weight:500;
+}
+
+.hero-beneficios i{
+    color:#22c55e;
+    font-size:18px;
+}
+
+.sobre-projeto{
+
+    display:grid;
+    grid-template-columns:2fr 1fr;
+
+    gap:60px;
+
+    padding:90px 10%;
+
+    align-items:center;
+
+    background:#f8fbff;
+
+}.sobre-projeto p{
+
+    font-size:18px;
+
+    color:#475569;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+.sobre-projeto .icone{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.sobre-projeto i{
+
+    font-size:120px;
+
+    color:#2563eb;
+
+    opacity:.15;
+
+}
+
+.card{
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 35px rgba(0,0,0,.12);
+}
+
+.btn-principal,
+.btn-secundario{
+    transition:.3s;
+}
+
+.btn-principal:hover{
+    transform:translateY(-3px);
+}
+
+.hero-imagem img{
+    transition:.5s;
+}
+
+.hero-imagem img:hover{
+    transform:scale(1.02);
+}
+
