@@ -76,7 +76,7 @@ O ForTEA nasceu da necessidade de reunir em um único lugar informações confi�
 
 </p>
 
-<a href="paginas/projeto.php" class="btn-secundario">
+<a href="projeto.php" class="btn-secundario">
 Conheça o projeto
 </a>
 
