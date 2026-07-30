@@ -66,8 +66,11 @@
     <h2>Primeiros sinais</h2>
 
     <p>
-        Os sinais do Transtorno do Espectro Autista (TEA) podem surgir ainda nos primeiros anos de vida. Em alguns bebês, características podem ser percebidas já no primeiro ano, enquanto em outras crianças tornam-se mais evidentes entre 18 e 24 meses, período em que habilidades relacionadas à comunicação e à interação social começam a se desenvolver.
-    </p>
+        Os sinais TEA podem surgir ainda nos primeiros anos de vida. Em alguns bebês,
+        características podem ser percebidas já no primeiro ano, enquanto em outras crianças
+        tornam-se mais evidentes entre 18 e 24 meses, período em que habilidades relacionadas
+        à comunicação e à interação social começam a se desenvolver.    
+</p>
 
     <p>
         Em alguns casos, pessoas com características mais leves podem não receber o diagnóstico durante a infância, sendo identificadas apenas na fase escolar ou até mesmo na vida adulta. Por isso, o TEA pode se manifestar de diferentes formas ao longo do espectro.
@@ -81,15 +84,17 @@
         <span class="circulo">👀</span>
         <div>
             <h3>Contato visual reduzido</h3>
-            <p>Dificuldade em manter contato visual ou responder quando chamado pelo nome.</p>
+            <p>Dificuldade em manter contato visual, interagir com outras pessoas ou responder quando
+chamado pelo nome.</p>
         </div>
     </div>
 
     <div class="timeline-item">
         <span class="circulo">💬</span>
         <div>
-            <h3>Dificuldades na comunicação</h3>
-            <p>Atraso no desenvolvimento da fala ou dificuldade para iniciar interações.</p>
+            <h3>Dificuldades em demonstrar emoções</h3>
+            <p>Pode haver atraso no desenvolvimento da fala, demonstrar ou compartilhar
+emoções e compreender algumas expressões emocionais de outras pessoas.</p>
         </div>
     </div>
 
@@ -97,15 +102,17 @@
         <span class="circulo">🤝</span>
         <div>
             <h3>Interação social limitada</h3>
-            <p>Menor interesse em brincadeiras compartilhadas e relações sociais.</p>
+            <p>Dificuldade para iniciar ou manter interações sociais, além de menor interesse em
+brincadeiras compartilhadas e na convivência com outras pessoas.</p>
         </div>
     </div>
 
     <div class="timeline-item">
         <span class="circulo">🔄</span>
         <div>
-            <h3>Comportamentos repetitivos</h3>
-            <p>Movimentos repetitivos, apego a rotinas e interesses específicos.</p>
+            <h3>Padrões comportamentais</h3>
+            <p>Movimentos repetitivos, apego a rotinas e interesses específicos. Mudanças na rotina ou
+situações inesperadas podem causar desconforto, estresse ou dificuldade de adaptação.</p>
         </div>
     </div>
 
@@ -113,13 +120,24 @@
         <span class="circulo">🔊</span>
         <div>
             <h3>Sensibilidade sensorial</h3>
-            <p>Incômodo ou reação intensa a sons, luzes, texturas ou cheiros.</p>
+            <p>Maior sensibilidade a sons, luzes, cheiros, texturas, sabores ou ao toque, reagindo com
+desconforto, incômodo ou evitando determinados estímulos.</p>
         </div>
     </div>
 
-    <p class="aviso">
-        Importante: a presença desses sinais não confirma o diagnóstico. A avaliação deve ser realizada por profissionais especializados.
-    </p>
+<div class="aviso-importante">
+    <div class="icone-aviso">
+        ⚠️
+    </div>
+
+    <div class="texto-aviso">
+        <h4>Importante</h4>
+        <p>
+            A presença desses sinais <strong>não confirma o diagnóstico</strong>.
+            A avaliação deve ser realizada por profissionais especializados.
+        </p>
+    </div>
+</div>
 
 </div>
 
@@ -129,7 +147,9 @@
             <div class="titulo">
                 <h2>Níveis de suporte</h2>
                 <p>
-                    O TEA é classificado em níveis de suporte conforme a intensidade do apoio necessário.
+                Os níveis de suporte do autismo indicam a quantidade de apoio que uma pessoa com TEA
+                necessita em seu dia a dia. Eles fazem parte da avaliação diagnóstica e ajudam a
+                personalizar o laudo, identificando as necessidades de suporte de cada pessoa.
                 </p>
             </div>
 
