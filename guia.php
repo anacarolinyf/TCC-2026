@@ -7,9 +7,16 @@
 <section class="sobre-banner">
 
     <div class="primeiros-sinais">
-        <h1>Quais são os primeiros sinais dados por pessoas com autismo?</h1>
+        <h1>Como lidar com o autismo?</h1>
         <p class="texto-lg">
-            Sinais precoces do autismo podem ser notados já em alguns bebês no primeiro ano de vida. Outras crianças com autismo podem apresentar um período de desenvolvimento considerado típico e, por volta dos 2 anos, apresentar regressão em habilidades sociais e de comportamento. A maioria das crianças com autismo pode ser identificada a partir dos 18 a 24 meses, quando os marcos sociais e de comunicação ficam mais evidentes.
+            Lidar com o diferente pode ser desafiador, sobretudo em condições
+            que abrangem nuances comportamentais. Começamos pelo óbvio:
+            não devemos querer que a pessoa autista deixe de ser autista;
+            pelo contrário, devemos acolhê-la sinceramente e ser empáticos e
+            compreensivos. Apesar de não ser uma doença, o autismo é um
+            transtorno e, como tal, tem questões que incluem o manejo
+            clínico e tratamentos para a qualidade de vida, promovendo rotinas
+            positivas, estímulo à cognição e acompanhamento multiprofissional.
         </p>
     </div>
 
@@ -23,51 +30,33 @@
 
     <div class="conteudo-principal">
 
-        <!-- PRINCIPAIS SINAIS -->
-        <section class="secao-sinais">
-
-            <h2>Principais sinais</h2>
-
-            <div class="grid-sinais">
-                <div class="card-sinal">
-                    <p>Dificuldade para interagir, manter contato visual ou se expressar por gestos e expressões faciais.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Dificuldade para demonstrar ou compartilhar emoções.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Tendência ao isolamento social.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Falta de resposta consistente ao próprio nome.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Pouca atenção compartilhada com cuidadores sobre objetos ou interesses.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Atraso na fala ou perda das palavras já adquiridas.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Movimentos repetitivos (estereotipias), como balançar o corpo, bater as mãos ou girar objetos.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Alterações sensoriais, como hipersensibilidade a sons, luzes, texturas e cheiros.</p>
-                </div>
-                <div class="card-sinal">
-                    <p>Pouca busca por conforto nos cuidadores quando está triste ou assustada.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- IMPORTÂNCIA DO DIAGNÓSTICO -->
+        <!-- IMPORTÂNCIA DO DIAGNÓSTICO PRECOCE EM CARDS -->
         <section class="secao-importancia">
 
-            <div class="caixa-destaque info">
-                <h2>Importância do diagnóstico precoce</h2>
-                <p class="texto-lg">
-                    A identificação precoce dos sinais pela família possibilita intervenções multidisciplinares adequadas, favorecendo o desenvolvimento infantil. Este estudo analisa a relevância do diagnóstico precoce para crianças e adolescentes autistas, por meio de uma revisão bibliográfica baseada em publicações do Google Acadêmico, SciELO e PubMed. Constatou-se que o diagnóstico precoce reduz o risco de prejuízos mais severos e permanentes no desenvolvimento. No entanto, essa realidade é influenciada pela resistência social em compreender e normalizar o TEA, perpetuando mitos e preconceitos que dificultam tanto a aceitação familiar quanto a inclusão social.
-                </p>
+            <h2>Importância do Diagnóstico Precoce</h2>
+
+            <div class="grid-sinais">
+
+                <div class="card-sinal">
+                    <h3>Intervenção no Tempo Certo</h3>
+                    <p>A identificação precoce dos sinais pela família possibilita intervenções multidisciplinares adequadas, favorecendo o desenvolvimento infantil.</p>
+                </div>
+
+                <div class="card-sinal">
+                    <h3>Redução de Prejuízos</h3>
+                    <p>o diagnóstico precoce reduz o risco de sequelas mais severas e permanentes no desenvolvimento. No entanto, essa realidade é influenciada pela resistência social em compreender e normalizar o TEA</p>
+                </div>
+
+                <div class="card-sinal">
+                    <h3>Apoio e Suporte Familiar</h3>
+                    <p>Receber o diagnóstico cedo dá às famílias o tempo e as ferramentas necessárias para aprender a lidar com as necessidades da criança com mais segurança.</p>
+                </div>
+
+                <div class="card-sinal">
+                    <h3>Superação de Barreiras</h3>
+                    <p>Ajuda a combater a resistência social e desmistificar preconceitos, abrindo caminhos para uma inclusão escolar e social muito mais efetiva.</p>
+                </div>
+
             </div>
 
         </section>
@@ -78,17 +67,14 @@
             <h2>Após o Diagnóstico: Por Onde Começar?</h2>
 
             <div class="painel-diagnostico">
-                
-
                 <div class="card-reflexao-novo">
                     <p class="texto-lg">
-                        Receber o diagnóstico de Transtorno do Espectro Autista (TEA) de um filho é como se o chão se abrisse sob nossos pés, e de repente, o mapa que tínhamos para a jornada da paternidade ou maternidade parece não servir mais. É um daqueles momentos da vida em que o trivial some e o essencial grita.
+                        Receber o diagnóstico de Transtorno do Espectro Autista (TEA) de um filho é como se o chão se abrisse sob nossos pés, e de repente, o mapa que tínhamos para a jornada da paternidade ou maternidade parece não servir mais. É um daqueles momentos da vida em que o trivial sumir e o essencial grita.
                     </p>
                     <p class="texto-lg">
                         Uma mistura de sentimentos – medo, incerteza, talvez até um estranho alívio por finalmente ter um nome para tantas inquietações – toma conta. É natural, é humano. Como diria um cronista da vida cotidiana, é a vida nos mostrando que seus roteiros são sempre mais surpreendentes que os nossos.
                     </p>
                 </div>
-
             </div>
 
             <div class="alerta-terreno">
@@ -141,7 +127,6 @@
                     </article>
                 </div>
 
-                <!-- Banner com texto preenchido -->
             </div>
 
         </section>
