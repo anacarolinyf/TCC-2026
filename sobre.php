@@ -8,7 +8,7 @@
 
     <div class="sobre-texto">
 
-        <h1>Sobre o Transtorno do Espectro Autista</h1>
+        <h1>Sobre o Transtorno do Espectro Autista (TEA)</h1>
 
         <p>
             Conheça mais sobre o Transtorno do Espectro Autista, seus principais sinais, níveis de suporte, diagnóstico precoce e a importância da inclusão em todas as fases da vida. Compreender suas características é fundamental para promover um ambiente mais inclusivo e acolhedor para as pessoas autistas e suas famílias.
@@ -57,7 +57,6 @@
 
         </section>
 
-        <!-- PRIMEIROS SINAIS -->
         <section id="primeiros-sinais" class="primeiros-sinais">
 
 
@@ -66,64 +65,42 @@
     <h2>Primeiros sinais</h2>
 
     <p>
-        Os sinais TEA podem surgir ainda nos primeiros anos de vida. Em alguns bebês,
-        características podem ser percebidas já no primeiro ano, enquanto em outras crianças
-        tornam-se mais evidentes entre 18 e 24 meses, período em que habilidades relacionadas
-        à comunicação e à interação social começam a se desenvolver.    
+        Os sinais TEA podem ser percebidos nos primeiros anos de vida, mas se manifestam de formas diferentes em cada pessoa. A observação atenta do desenvolvimento da criança é fundamental para identificar possíveis sinais de alerta.  
 </p>
 
-    <p>
-        Em alguns casos, pessoas com características mais leves podem não receber o diagnóstico durante a infância, sendo identificadas apenas na fase escolar ou até mesmo na vida adulta. Por isso, o TEA pode se manifestar de diferentes formas ao longo do espectro.
-    </p>
-
-    <p>
-        Entre os principais sinais observados estão:
-    </p>
 
     <div class="timeline-item">
-        <span class="circulo">👀</span>
-        <div>
-            <h3>Contato visual reduzido</h3>
-            <p>Dificuldade em manter contato visual, interagir com outras pessoas ou responder quando
-chamado pelo nome.</p>
-        </div>
+    <span class="circulo">👶</span>
+    <div>
+        <h3>0 a 6 meses</h3>
+        <p>
+            Menor contato visual, pouca resposta ao nome,
+            dificuldade com o toque e com mudanças na rotina.
+        </p>
     </div>
+</div>
 
-    <div class="timeline-item">
-        <span class="circulo">💬</span>
-        <div>
-            <h3>Dificuldades em demonstrar emoções</h3>
-            <p>Pode haver atraso no desenvolvimento da fala, demonstrar ou compartilhar
-emoções e compreender algumas expressões emocionais de outras pessoas.</p>
-        </div>
+<div class="timeline-item">
+    <span class="circulo">💬</span>
+    <div>
+        <h3>6 a 12 meses</h3>
+        <p>
+            Atrasos na fala, dificuldade em imitar sons e gestos, pouca interação social e interesse limitado em brinquedos.
+        </p>
     </div>
+</div>
 
-    <div class="timeline-item">
-        <span class="circulo">🤝</span>
-        <div>
-            <h3>Interação social limitada</h3>
-            <p>Dificuldade para iniciar ou manter interações sociais, além de menor interesse em
-brincadeiras compartilhadas e na convivência com outras pessoas.</p>
-        </div>
+<div class="timeline-item">
+    <span class="circulo">👨‍👩‍👧</span>
+    <div>
+        <h3>2 a 5 anos</h3>
+        <p>
+            Dificuldade para interagir e brincar com outras crianças,interesses restritos, comportamentos repetitivos,
+            sensibilidade sensorial, dificuldade em lidar
+            com mudanças, dificuldades com texturas de roupas e alimentos, e dificuldade em compreender emoções.
+        </p>
     </div>
-
-    <div class="timeline-item">
-        <span class="circulo">🔄</span>
-        <div>
-            <h3>Padrões comportamentais</h3>
-            <p>Movimentos repetitivos, apego a rotinas e interesses específicos. Mudanças na rotina ou
-situações inesperadas podem causar desconforto, estresse ou dificuldade de adaptação.</p>
-        </div>
-    </div>
-
-    <div class="timeline-item">
-        <span class="circulo">🔊</span>
-        <div>
-            <h3>Sensibilidade sensorial</h3>
-            <p>Maior sensibilidade a sons, luzes, cheiros, texturas, sabores ou ao toque, reagindo com
-desconforto, incômodo ou evitando determinados estímulos.</p>
-        </div>
-    </div>
+</div>
 
 <div class="aviso-importante">
     <div class="icone-aviso">
@@ -140,8 +117,6 @@ desconforto, incômodo ou evitando determinados estímulos.</p>
 </div>
 
 </div>
-
-        <!-- NÍVEIS DE SUPORTE -->
         <section id="niveis-suporte" class="niveis-suporte">
 
             <div class="titulo">
