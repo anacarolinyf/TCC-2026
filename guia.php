@@ -25,6 +25,69 @@
     </div>
 
 </section>
+ <section class="sinais">
+    <div class="container">
+        <h2>Principais sinais do TEA</h2>
+
+        <p class="descricao">
+            Os sinais do Transtorno do Espectro Autista (TEA) podem variar de uma pessoa para outra.
+            Nem todos os indivíduos apresentarão as mesmas características ou na mesma intensidade.
+        </p>
+
+        <div class="cards-sinais">
+
+            <div class="card-sinal">
+                <div class="icone">👀</div>
+                <h3>Contato visual reduzido</h3>
+                <p>
+                    Dificuldade em manter contato visual, responder quando chamado
+                    pelo nome ou demonstrar interesse em interações com outras pessoas.
+                </p>
+            </div>
+
+            <div class="card-sinal">
+                <div class="icone">💬</div>
+                <h3>Comunicação e expressão de emoções</h3>
+                <p>
+                    Pode haver atraso no desenvolvimento da fala, dificuldade para
+                    iniciar ou manter conversas, expressar necessidades, compartilhar
+                    emoções ou compreender emoções de outras pessoas.
+                </p>
+            </div>
+
+            <div class="card-sinal">
+                <div class="icone">🤝</div>
+                <h3>Interação social</h3>
+                <p>
+                    Dificuldade para iniciar ou manter interações sociais, menor
+                    interesse em brincadeiras compartilhadas e desafios para criar
+                    vínculos sociais.
+                </p>
+            </div>
+
+            <div class="card-sinal">
+                <div class="icone">🔄</div>
+                <h3>Padrões comportamentais repetitivos</h3>
+                <p>
+                    Movimentos repetitivos, apego intenso a rotinas e interesses
+                    específicos. Mudanças inesperadas podem causar desconforto,
+                    estresse ou dificuldade de adaptação.
+                </p>
+            </div>
+
+            <div class="card-sinal">
+                <div class="icone">🔊</div>
+                <h3>Sensibilidade sensorial</h3>
+                <p>
+                    Maior sensibilidade a sons, luzes, cheiros, texturas, sabores
+                    ou ao toque, reagindo com desconforto ou evitando determinados
+                    estímulos.
+                </p>
+            </div>
+
+        </div>
+
+</section>
 
 <div class="conteudo-tea">
 

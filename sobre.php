@@ -31,9 +31,8 @@
         <a href="#oque">O que é o TEA?</a>
         <a href="#primeiros-sinais">Primeiros sinais</a>
         <a href="#niveis-suporte">Níveis de suporte</a>
-        <a href="#diagnostico">Diagnóstico precoce</a>
         <a href="#mitos-verdades">Mitos e verdades</a>
-        <a href="#glossario">Glossário</a>
+
 
     </aside>
 
@@ -151,26 +150,6 @@
 
         </section>
 
-        <!-- DIAGNÓSTICO -->
-        <section id="diagnostico" class="diagnostico">
-
-            <div class="imagem-org">
-                <img src="img/diagnostico.jpg" alt="Diagnóstico precoce">
-            </div>
-
-            <div class="texto">
-
-                <h2>Diagnóstico e intervenção precoce</h2>
-
-                <p>
-                    O diagnóstico deve ser realizado por profissionais especializados, considerando o histórico do desenvolvimento e comportamento da pessoa.
-                </p>
-
-                <p>
-                    Quanto mais cedo ocorrer a identificação, maiores serão as oportunidades de desenvolvimento, aprendizagem e autonomia.
-                </p>
-
-            </div>
 
         </section>
 
@@ -211,32 +190,6 @@
 
         </section>
 
-        <!-- GLOSSÁRIO -->
-        <section id="glossario" class="glossario">
-
-            <h2>Glossário</h2>
-
-            <details>
-                <summary>Comunicação social</summary>
-                <p>Capacidade de interagir e trocar informações com outras pessoas.</p>
-            </details>
-
-            <details>
-                <summary>Estereotipias</summary>
-                <p>Movimentos repetitivos ou comportamentos frequentes.</p>
-            </details>
-
-            <details>
-                <summary>Hiperfoco</summary>
-                <p>Interesse intenso em um assunto específico.</p>
-            </details>
-
-            <details>
-                <summary>Sobrecarga sensorial</summary>
-                <p>Quando estímulos do ambiente causam desconforto ou estresse.</p>
-            </details>
-
-        </section>
 
         <!-- CTA FINAL -->
         <section class="cta-final">

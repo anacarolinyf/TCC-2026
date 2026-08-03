@@ -58,14 +58,80 @@
         </div>
     </section>
 
-    <!-- Seção de Apoio ao Diagnóstico -->
-    <section class="apoio">
-        <div>
-            <h2>Recebeu um diagnóstico recente?</h2>
-            <p>Conheça um caminho inicial para compreender o diagnóstico, buscar apoio profissional e acessar informações confiáveis.</p>
-            <a href="paginas/guia.html" class="btn-principal">Ver Guia Completo</a>
-        </div>
-    </section>
+<section class="diagnostico">
+
+    <div class="diagnostico-topo">
+        <h2>Recebeu um diagnóstico recentemente?</h2>
+        <p>Conheça as principais etapas para iniciar essa jornada com mais confiança</p>
+    </div>
+
+    <div class="passos">
+
+        <a href="sobre.php" class="passo">
+            <div class="icone">
+                <i class="fa-solid fa-puzzle-piece"></i>
+            </div>
+            <span class="numero">1</span>
+            <span class="titulo-passo">Entenda o TEA</span>
+        </a>
+
+        <span class="seta">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+
+        <a href="apoio.php" class="passo">
+            <div class="icone">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <span class="numero">2</span>
+            <span class="titulo-passo">Procure apoio profissional</span>
+        </a>
+
+        <span class="seta">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+
+        <a href="direitos.php" class="passo">
+            <div class="icone">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+            <span class="numero">3</span>
+            <span class="titulo-passo">Conheça seus direitos</span>
+        </a>
+
+        <span class="seta">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+
+        <a href="educacaoinclusiva.php" class="passo">
+            <div class="icone">
+                <i class="fa-solid fa-school"></i>
+            </div>
+            <span class="numero">4</span>
+            <span class="titulo-passo">Conheça a inclusão escolar</span>
+        </a>
+
+        <span class="seta">
+            <i class="fa-solid fa-chevron-right"></i>
+        </span>
+
+        <a href="faq.php" class="passo">
+            <div class="icone">
+               <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <span class="numero">5</span>
+            <span class="titulo-passo">Confira as dúvidas frequentes</span>
+        </a>
+
+        <a href="guia.php" class="btn-guia">
+            Ver guia completo
+        </a>
+
+    </div>
+
+</section>
+</div>
+</section>
 
     <?php include 'includes/footer.php'; ?>
 </main>

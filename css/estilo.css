@@ -1,7 +1,3 @@
-/* ==================================================
-   RESET E CONFIGURAÇÕES GERAIS
-================================================== */
-
 *{
     margin:0;
     padding:0;
@@ -32,10 +28,6 @@ button,
 input{
     transition:.3s ease;
 }
-
-/* ==================================================
-   HEADER
-================================================== */
 
 header{
     background:#1e40af;
@@ -108,9 +100,7 @@ header a{
     color:#1e293b;
 }
 
-/* ==================================================
-   MENU
-================================================== */
+/* MENU */
 
 .menu{
     background:#1e40af;
@@ -170,9 +160,7 @@ header a{
     background:rgba(255,255,255,.12);
 }
 
-/* ==================================================
-   BOTÕES
-================================================== */
+/*BOTÕES PAGINA INICIAL*/
 
 .botoes{
     display:flex;
@@ -224,9 +212,7 @@ header a{
 
 }
 
-/* ==================================================
-   HERO
-================================================== */
+/* HERO  INICIO */
 
 .hero{
 
@@ -326,9 +312,7 @@ header a{
 
 }
 
-/* ==================================================
-   CARDS
-================================================== */
+/* CARDS */
 
 .cards,
 .cards-info,
@@ -359,14 +343,10 @@ header a{
     box-shadow:0 6px 18px rgba(0,0,0,.04);
 
     transition:.3s;
+     text-align:center;
 
 }
 
-.card{
-
-    text-align:center;
-
-}
 
 .card:hover{
 
@@ -400,9 +380,7 @@ header a{
 
 }
 
-/* ==================================================
-   SOBRE O PROJETO
-================================================== */
+/* SOBRE O PROJETO - PAGINA INICIAL */
 
 .sobre-projeto{
 
@@ -457,43 +435,152 @@ header a{
 
 }
 
-/* ==================================================
-   APOIO
-================================================== */
+/*  DIAGNÓSTICO PAGINA INICIAL*/
 
-.apoio{
-
-    background:#EAF2FF;
-
-    margin:70px 8%;
-
-    padding:45px;
-
-    border-left:6px solid #3467EB;
-
-    border-radius:18px;
-
+.diagnostico{
+    max-width:1200px;
+    margin:60px auto;
+    padding:35px 30px;
+    background:#eef4ff;
+    border-radius:22px;
 }
 
-.apoio h2{
+.diagnostico-topo h2{
+    color:#21479B;
+    font-size:2rem;
+    margin-bottom:8px;
+}
 
+.diagnostico-topo p{
+    color:#5f6b82;
+    margin-bottom:35px;
+    font-size:1rem;
+}
+
+.passos{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.passo{
+    width:135px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-decoration:none;
     color:#21479B;
 
-    margin-bottom:15px;
-
+    transition:.25s;
 }
 
-.apoio p{
-
-    margin-bottom:25px;
-
+.passo:hover{
+    transform:translateY(-5px);
 }
 
-/* ==================================================
-   PÁGINA SOBRE
-================================================== */
+.icone{
+    width:72px;
+    height:72px;
+    background:#fff;
+    border-radius:50%;
 
-/* Banner */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(33,71,155,.10);
+
+    margin-bottom:14px;
+
+    transition:.3s;
+}
+
+.icone i{
+    font-size:28px;
+    color:#21479B;
+}
+
+.passo:hover .icone{
+    background:#21479B;
+}
+
+.passo:hover .icone i{
+    color:#fff;
+}
+
+.numero{
+    font-size:15px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.titulo-passo{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    min-height:56px;
+
+    padding:10px 12px;
+
+    border:2px solid #8b6cf2;
+
+    border-radius:14px;
+
+    background:#fff;
+
+    font-size:14px;
+    font-weight:600;
+
+    line-height:18px;
+
+    transition:.3s;
+}
+
+.passo:hover .titulo-passo{
+    background:#21479B;
+    color:#fff;
+    border-color:#21479B;
+}
+
+.seta{
+    color:#b4bfdc;
+    font-size:26px;
+}
+
+.btn-guia{
+
+    background:#21479B;
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:18px 28px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    white-space:nowrap;
+}
+
+.btn-guia:hover{
+    background:#17397f;
+}
+
+
+  
+/* PÁGINA SOBRE */
+
+
 
 .sobre-home{
     padding:70px 8%;
@@ -536,7 +623,7 @@ header a{
     box-shadow:0 15px 30px rgba(0,0,0,.08);
 }
 
-/* Conteúdo */
+/* Conteúdo pagina sobre*/
 
 .conteudo-tea{
     display:flex;
@@ -883,43 +970,9 @@ header a{
 
 }
 
-/* Glossário */
 
-.glossario details{
 
-    background:#fff;
-
-    margin-bottom:18px;
-
-    border-radius:16px;
-
-    overflow:hidden;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.05);
-
-}
-
-.glossario summary{
-
-    padding:20px;
-
-    cursor:pointer;
-
-    color:#21479B;
-
-    font-weight:600;
-
-}
-
-.glossario p{
-
-    padding:0 20px 20px;
-
-}
-
-/* ==================================================
-   FOOTER
-================================================== */
+/* FOOTER*/
 
 footer{
     background:#1E40AF;
@@ -1020,451 +1073,4 @@ footer{
 .footer-copy p{
     color:#BFDBFE;
     font-size:.9rem;
-}
-
-/* ==================================================
-   RESPONSIVIDADE
-================================================== */
-
-@media (max-width:1024px){
-
-    body{
-        padding-top:180px;
-    }
-
-    .hero{
-        gap:40px;
-        padding:70px 6%;
-    }
-
-    .sobre-banner{
-        gap:40px;
-    }
-
-    .conteudo-tea{
-        gap:30px;
-    }
-
-    .menu-lateral{
-        width:240px;
-    }
-
-}
-
-@media (max-width:900px){
-
-    body{
-        padding-top:230px;
-    }
-
-    .topo{
-        flex-direction:column;
-        gap:18px;
-        text-align:center;
-    }
-
-    .acoes{
-        width:100%;
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    .pesquisa{
-        width:100%;
-        display:flex;
-        justify-content:center;
-    }
-
-    .pesquisa input{
-        width:100%;
-        max-width:420px;
-    }
-
-    .menu ul{
-        flex-wrap:wrap;
-        gap:12px;
-        padding:15px;
-    }
-
-    .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-    }
-
-    .hero-imagem img{
-        max-width:420px;
-    }
-
-    .botoes{
-        justify-content:center;
-    }
-
-    .hero-beneficios{
-        justify-content:center;
-    }
-
-    .sobre-banner{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .sobre-projeto{
-        grid-template-columns:1fr;
-        text-align:center;
-    }
-
-    .conteudo-tea{
-        flex-direction:column;
-    }
-
-    .menu-lateral{
-        width:100%;
-        position:relative;
-        top:0;
-    }
-
-}
-
-@media (max-width:768px){
-
-    body{
-        padding-top:270px;
-    }
-
-    .hero{
-        padding:50px 20px;
-    }
-
-    .hero-texto h1{
-        font-size:2rem;
-    }
-
-    .hero-texto p{
-        font-size:1rem;
-    }
-
-    .cards,
-    .cards-info,
-    .cards-niveis{
-        padding:45px 20px;
-        grid-template-columns:1fr;
-    }
-
-    .card,
-    .info-card,
-    .nivel-card{
-        padding:25px;
-    }
-
-    .apoio{
-        margin:40px 20px;
-        padding:30px 20px;
-        text-align:center;
-    }
-
-    .botoes{
-        flex-direction:column;
-        width:100%;
-    }
-
-    .btn-principal,
-    .btn-secundario{
-        width:100%;
-    }
-
-    .colunas{
-        grid-template-columns:1fr;
-    }
-
-    .divisor{
-        display:none;
-    }
-
-    .timeline-item{
-        gap:15px;
-    }
-
-    .circulo{
-        width:48px;
-        height:48px;
-        min-width:48px;
-        font-size:18px;
-    }
-
-    .footer-container{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .redes{
-        justify-content:center;
-    }
-
-}
-
-@media (max-width:480px){
-
-    body{
-        padding-top:300px;
-    }
-
-    .logo img{
-        height:58px;
-    }
-
-    .hero-texto h1{
-        font-size:1.7rem;
-    }
-
-    .hero-texto p{
-        font-size:.95rem;
-    }
-
-    .sobre-texto h1{
-        font-size:1.8rem;
-    }
-
-    .conteudo-principal h2{
-        font-size:1.6rem;
-    }
-
-    .menu ul{
-        flex-direction:column;
-        align-items:center;
-        gap:6px;
-    }
-
-    .menu a{
-        width:100%;
-        text-align:center;
-    }
-
-    .tooltip-text{
-        width:260px;
-    }
-
-}
-
-/* PAGINA FAQ */
-
-.container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
-}
-
-.faq-banner{
-    padding:50px 0;
-}
-
-.faq-topo{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:35px;
-}
-
-.titulo h1{
-    color:#16366f;
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.titulo p{
-    color:#666;
-}
-
-
-.faq-conteudo{
-
-    display:grid;
-
-    grid-template-columns:220px 1fr 320px;
-
-    gap:30px;
-
-}
-
-.categorias{
-
-    background:#fff;
-
-    border-radius:15px;
-
-    padding:20px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:10px;
-
-    height:fit-content;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
-}
-
-.categorias button{
-
-    background:none;
-
-    border:none;
-
-    text-align:left;
-
-    padding:10px;
-
-    cursor:pointer;
-
-    border-radius:8px;
-
-    transition:.3s;
-
-}
-
-.categorias button:hover{
-
-    background:#edf3ff;
-
-}
-
-.categorias .ativo{
-
-    background:#dce8ff;
-
-    color:#16366f;
-
-    font-weight:bold;
-
-}
-
-.perguntas{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
-.accordion{
-
-    background:#fff;
-
-    border-radius:12px;
-
-    overflow:hidden;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-
-}
-
-.accordion-btn{
-
-    width:100%;
-
-    padding:22px;
-
-    border:none;
-
-    background:#fff;
-
-    text-align:left;
-
-    cursor:pointer;
-
-    font-size:17px;
-
-    font-weight:600;
-
-    color:#16366f;
-
-}
-
-.accordion-btn::after{
-
-    content:"+";
-
-    float:right;
-
-    font-size:22px;
-
-}
-
-.accordion-btn.active::after{
-
-    content:"−";
-
-}
-
-.accordion-content{
-
-    max-height:0;
-
-    overflow:hidden;
-
-    transition:.4s;
-
-}
-
-.accordion-content p{
-
-    padding:0 22px 22px;
-
-    color:#555;
-
-    line-height:1.7;
-
-}
-
-.faq-imagem{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-}
-
-.faq-imagem img{
-
-    width:100%;
-
-    max-width:280px;
-
-}
-
-@media(max-width:1000px){
-
-.faq-conteudo{
-
-grid-template-columns:1fr;
-
-}
-
-.faq-imagem{
-
-display:none;
-
-}
-
-.faq-topo{
-
-flex-direction:column;
-
-align-items:flex-start;
-
-gap:20px;
-
-}
-
-.pesquisa input{
-
-width:100%;
-
-}
-
 }
