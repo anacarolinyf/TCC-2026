@@ -48,8 +48,7 @@
             <h2>Por que criamos o ForTEA?</h2>
             <p>
                 O ForTEA nasceu da necessidade de reunir em um único lugar informações confiáveis sobre o Transtorno do Espectro Autista. 
-                Nosso objetivo é oferecer orientação, apoio e recursos para famílias, educadores e pessoas com TEA, promovendo inclusão, 
-                conhecimento e qualidade de vida.
+               Nosso objetivo é oferecer orientação, apoio e recursos para famílias, educadores e pessoas com TEA, promovendo inclusão, conhecimento, qualidade de vida e uma comunicação mais acolhedora sobre o autismo.
             </p>
             <a href="projeto.php" class="btn-secundario">Conheça o projeto</a>
         </div>

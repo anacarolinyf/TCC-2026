@@ -711,6 +711,8 @@ header a{
 /* Tooltip */
 
 .tooltip-termo{
+    display:inline-block;
+
 
     position:relative;
 
@@ -970,6 +972,26 @@ header a{
 
 }
 
+.info-destaque{
+    margin-top: 30px;
+    padding: 20px;
+    background: #F7F9FC;
+    border-left: 5px solid #3467EB;
+    border-radius: 10px;
+}
+
+.info-destaque h4{
+    color: #21479B;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.info-destaque p{
+    margin: 10px 0;
+    color: #374151;
+    line-height: 1.7;
+}
+
 
 
 /* FOOTER*/
@@ -1073,4 +1095,154 @@ footer{
 .footer-copy p{
     color:#BFDBFE;
     font-size:.9rem;
+}
+
+
+/* ================================
+   PÁGINA LINGUAGEM INCLUSIVA
+================================ */
+
+.pagina-inclusao {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 25px;
+}
+
+
+/* Título */
+
+.titulo-inclusao {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.titulo-inclusao h1 {
+    color: #21479B;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.titulo-inclusao p {
+    color: #374151;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+
+/* Blocos */
+
+.bloco-inclusao,
+.simbolo {
+    background: #F7F9FC;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+
+.icone-bloco {
+    font-size: 45px;
+}
+
+
+.bloco-inclusao h2,
+.linguagem h2,
+.simbolo h2 {
+    color: #21479B;
+    margin-bottom: 15px;
+}
+
+
+.bloco-inclusao p,
+.simbolo p {
+    color: #374151;
+    line-height: 1.7;
+}
+
+
+
+/* Linguagem */
+
+.linguagem {
+    margin-bottom: 40px;
+}
+
+
+.linguagem > p {
+    color: #374151;
+    margin-bottom: 25px;
+}
+
+
+.cards-linguagem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.card-linguagem {
+    padding: 25px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.card-linguagem h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+
+.card-linguagem p {
+    color: #374151;
+    line-height: 1.6;
+}
+
+
+/* Cores dos cards */
+
+.usar {
+    border-left: 5px solid #4CAF50;
+}
+
+
+.evitar {
+    border-left: 5px solid #e57373;
+}
+
+
+
+/* Símbolo */
+
+.simbolo {
+    display: block;
+    background: #EAF2FF;
+}
+
+
+
+/* Responsivo */
+
+@media(max-width:768px){
+
+    .titulo-inclusao h1 {
+        font-size: 30px;
+    }
+
+
+    .bloco-inclusao {
+        flex-direction: column;
+    }
+
+
+    .cards-linguagem {
+        grid-template-columns: 1fr;
+    }
+
 }
