@@ -12,20 +12,19 @@
 
             <div class="titulo">
 
-                <h1>FAQ – Perguntas frequentes</h1>
+                <h1><i class="fa-solid fa-circle-question"></i> FAQ – Perguntas frequentes</h1>
 
                 <p>
-                    Tire suas dúvidas sobre o Transtorno do Espectro Autista (TEA).
+                    Encontre respostas para as principais dúvidas sobre o Transtorno do Espectro Autista (TEA). Reunimos informações confiáveis e de fácil compreensão para ajudar você a entender melhor o diagnóstico, os direitos, o tratamento e o desenvolvimento da pessoa autista.
                 </p>
 
             </div>
 
 
+
         </div>
 
             <div class="perguntas">
-
-
                 <div class="accordion">
 
                     <button class="accordion-btn">
@@ -35,9 +34,7 @@
                     <div class="accordion-content">
 
                         <p>
-                            O diagnóstico é realizado por profissionais especializados
-                            através da observação clínica, entrevistas e avaliações do
-                            desenvolvimento da criança.
+O diagnóstico do Transtorno do Espectro Autista (TEA) é realizado com muito cuidado, pois o transtorno pode se manifestar de diferentes formas em cada pessoa. Trata-se de um diagnóstico clínico, baseado na avaliação dos comportamentos, da comunicação, da interação social e do desenvolvimento do indivíduo. Em caso de dúvidas ou suspeitas, é fundamental procurar um profissional especializado o mais cedo possível.
                         </p>
 
                     </div>
@@ -98,35 +95,41 @@
 
                 </div>
 
-                <div class="accordion">
+               <div class="accordion">
 
-                    <button class="accordion-btn">
-                        O autismo é somente em crianças?
-                    </button>
+    <button class="accordion-btn">
+        O autismo é somente em crianças?
+    </button>
 
-                    <div class="accordion-content">
+    <div class="accordion-content">
 
-                        <p>
-                            Não. O TEA acompanha a pessoa durante toda a vida. Adultos
-                            também podem receber diagnóstico e acompanhamento.
-                        </p>
+        <p>
+            Não. O TEA acompanha a pessoa durante toda a vida. Adultos
+            também podem receber diagnóstico e acompanhamento.
+        </p>
 
-                    </div>
+    </div>
 
-                       <div class="accordion">
+</div> <!-- FECHA O CARD AQUI -->
 
-                    <button class="accordion-btn">
-                       Todas as pessoas com Transtorno do Espectro Autista são iguais?
-                    </button>
 
-                    <div class="accordion-content">
+<div class="accordion">
 
-                        <p>
-                            tem que preencher
-                        </p>
-                    </div>
-                </div>
+    <button class="accordion-btn">
+        Todas as pessoas com Transtorno do Espectro Autista são iguais?
+    </button>
 
+    <div class="accordion-content">
+
+        <p>
+            Cada pessoa autista possui características, habilidades e necessidades
+            diferentes. O espectro é amplo, por isso duas pessoas com TEA podem
+            apresentar formas distintas de comunicação, comportamento e interação.
+        </p>
+
+    </div>
+
+</div>
                 <div class="accordion">
 
                     <button class="accordion-btn">
@@ -170,10 +173,17 @@
                     </div>
                 </div>
 
+    <div class="accordion">
+        <button class="accordion-btn">
+                Autistas vivem de forma independente?        
+            </button>
+                    <div class="accordion-content">
 
-        </div>
-
-    </div>
+                        <p>
+                            tem que preencher
+                        </p>
+                    </div>
+                </div>
 
 </section>
 
@@ -187,9 +197,22 @@ accordions.forEach(btn=>{
 
     btn.addEventListener("click",()=>{
 
+        accordions.forEach(other=>{
+
+            if(other !== btn){
+
+                other.classList.remove("active");
+                other.nextElementSibling.style.maxHeight=null;
+
+            }
+
+        });
+
+
         btn.classList.toggle("active");
 
         let content = btn.nextElementSibling;
+
 
         if(content.style.maxHeight){
 
@@ -204,6 +227,5 @@ accordions.forEach(btn=>{
     });
 
 });
-
 </script>
 <?php include 'includes/footer.php'; ?>

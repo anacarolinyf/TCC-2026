@@ -107,7 +107,7 @@
 </div>
 
 <div class="timeline-item">
-    <span class="circulo">👨‍👩‍👧</span>
+    <span class="circulo">👧</span>
     <div>
 
         <h3>2 a 5 anos</h3>
@@ -265,43 +265,6 @@
 </div>
 
 </section>
-        <!-- MITOS E VERDADES -->
-        <section id="mitos-verdades" class="mitos-verdades">
-
-            <h2>Mitos e verdades sobre o TEA</h2>
-
-            <div class="colunas">
-
-                <div class="mitos">
-
-                    <h3>❌ Mitos</h3>
-
-                    <ul>
-                        <li>TEA é falta de educação.</li>
-                        <li>Pessoas autistas não têm sentimentos.</li>
-                        <li>Todas as pessoas autistas são iguais.</li>
-                    </ul>
-
-                </div>
-
-                <div class="divisor"></div>
-
-                <div class="verdades">
-
-                    <h3>✅ Verdades</h3>
-
-                    <ul>
-                        <li>TEA é uma condição do neurodesenvolvimento.</li>
-                        <li>Cada pessoa apresenta características únicas.</li>
-                        <li>Com apoio adequado é possível desenvolver autonomia.</li>
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </section>
-
 
         <!-- CTA FINAL -->
         <section class="cta-final">

@@ -947,24 +947,8 @@ header a{
 .nivel3{
     border-left:6px solid #EF4444;
 }
-
-/* Mitos */
-
-.colunas{
-
-    display:grid;
-
-    grid-template-columns:1fr 1px 1fr;
-
-    gap:40px;
-
-}
-
-.divisor{
-
-    background:#E5E7EB;
-
-}
+ 
+/* caixa "ENTENDA"*\
 
 .info-destaque{
     margin-top: 30px;
@@ -1003,8 +987,7 @@ footer{
     display:flex;
     justify-content:space-between;
     gap:50px;
-
-    padding:45px 0;
+    padding:px 0;
 
     flex-wrap:wrap;
 }
@@ -1054,7 +1037,7 @@ footer{
 
 .redes{
     display:flex;
-    gap:16px;
+    gap:16px;   
     margin-top:15px;
 }
 
@@ -1221,7 +1204,7 @@ footer{
 /* FAQ */
 
 .faq-banner{
-    padding:70px 0;
+    padding:40px 70px;
     background:#fff;
 }
 
@@ -1313,15 +1296,8 @@ footer{
     color:#555;
 }
 
-/* Imagem */
-
-.faq-imagem{
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-}
-
-.faq-imagem img{
-    width:100%;
-    max-width:260px;
+.container{
+    width:200%;
+    max-width:1200px;
+    margin:auto;
 }
