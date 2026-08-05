@@ -87,7 +87,7 @@
 </div>
 
 <div class="timeline-item">
-    <span class="circulo">💬</span>
+    <span class="circulo">👦</span>
     <div>
 
         <h3>6 a 12 meses</h3>

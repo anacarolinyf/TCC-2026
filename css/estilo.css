@@ -32,11 +32,11 @@ input{
 header{
     background:#1e40af;
     position:fixed;
-    top:0;
+    top: 0;
     left:0;
     width:100%;
     z-index:9999;
-    box-shadow:0 4px 10px rgba(0,0,0,.08);
+    box-shadow:0 7px 10px rgba(0,0,0,.08);
 }
 
 header,
@@ -56,7 +56,7 @@ header a{
     justify-content:space-between;
     align-items:center;
 
-    padding:18px 0;
+    padding: 4px 0;
 }
 
 .logo{
@@ -77,7 +77,7 @@ header a{
 }
 
 .pesquisa input{
-    width:240px;
+    width:260px;
     padding:11px 18px;
 
     border:none;
@@ -381,6 +381,7 @@ header a{
 }
 
 /* SOBRE O PROJETO - PAGINA INICIAL */
+
 
 .sobre-projeto{
 
@@ -711,19 +712,12 @@ header a{
 /* Tooltip */
 
 .tooltip-termo{
-    display:inline-block;
-
-
+    display:inline;
     position:relative;
-
     color:#21479B;
-
     font-weight:600;
-
     cursor:pointer;
-
     text-decoration:underline;
-
 }
 
 .tooltip-text{
@@ -987,9 +981,9 @@ header a{
 }
 
 .info-destaque p{
-    margin: 10px 0;
+    margin: 1px 0;
     color: #374151;
-    line-height: 1.7;
+    line-height: 1.4;
 }
 
 
@@ -1098,9 +1092,7 @@ footer{
 }
 
 
-/* ================================
-   PÁGINA LINGUAGEM INCLUSIVA
-================================ */
+/* PÁGINA LINGUAGEM INCLUSIVA*/
 
 .pagina-inclusao {
     max-width: 1100px;
@@ -1226,23 +1218,110 @@ footer{
 }
 
 
+/* FAQ */
 
-/* Responsivo */
+.faq-banner{
+    padding:70px 0;
+    background:#fff;
+}
 
-@media(max-width:768px){
+.faq-topo{
+    margin-bottom:35px;
+}
 
-    .titulo-inclusao h1 {
-        font-size: 30px;
-    }
+.faq-topo h1{
+    font-size:2.2rem;
+    color:#21479B;
+    margin-bottom:8px;
+}
+
+.faq-topo p{
+    color:#6B7280;
+    font-size:1rem;
+}
+
+/* Layout */
+
+.faq-conteudo{
+    display:grid;
+    grid-template-columns:220px 1fr 260px;
+    gap:30px;
+    align-items:flex-start;
+}
 
 
-    .bloco-inclusao {
-        flex-direction: column;
-    }
+/* Perguntas */
 
+.perguntas{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
 
-    .cards-linguagem {
-        grid-template-columns: 1fr;
-    }
+.accordion{
+    background:#fff;
+    border:1px solid #E5E7EB;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
 
+.accordion:hover{
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.accordion-btn{
+    width:100%;
+    border:none;
+    background:#fff;
+    padding:18px 25px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:16px;
+    font-weight:600;
+    color:#1F2937;
+    transition:.3s;
+}
+
+.accordion-btn::after{
+    content:"+";
+    font-size:24px;
+    color:#21479B;
+    transition:.3s;
+}
+
+.accordion-btn.active::after{
+    content:"−";
+}
+
+.accordion-btn.active{
+    color:#21479B;
+}
+
+.accordion-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+}
+
+.accordion-content p{
+    padding:0 25px 22px;
+    line-height:1.8;
+    color:#555;
+}
+
+/* Imagem */
+
+.faq-imagem{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+.faq-imagem img{
+    width:100%;
+    max-width:260px;
 }

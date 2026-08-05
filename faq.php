@@ -23,46 +23,8 @@
 
         </div>
 
-        <div class="faq-conteudo">
-
-            <aside class="categorias">
-
-                <button class="ativo">Todas</button>
-
-                <button>Sobre o TEA</button>
-
-                <button>Diagnóstico</button>
-
-                <button>Tratamento</button>
-
-                <button>Comportamento</button>
-
-                <button>Inclusão</button>
-
-                <button>Direitos</button>
-
-            </aside>
-
             <div class="perguntas">
 
-                <div class="accordion">
-
-                    <button class="accordion-btn">
-                        O que é autismo?
-                    </button>
-
-                    <div class="accordion-content">
-
-                        <p>
-                            O Transtorno do Espectro Autista (TEA) é uma condição do
-                            neurodesenvolvimento que afeta principalmente a comunicação,
-                            interação social e comportamento. Cada pessoa apresenta
-                            características e necessidades diferentes.
-                        </p>
-
-                    </div>
-
-                </div>
 
                 <div class="accordion">
 
@@ -151,15 +113,63 @@
 
                     </div>
 
+                       <div class="accordion">
+
+                    <button class="accordion-btn">
+                       Todas as pessoas com Transtorno do Espectro Autista são iguais?
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p>
+                            tem que preencher
+                        </p>
+                    </div>
                 </div>
 
-            </div>
+                <div class="accordion">
 
-            <div class="faq-imagem">
+                    <button class="accordion-btn">
+                        O que é comunicação alternativa no autismo?
+                    </button>
 
-                <img src="../img/faq-ilustracao.png" alt="FAQ">
+                    <div class="accordion-content">
 
-            </div>
+                        <p>
+                            tem que preencher
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="accordion">
+
+                    <button class="accordion-btn">
+                    O que é a hiperatividade em crianças com autismo?
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p>
+                            tem que preencher
+                        </p>
+                    </div>
+                </div>
+
+                 <div class="accordion">
+
+                    <button class="accordion-btn">
+                    Por que muitos não demonstram afeto?
+                    </button>
+
+                    <div class="accordion-content">
+
+                        <p>
+                            tem que preencher
+                        </p>
+                    </div>
+                </div>
+
 
         </div>
 
