@@ -27,11 +27,6 @@
     </div>
     
     <nav class="menu">
-        <!-- Botão do Menu Hambúrguer (Aparece apenas no mobile) -->
-        <button class="menu-toggle" id="js-menu-toggle" aria-label="Abrir menu">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
         <!-- Lista de links original -->
         <ul class="menu-links" id="js-menu-links">
             <li><a href="index.php">Início</a></li>

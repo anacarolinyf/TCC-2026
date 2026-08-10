@@ -9,8 +9,8 @@
                 informações confiáveis sobre o TEA, acesso a recursos, direitos e orientações que promovam inclusão e qualidade de vida.
             </p>
             <div class="botoes">
-                <a href="paginas/guia.html" class="btn-principal">Começar agora</a>
-                <a href="paginas/leis.html" class="btn-secundario">Conheça seus direitos</a>
+                <a href="guia.php" class="btn-principal">Começar agora</a>
+                <a href="leis.php" class="btn-secundario">Conheça seus direitos</a>
             </div>
         </div>
         <div class="hero-imagem">

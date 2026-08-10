@@ -4,7 +4,7 @@
 
 <main>
 
-<section class="sobre-banner">
+<section class="sobre-banner reveal">
 
     <div class="sobre-texto">
 
@@ -17,7 +17,7 @@
     </div>
 
     <div class="sobre-imagem">
-        <img src="img/familiasobre.png" alt="Família">
+        <img src="img/familiasobre.png" loading="lazy">
     </div>
 
 </section>
@@ -28,18 +28,16 @@
 
         <h3>Conteúdo</h3>
 
-        <a href="#oque">O que é o TEA?</a>
+     <a href="#oquee">O que é o TEA?</a>
         <a href="#primeiros-sinais">Primeiros sinais</a>
-        <a href="#niveis-suporte">Níveis de suporte</a>
-        <a href="#mitos-verdades">Mitos e verdades</a>
-
+        <a href="#niveis-suporte">Níveis de suporte</a> 
 
     </aside>
 
     <div class="conteudo-principal">
 
         <!-- O QUE É O TEA -->
-        <section id="oque">
+            <section id="oquee" class="reveal">
 
             <h2>O que é o TEA?</h2>
 
@@ -56,7 +54,7 @@
 
         </section>
 
-        <section id="primeiros-sinais" class="primeiros-sinais">
+        <section id="primeiros-sinais" class="primeiros-sinais" class="reveal">
 
 
                 <div class="timeline">
@@ -170,6 +168,7 @@
 </div>
 
 </div>
+
         
 <section id="niveis-suporte" class="niveis-suporte">
 
@@ -225,8 +224,6 @@
     </p>
 
 </details>
-
-
 
 <!-- NÍVEL 3 -->
 
@@ -298,5 +295,12 @@ document.addEventListener("click", function (e) {
 </script>
 
 </main>
+<button id="topBtn">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
 
 <?php include 'includes/footer.php'; ?>
+
+<script src="js/sobre.js"></script>
