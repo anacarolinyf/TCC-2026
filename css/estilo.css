@@ -1577,3 +1577,404 @@ bottom:15px;
     max-width:1200px;
     margin:auto;
 }
+
+  /* CSS DA TELA EDUCAÇÃO INCLUSIVA \*
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. ESTRUTURA PRINCIPAL
+   ========================================================================== */
+.container-principal {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ==========================================================================
+   3. BANNER SUPERIOR
+   ========================================================================== */
+.sobre-banner {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.primeiros-sinais {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tag-destaque {
+    display: inline-block;
+    background-color: #e0f2fe;
+    color: #0284c7;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sobre-banner h1 {
+    color: #1e293b;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.texto-lg {
+    font-size: 1.125rem;
+    color: #64748b;
+}
+
+/* ==========================================================================
+   4. GRID DE CARDS
+   ========================================================================== */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    color: #0284c7;
+    background-color: #f0f9ff;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #0f172a;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   5. RESPONSIVIDADE (Dispositivos Móveis)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container-principal {
+        padding: 20px 15px;
+    }
+
+    .sobre-banner {
+        padding: 25px 20px;
+    }
+
+    .sobre-banner h1 {
+        font-size: 1.75rem;
+    }
+
+    .texto-lg {
+        font-size: 1rem;
+    }
+}
+
+/* ==========================================================================
+   1. RESETS E VARIÁVEIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0284c7;
+    --primary-light: #e0f2fe;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --bg-light: #f8fafc;
+    --card-bg: #ffffff;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   2. BANNER PRINCIPAL (Com imagem e texto lado a lado)
+   ========================================================================== */
+.sobre-banner {
+    background-color: var(--card-bg);
+    padding: 50px 0;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 40px;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.primeiros-sinais h1 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.texto-lg {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    box-shadow: var(--box-shadow);
+}
+
+/* ==========================================================================
+   3. TÍTULOS E SEÇÕES GERAIS
+   ========================================================================== */
+section {
+    padding: 30px 0;
+}
+
+.titulo-secao {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.descricao {
+    text-align: center;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+.secao-destaque {
+    background-color: #f1f5f9;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* ==========================================================================
+   4. GRADES DE CARDS (Sinais e Intervenção Precoce)
+   ========================================================================== */
+.cards-sinais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card-sinal {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-sinal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-sinal h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.card-sinal p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. DESTAQUES DE TEXTO E PAINÉIS
+   ========================================================================== */
+.painel-diagnostico {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+}
+
+.alerta-terreno {
+    background-color: #fef3c7;
+    border-left: 5px solid #f59e0b;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 40px;
+}
+
+.texto-destaque {
+    color: #b45309;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   6. BLOCOS EDUCACIONAIS E PASSOS (1, 2...)
+   ========================================================================== */
+.bloco-educacao {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.cabecalho-etapa {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.numero-passo {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.subtitulo-etapa {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.grid-informacoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card-info {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.card-topo {
+    margin-bottom: 10px;
+}
+
+.card-topo h4 {
+    margin-top: 8px;
+    color: var(--text-dark);
+}
+
+/* Badges Coloridas */
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.badge.verde {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.badge.atencao {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.badge.azul {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.texto-card {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .sobre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-imagem {
+        order: -1; /* Exibe a imagem acima do texto no celular */
+    }
+
+    .cabecalho-etapa {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
