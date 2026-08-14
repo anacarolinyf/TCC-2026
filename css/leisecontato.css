@@ -1,0 +1,776 @@
+/* ==========================================
+   PAGINA DE LEIS
+========================================== */
+
+.pagina-leis {
+    background: #f4f8ff;
+    min-height: 100vh;
+}
+
+.secao-leis {
+    padding: 75px 0;
+}
+
+.container-leis {
+    width: 84%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.titulo-leis {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.titulo-leis span {
+    display: block;
+    color: #2850a5;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.titulo-leis h2 {
+    color: #2850a5;
+    font-size: 38px;
+    margin: 0 0 18px;
+}
+
+.titulo-leis p {
+    color: #61728b;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* ==========================================
+   GRID DOS CARDS
+========================================== */
+
+.cards-legislacao {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.cards-legislacao {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.card-legislacao {
+    height: fit-content;
+    background: #ffffff;
+    border: 1px solid #dfe8f5;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(40, 80, 165, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card-legislacao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(40, 80, 165, 0.14);
+}
+
+
+/* ==========================================
+   CABECALHO DO CARD
+========================================== */
+
+.card-cabecalho {
+    width: 100%;
+    min-height: 100px;
+    padding: 22px;
+    border: none;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    text-align: left;
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+
+/* ==========================================
+   ICONE
+========================================== */
+
+.card-icone {
+    flex-shrink: 0;
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: #e7f0ff;
+    color: #2850a5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ==========================================
+   TITULO
+========================================== */
+
+.card-titulo {
+    flex: 1;
+}
+
+.card-titulo span {
+    display: block;
+
+    color: #6a7f9f;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 5px;
+}
+
+.card-titulo h3 {
+    color: #2850a5;
+
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    margin: 0;
+}
+
+
+/* ==========================================
+   SETA
+========================================== */
+
+.seta-card {
+    color: #2850a5;
+
+    font-size: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* ==========================================
+   CONTEUDO ESCONDIDO
+========================================== */
+
+.card-detalhes {
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    padding: 0 25px;
+
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.card-detalhes p {
+    color: #61728b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 0 0 14px;
+}
+
+.card-detalhes strong {
+    display: block;
+
+    color: #2850a5;
+
+    font-size: 15px;
+
+    margin: 18px 0 8px;
+}
+
+.card-detalhes ul {
+    margin: 0 0 10px;
+
+    padding-left: 20px;
+}
+
+.card-detalhes li {
+    color: #61728b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================
+   CARD ABERTO
+========================================== */
+
+.card-legislacao.aberto {
+    border-color: #b8cbed;
+}
+
+.card-legislacao.aberto .card-detalhes {
+    max-height: 700px;
+
+    opacity: 1;
+
+    padding: 0 25px 25px;
+}
+
+.card-legislacao.aberto .seta-card {
+    transform: rotate(180deg);
+}
+
+.card-legislacao.aberto .card-icone {
+    background: #2850a5;
+
+    color: #ffffff;
+}
+
+
+/* ==========================================
+   AVISO
+========================================== */
+
+.aviso-leis {
+    margin-top: 35px;
+
+    padding: 22px 25px;
+
+    background: #e8f2ff;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.aviso-leis i {
+    color: #2850a5;
+
+    font-size: 21px;
+
+    margin-top: 3px;
+}
+
+.aviso-leis p {
+    color: #536985;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 800px) {
+
+    .cards-legislacao {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .secao-leis {
+        padding: 50px 0;
+    }
+
+    .container-leis {
+        width: 90%;
+    }
+
+    .titulo-leis h2 {
+        font-size: 30px;
+    }
+
+    .card-cabecalho {
+        padding: 20px;
+    }
+
+    .card-icone {
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+/* =====================================================
+   CONTATO - FORTEA
+===================================================== */
+
+body {
+    overflow-x: hidden;
+}
+
+.pagina-contato {
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f8fd;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.pagina-contato .contato-hero {
+    width: 100%;
+    background: #e8f2ff;
+    padding: 75px 20px 70px;
+    box-sizing: border-box;
+}
+
+.pagina-contato .contato-hero-inner {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.pagina-contato .contato-label {
+    display: block;
+    margin: 0 0 12px;
+
+    color: #2850a5;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.pagina-contato .contato-hero h1 {
+    display: block;
+
+    width: auto;
+    max-width: 800px;
+
+    margin: 0 auto 18px;
+
+    color: #2850a5;
+
+    font-size: 46px;
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    text-align: center;
+}
+
+.pagina-contato .contato-hero p {
+    width: auto;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #607492;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ÁREA PRINCIPAL
+===================================================== */
+
+.pagina-contato .contato-area {
+    width: 100%;
+    padding: 65px 20px 80px;
+
+    box-sizing: border-box;
+}
+
+.pagina-contato .contato-container {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+.pagina-contato .contato-grid {
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =====================================================
+   CARD DE INFORMAÇÕES
+===================================================== */
+
+.pagina-contato .contato-info {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8f2;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 6px 20px rgba(40, 80, 165, 0.07);
+}
+
+.pagina-contato .contato-info h2 {
+    width: auto;
+
+    margin: 0 0 12px;
+
+    color: #2850a5;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+}
+
+.pagina-contato .contato-info > p {
+    margin: 0 0 25px;
+
+    color: #657791;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES INDIVIDUAIS
+===================================================== */
+
+.pagina-contato .contato-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #edf1f6;
+}
+
+.pagina-contato .contato-item:last-of-type {
+    border-bottom: none;
+}
+
+.pagina-contato .contato-icon {
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #e8f1ff;
+
+    color: #2850a5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+.pagina-contato .contato-item-text strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #2850a5;
+
+    font-size: 15px;
+}
+
+.pagina-contato .contato-item-text span {
+    color: #667992;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   AVISO
+===================================================== */
+
+.pagina-contato .contato-aviso {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 22px;
+
+    padding: 16px;
+
+    background: #f0f6ff;
+
+    border-radius: 11px;
+
+    box-sizing: border-box;
+}
+
+.pagina-contato .contato-aviso i {
+    flex-shrink: 0;
+
+    color: #2850a5;
+
+    margin-top: 3px;
+}
+
+.pagina-contato .contato-aviso p {
+    margin: 0;
+
+    color: #607492;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+
+.pagina-contato .contato-form {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8f2;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 6px 20px rgba(40, 80, 165, 0.07);
+}
+
+.pagina-contato .contato-form h2 {
+    width: auto;
+
+    margin: 0 0 25px;
+
+    color: #2850a5;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+}
+
+
+/* =====================================================
+   CAMPOS
+===================================================== */
+
+.pagina-contato .contato-field {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+.pagina-contato .contato-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #365681;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pagina-contato .contato-field input,
+.pagina-contato .contato-field textarea {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d7e1ee;
+
+    border-radius: 9px;
+
+    background: #fbfcff;
+
+    padding: 13px 14px;
+
+    color: #344f73;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.pagina-contato .contato-field input {
+    height: 47px;
+}
+
+.pagina-contato .contato-field textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.pagina-contato .contato-field input:focus,
+.pagina-contato .contato-field textarea:focus {
+    border-color: #2850a5;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(40, 80, 165, 0.08);
+}
+
+.pagina-contato .contato-field input::placeholder,
+.pagina-contato .contato-field textarea::placeholder {
+    color: #9aa8ba;
+}
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
+
+.pagina-contato .contato-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2850a5;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.pagina-contato .contato-button:hover {
+    background: #1f428b;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 14px rgba(40, 80, 165, 0.2);
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .pagina-contato .contato-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-contato .contato-hero h1 {
+        font-size: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .pagina-contato .contato-hero {
+        padding: 55px 18px;
+    }
+
+    .pagina-contato .contato-hero h1 {
+        font-size: 32px;
+    }
+
+    .pagina-contato .contato-hero p {
+        font-size: 15px;
+    }
+
+    .pagina-contato .contato-area {
+        padding: 45px 18px 60px;
+    }
+
+    .pagina-contato .contato-info,
+    .pagina-contato .contato-form {
+        padding: 24px;
+    }
+
+}

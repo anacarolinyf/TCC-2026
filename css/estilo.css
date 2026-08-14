@@ -1978,3 +1978,27 @@ section {
         gap: 10px;
     }
 }
+
+.nome-usuario {
+    color: white;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.nome-usuario:hover {
+    opacity: 0.85;
+}
+
+.usuario-logado {
+    color: white;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.usuario-logado:hover {
+    opacity: 0.85;
+}

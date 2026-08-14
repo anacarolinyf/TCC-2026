@@ -1,0 +1,855 @@
+/* =========================
+   PÁGINA DO PERFIL
+   ========================= */
+
+.perfil-pagina,
+.editar-pagina {
+    min-height: calc(100vh - 132px);
+    background: #f3f6fc;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   CARD
+   ========================= */
+
+.perfil-card,
+.editar-card {
+    width: 100%;
+    max-width: 950px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   TOPO
+   ========================= */
+
+.perfil-topo {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #e5ebf5;
+}
+
+
+.perfil-avatar {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #2949b9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    font-size: 35px;
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+.perfil-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.perfil-titulo {
+    flex: 1;
+}
+
+
+.perfil-titulo h1 {
+    margin: 0 0 6px;
+
+    color: #123b70;
+
+    font-size: 29px;
+}
+
+
+.perfil-titulo p {
+    margin: 0;
+
+    color: #7187aa;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BOTÃO EDITAR DO TOPO
+   ========================= */
+
+.botao-editar-topo {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 22px;
+
+    background: #2949b9;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.botao-editar-topo:hover {
+    background: #203da3;
+}
+
+
+/* =========================
+   ABAS
+   ========================= */
+
+.perfil-abas {
+    display: flex;
+
+    gap: 5px;
+
+    margin-top: 25px;
+
+    border-bottom: 1px solid #e5ebf5;
+}
+
+
+.aba {
+    border: none;
+
+    background: transparent;
+
+    color: #7187aa;
+
+    padding: 13px 18px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    border-bottom: 3px solid transparent;
+
+    transition: 0.2s;
+}
+
+
+.aba:hover {
+    color: #2949b9;
+}
+
+
+.aba.ativa {
+    color: #2949b9;
+
+    border-bottom-color: #2949b9;
+}
+
+
+/* =========================
+   CONTEÚDO DAS ABAS
+   ========================= */
+
+.conteudo-aba {
+    display: none;
+
+    padding-top: 30px;
+}
+
+
+.conteudo-aba.ativa {
+    display: block;
+}
+
+
+.conteudo-aba h2 {
+    margin: 0 0 20px;
+
+    color: #123b70;
+
+    font-size: 21px;
+}
+
+
+.aba-titulo {
+    margin-bottom: 25px;
+}
+
+
+.aba-titulo h2 {
+    margin-bottom: 5px;
+}
+
+
+.aba-titulo p {
+    margin: 0;
+
+    color: #7187aa;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   INFORMAÇÕES
+   ========================= */
+
+.perfil-campo {
+    margin-bottom: 20px;
+}
+
+
+.perfil-campo label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #123b70;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.perfil-valor {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 13px 15px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d3deef;
+
+    border-radius: 9px;
+
+    background: #f9fbfe;
+
+    color: #526b91;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   LISTA DE PROFISSIONAIS
+   ========================= */
+
+.lista-profissionais {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.profissional-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    border: 1px solid #e0e8f4;
+
+    border-radius: 12px;
+
+    background: #fbfcfe;
+}
+
+
+.profissional-icone {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: #e9effb;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2949b9;
+
+    font-size: 19px;
+
+    flex-shrink: 0;
+}
+
+
+.profissional-info {
+    flex: 1;
+}
+
+
+.profissional-info h3 {
+    margin: 0 0 4px;
+
+    color: #123b70;
+
+    font-size: 16px;
+}
+
+
+.profissional-info p {
+    margin: 0;
+
+    color: #7187aa;
+
+    font-size: 13px;
+}
+
+
+.profissional-info small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #94a5bf;
+
+    font-size: 12px;
+}
+
+
+.coracao-favorito {
+    color: #2949b9;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   BOTÃO CONVERSAR
+   ========================= */
+
+.botao-conversar {
+    padding: 9px 14px;
+
+    border-radius: 18px;
+
+    background: #2949b9;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.botao-conversar:hover {
+    background: #203da3;
+}
+
+
+/* =========================
+   ESTADO VAZIO
+   ========================= */
+
+.estado-vazio {
+    text-align: center;
+
+    padding: 45px 20px;
+
+    border: 1px dashed #d3deef;
+
+    border-radius: 12px;
+
+    background: #fbfcfe;
+}
+
+
+.estado-vazio i {
+    color: #9aafd0;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+.estado-vazio h3 {
+    margin: 0 0 7px;
+
+    color: #123b70;
+
+    font-size: 17px;
+}
+
+
+.estado-vazio p {
+    margin: 0;
+
+    color: #7187aa;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SAIR
+   ========================= */
+
+.perfil-final {
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e5ebf5;
+}
+
+
+.botao-sair {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #2949b9;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   EDITAR PERFIL
+   ========================= */
+
+.editar-card {
+    max-width: 850px;
+}
+
+
+.editar-cabecalho {
+    margin-bottom: 30px;
+}
+
+
+.voltar-perfil {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+    color: #2949b9;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.editar-cabecalho h1 {
+    margin: 0 0 6px;
+
+    color: #123b70;
+
+    font-size: 29px;
+}
+
+
+.editar-cabecalho p {
+    margin: 0;
+
+    color: #7187aa;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOTO
+   ========================= */
+
+.foto-edicao {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    padding: 22px;
+
+    margin-bottom: 30px;
+
+    background: #f8faff;
+
+    border: 1px solid #e1e9f5;
+
+    border-radius: 14px;
+}
+
+
+.foto-preview {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #2949b9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    color: white;
+
+    font-size: 34px;
+    font-weight: 700;
+
+    flex-shrink: 0;
+}
+
+
+.foto-preview img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.foto-texto h3 {
+    margin: 0 0 5px;
+
+    color: #123b70;
+
+    font-size: 17px;
+}
+
+
+.foto-texto p {
+    margin: 0 0 12px;
+
+    color: #7187aa;
+
+    font-size: 13px;
+}
+
+
+.botao-foto {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    background: #2949b9;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.foto-texto small {
+    display: block;
+
+    margin-top: 7px;
+
+    color: #94a5bf;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   CAMPOS DE EDIÇÃO
+   ========================= */
+
+.campo-editar {
+    margin-bottom: 20px;
+}
+
+
+.campo-editar label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #123b70;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.campo-editar input {
+    width: 100%;
+    height: 46px;
+
+    padding: 0 14px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #cbd9ed;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #123b70;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.campo-editar input:focus {
+    border-color: #2949b9;
+}
+
+
+.linha-senha {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+/* =========================
+   MENSAGENS
+   ========================= */
+
+.mensagem-sucesso,
+.mensagem-erro {
+    padding: 12px 15px;
+
+    border-radius: 9px;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+}
+
+
+.mensagem-sucesso {
+    background: #eef8f1;
+
+    color: #267044;
+}
+
+
+.mensagem-erro {
+    background: #fff0f0;
+
+    color: #a83d3d;
+}
+
+
+/* =========================
+   BOTÕES DE EDIÇÃO
+   ========================= */
+
+.editar-acoes {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #e5ebf5;
+}
+
+
+.botao-cancelar,
+.botao-salvar {
+    height: 44px;
+
+    padding: 0 20px;
+
+    border-radius: 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-sizing: border-box;
+}
+
+
+.botao-cancelar {
+    background: white;
+
+    border: 1px solid #ccd9ec;
+
+    color: #526b91;
+}
+
+
+.botao-salvar {
+    border: none;
+
+    background: #2949b9;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.botao-salvar:hover {
+    background: #203da3;
+}
+
+
+/* =========================
+   NOME NO HEADER
+   ========================= */
+
+.usuario-logado {
+    color: white;
+
+    text-decoration: underline;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   RESPONSIVO
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .perfil-pagina,
+    .editar-pagina {
+        padding: 25px 15px;
+    }
+
+    .perfil-card,
+    .editar-card {
+        padding: 25px 20px;
+    }
+
+    .perfil-topo {
+        flex-wrap: wrap;
+    }
+
+    .botao-editar-topo {
+        width: 100%;
+    }
+
+    .perfil-abas {
+        overflow-x: auto;
+    }
+
+    .aba {
+        white-space: nowrap;
+    }
+
+    .profissional-card {
+        align-items: flex-start;
+    }
+
+    .botao-conversar {
+        display: none;
+    }
+
+    .foto-edicao {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .linha-senha {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .editar-acoes {
+        flex-direction: column;
+    }
+
+    .botao-cancelar,
+    .botao-salvar {
+        width: 100%;
+    }
+
+}

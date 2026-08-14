@@ -1,4 +1,6 @@
-<?php include 'includes/header.php';?>
+<?php include 'includes/header.php';
+?>
+
 <main>
     <!-- Seção Hero: Texto e Imagem lado a lado -->
     <section class="hero">
