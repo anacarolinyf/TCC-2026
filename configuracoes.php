@@ -413,6 +413,7 @@ function abrirConfiguracao(tipo) {
     |--------------------------------------------------------------------------
     */
 
+
     if (tipo === 'conta') {
 
         titulo.innerText = 'Minha conta';
