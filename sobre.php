@@ -149,6 +149,39 @@
         </p>
 
     </div>
+    
+</div>
+<div class="timeline-item">
+    <span class="circulo">🧑</span>
+    <div>
+
+        <h3>Adolescência e vida adulta</h3>
+
+        <p>
+            Embora os primeiros sinais geralmente apareçam na infância, muitas pessoas
+            recebem o diagnóstico apenas na adolescência ou na vida adulta. Nessa fase,
+            algumas características podem se manifestar de formas diferentes, como:
+        </p>
+
+        <ul>
+            <li>Dificuldade para compreender regras sociais e situações de convivência.</li>
+            <li>Necessidade de manter rotinas e previsibilidade no dia a dia.</li>
+            <li>Sobrecarga sensorial diante de sons, luzes, cheiros ou ambientes movimentados.</li>
+            <li>Ansiedade relacionada às interações sociais ou mudanças inesperadas.</li>
+            <li>
+                Uso de estratégias de
+                <span class="tooltip-termo" onclick="toggleTooltip(this)">
+                    masking
+                    <span class="tooltip-text">
+                        Estratégia em que a pessoa autista tenta esconder ou adaptar suas características para se encaixar nas expectativas sociais, o que pode causar grande desgaste emocional.
+                    </span>
+                </span>.
+            </li>
+            <li>Interesses específicos intensos por determinados assuntos ou atividades.</li>
+        </ul>
+
+    </div>
+
 </div>
 
 <div class="aviso-importante">
@@ -185,21 +218,15 @@
 
 <details class="nivel1">
 
-    <summary>Nível 1 — Necessita de apoio</summary>
+       <summary>Nível 1 — Necessita de apoio</summary>
 
     <p>
-        Pessoas com TEA nível 1 geralmente possuem maior autonomia nas atividades diárias, mas podem apresentar dificuldades em situações sociais, como iniciar ou manter conversas, compreender regras sociais e lidar com mudanças inesperadas. Algumas pessoas podem desenvolver estratégias para esconder ou adaptar suas características sociais, um comportamento conhecido como
-    </p>
-        <span class="tooltip-termo" onclick="toggleTooltip(this)">masking<span class="tooltip-text">
-                Também chamado de mascaramento, ocorre quando a pessoa autista tenta esconder ou adaptar suas características para se encaixar nas expectativas sociais. Essa estratégia pode gerar desgaste emocional ao longo do tempo.
-            </span>
-        </span>.
+        Pessoas com TEA nível 1 geralmente possuem maior autonomia nas atividades diárias, mas podem apresentar dificuldades em situações sociais, como iniciar ou manter conversas, compreender regras sociais e lidar com mudanças inesperadas. Algumas pessoas podem desenvolver estratégias para esconder ou adaptar suas características sociais, um comportamento conhecido como masking.
     </p>
 
     <p class="lembrete">
         💙 <strong>Vale lembrar:</strong> Ter maior autonomia não significa ser <strong>"menos autista"</strong>. Cada pessoa possui características e necessidades de apoio diferentes.
     </p>
-
 </details>
 
 
@@ -260,6 +287,36 @@
     </p>
 
 </div>
+
+<section class="faq-conexao reveal">
+
+    <div class="faq-card">
+
+        <div class="faq-icone">
+            <i class="fa-solid fa-circle-question"></i>
+        </div>
+
+        <div class="faq-texto">
+
+            <h2>Ainda tem dúvidas sobre o TEA?</h2>
+
+            <p>
+                Existem muitas informações incorretas sobre o Transtorno do Espectro Autista.
+                Para ajudar você a compreender melhor o tema, reunimos respostas para as
+                perguntas mais frequentes sobre diagnóstico, causas, tratamento, inclusão,
+                mitos e verdades.
+            </p>
+
+            <a href="faq.php" class="btn-faq">
+                Acessar Perguntas Frequentes
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
 
 </section>
 
