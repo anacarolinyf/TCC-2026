@@ -2002,3 +2002,170 @@ section {
 .usuario-logado:hover {
     opacity: 0.85;
 }
+
+
+/* ==========================
+   FAQ - CARD TEA
+========================== */
+
+.faq-conexao {
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fb;
+    box-sizing: border-box;
+}
+
+.faq-card {
+    width: 100%;
+    max-width: 1100px;
+    background: linear-gradient(135deg,#F8FBFF,#EAF2FF);
+    border-radius: 18px;
+    padding: 45px 55px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+
+    /* Sombra suave */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+    /* Pequena borda */
+    border: 1px solid #e8edf5;
+
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.faq-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Ícone */
+.faq-icone {
+    width: 65px;
+    height: 65px;
+    min-width: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf2ff;
+    border-radius: 50%;
+}
+
+.faq-icone i {
+    font-size: 30px;
+    color: #2454a6;
+}
+
+
+/* Área do texto */
+.faq-texto {
+    flex: 1;
+}
+
+.faq-texto h2 {
+    margin: 0 0 15px 0;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+
+    color: #2454a6;
+}
+
+.faq-texto p {
+    margin: 0 0 25px 0;
+
+    max-width: 900px;
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    color: #5d6878;
+}
+
+
+/* Botão */
+.btn-faq {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    background: #2454a6;
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-faq:hover {
+    background: #193f80;
+    color: #ffffff;
+
+    transform: translateX(3px);
+}
+
+.btn-faq i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.btn-faq:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 768px) {
+
+    .faq-conexao {
+        padding: 40px 15px;
+    }
+
+    .faq-card {
+        padding: 35px 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .faq-icone {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+    }
+
+    .faq-icone i {
+        font-size: 27px;
+    }
+
+    .faq-texto h2 {
+        font-size: 25px;
+    }
+
+    .faq-texto p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .btn-faq {
+        justify-content: center;
+    }
+}

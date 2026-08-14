@@ -1,7 +1,11 @@
 <?php
-session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $nomeUsuario = $_SESSION['nome'] ?? $_SESSION['usuario_nome'] ?? null;
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +15,7 @@ $nomeUsuario = $_SESSION['nome'] ?? $_SESSION['usuario_nome'] ?? null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/leisecontato.css">
+    <link rel="stylesheet" href="css/configuracoes.css">
     <title>ForTEA</title>
     <link rel="icon" type="image" href="img/logoo.png">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
@@ -36,19 +41,25 @@ $nomeUsuario = $_SESSION['nome'] ?? $_SESSION['usuario_nome'] ?? null;
 
             <?php if ($nomeUsuario): ?>
 
-                <a href="perfil.php" class="usuario-logado">
-                    <i class="fa-regular fa-user"></i>
-                    <?= htmlspecialchars($nomeUsuario) ?>
-                </a>
+    <a href="perfil.php" class="usuario-logado">
+        <i class="fa-regular fa-user"></i>
+        <?= htmlspecialchars($nomeUsuario) ?>
+    </a>
 
-            <?php else: ?>
+    <a href="configuracoes.php" class="menu-configuracoes">
+        <i class="fa-solid fa-gear"></i>
+        Configurações
+    </a>
 
-                <a href="login.php">
-                    <i class="fa-regular fa-user"></i>
-                    Login
-                </a>
+<?php else: ?>
 
-            <?php endif; ?>
+    <a href="login.php">
+        <i class="fa-regular fa-user"></i>
+        Login
+    </a>
+
+<?php endif; ?>
+            
 
         </div>
 
