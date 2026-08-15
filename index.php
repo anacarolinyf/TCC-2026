@@ -1,5 +1,6 @@
-<?php include 'includes/header.php';
-?>
+<?php include 'includes/header.php'; ?>
+
+<link rel="icon" type="image" href="img/logoo.png">
 
 <main>
     <!-- Seção Hero: Texto e Imagem lado a lado -->

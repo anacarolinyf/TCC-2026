@@ -3,6 +3,37 @@
 session_start();
 
 require_once 'conexao.php';
+
+
+/*
+|--------------------------------------------------------------------------
+| CARREGAR CONFIGURAÇÕES
+|--------------------------------------------------------------------------
+*/
+
+$config = [];
+
+$resultado = $conexao->query(
+    "SELECT chave, valor FROM configuracoes"
+);
+
+if (!$resultado) {
+    die("Erro ao carregar configurações: " . $conexao->error);
+}
+
+while ($row = $resultado->fetch_assoc()) {
+
+    $config[$row['chave']] = $row['valor'];
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| AGORA CARREGA O HEADER
+|--------------------------------------------------------------------------
+*/
+
 require_once 'includes/header.php';
 
 /*
@@ -513,45 +544,73 @@ function abrirConfiguracao(tipo) {
     |--------------------------------------------------------------------------
     */
 
-    else if (tipo === 'aparencia') {
+   else if (tipo === 'aparencia') {
 
-        titulo.innerText = 'Aparência';
+    titulo.innerText = 'Aparência';
 
-        conteudo = `
+    conteudo = `
 
-            <div class="form-row">
+        <div class="config-option">
 
-                <div class="form-group">
+            <div>
 
-                    <label>Cor principal</label>
+                <strong>Modo escuro</strong>
 
-                    <input
-                        type="color"
-                        class="color-picker"
-                        name="cor_principal"
-                        value="<?= htmlspecialchars($config['cor_principal'] ?? '#2454A6') ?>"
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>Cor secundária</label>
-
-                    <input
-                        type="color"
-                        class="color-picker"
-                        name="cor_secundaria"
-                        value="<?= htmlspecialchars($config['cor_secundaria'] ?? '#193F80') ?>"
-                    >
-
-                </div>
+                <p>
+                    Ativar aparência escura no ForTEA.
+                </p>
 
             </div>
 
-        `;
-    }
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    name="modo_escuro"
+                    value="1"
+                    <?= ($config['modo_escuro'] ?? '0') === '1' ? 'checked' : '' ?>
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>Cor principal</label>
+
+                <input
+                    type="color"
+                    class="color-picker"
+                    name="cor_principal"
+                    value="<?= htmlspecialchars($config['cor_principal'] ?? '#2454A6') ?>"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Cor secundária</label>
+
+                <input
+                    type="color"
+                    class="color-picker"
+                    name="cor_secundaria"
+                    value="<?= htmlspecialchars($config['cor_secundaria'] ?? '#193F80') ?>"
+                >
+
+            </div>
+
+        </div>
+
+    `;
+}
 
 
     /*
@@ -560,76 +619,107 @@ function abrirConfiguracao(tipo) {
     |--------------------------------------------------------------------------
     */
 
-    else if (tipo === 'acessibilidade') {
+   else if (tipo === 'acessibilidade') {
 
-        titulo.innerText = 'Acessibilidade';
+    titulo.innerText = 'Acessibilidade';
 
-        conteudo = `
+    conteudo = `
 
-            <div class="config-option">
+        <div class="config-option">
 
-                <div>
+            <div>
 
-                    <strong>Alto contraste</strong>
+                <strong>Alto contraste</strong>
 
-                    <p>
-                        Aumenta o contraste visual dos elementos.
-                    </p>
-
-                </div>
-
-                <label class="switch">
-
-                    <input type="checkbox">
-
-                    <span class="slider"></span>
-
-                </label>
+                <p>
+                    Aumenta o contraste visual dos elementos.
+                </p>
 
             </div>
 
+            <label class="switch">
 
-            <div class="config-option">
+                <input
+                    type="checkbox"
+                    name="alto_contraste"
+                    value="1"
+                    <?= ($config['alto_contraste'] ?? '0') === '1' ? 'checked' : '' ?>
+                >
 
-                <div>
+                <span class="slider"></span>
 
-                    <strong>Reduzir animações</strong>
+            </label>
 
-                    <p>
-                        Reduz efeitos e movimentos da interface.
-                    </p>
-
-                </div>
-
-                <label class="switch">
-
-                    <input type="checkbox">
-
-                    <span class="slider"></span>
-
-                </label>
-
-            </div>
+        </div>
 
 
-            <div class="form-group">
+        <div class="config-option">
 
-                <label>Tamanho da fonte</label>
+            <div>
 
-                <select>
+                <strong>Reduzir animações</strong>
 
-                    <option>Normal</option>
-
-                    <option>Grande</option>
-
-                    <option>Muito grande</option>
-
-                </select>
+                <p>
+                    Reduz efeitos e movimentos da interface.
+                </p>
 
             </div>
 
-        `;
-    }
+            <label class="switch">
+
+                <input
+                    type="checkbox"
+                    name="reduzir_animacoes"
+                    value="1"
+                    <?= ($config['reduzir_animacoes'] ?? '0') === '1' ? 'checked' : '' ?>
+                >
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>Tamanho da fonte</label>
+
+            <select name="tamanho_fonte">
+
+                <option
+                    value="normal"
+                    <?= ($config['tamanho_fonte'] ?? 'normal') === 'normal'
+                        ? 'selected'
+                        : '' ?>
+                >
+                    Normal
+                </option>
+
+                <option
+                    value="grande"
+                    <?= ($config['tamanho_fonte'] ?? '') === 'grande'
+                        ? 'selected'
+                        : '' ?>
+                >
+                    Grande
+                </option>
+
+                <option
+                    value="muito_grande"
+                    <?= ($config['tamanho_fonte'] ?? '') === 'muito_grande'
+                        ? 'selected'
+                        : '' ?>
+                >
+                    Muito grande
+                </option>
+
+            </select>
+
+        </div>
+
+    `;
+}
 
 
     /*

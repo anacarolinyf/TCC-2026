@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14/08/2026 às 19:17
+-- Tempo de geração: 15/08/2026 às 05:52
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -39,8 +39,8 @@ CREATE TABLE `configuracoes` (
 --
 
 INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
-(1, 'nome_site', 'Meu Site', '2026-08-14 17:17:25'),
-(2, 'descricao_site', 'Descrição do meu site', '2026-08-14 17:17:25'),
+(1, 'nome_site', '', '2026-08-15 03:48:18'),
+(2, 'descricao_site', '', '2026-08-15 03:48:18'),
 (3, 'email_contato', '', '2026-08-14 17:17:25'),
 (4, 'telefone', '', '2026-08-14 17:17:25'),
 (5, 'endereco', '', '2026-08-14 17:17:25'),
@@ -48,10 +48,16 @@ INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
 (7, 'facebook', '', '2026-08-14 17:17:25'),
 (8, 'youtube', '', '2026-08-14 17:17:25'),
 (9, 'linkedin', '', '2026-08-14 17:17:25'),
-(10, 'cor_principal', '#2454A6', '2026-08-14 17:17:25'),
-(11, 'cor_secundaria', '#193F80', '2026-08-14 17:17:25'),
+(10, 'cor_principal', '#2454A6', '2026-08-15 03:50:07'),
+(11, 'cor_secundaria', '#193F80', '2026-08-15 03:50:07'),
 (12, 'meta_title', '', '2026-08-14 17:17:25'),
-(13, 'meta_description', '', '2026-08-14 17:17:25');
+(13, 'meta_description', '', '2026-08-14 17:17:25'),
+(14, 'modo_escuro', '0', '2026-08-15 03:32:13'),
+(15, 'alto_contraste', '0', '2026-08-15 03:32:13'),
+(16, 'reduzir_animacoes', '0', '2026-08-15 03:32:13'),
+(17, 'tamanho_fonte', 'normal', '2026-08-15 03:32:13'),
+(18, 'notificacoes_sistema', '1', '2026-08-15 03:32:13'),
+(19, 'lembretes', '1', '2026-08-15 03:32:13');
 
 -- --------------------------------------------------------
 
@@ -144,7 +150,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `contatos_medicos`

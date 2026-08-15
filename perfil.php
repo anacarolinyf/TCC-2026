@@ -106,7 +106,9 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
 
 ?>
 
+
 <!DOCTYPE html>
+
 
 <html lang="pt-br">
 
@@ -136,6 +138,11 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
 
 
 <body>
+
+<?php include "chatbot/chatbot.php"; ?>
+
+<link rel="stylesheet" href="chatbot/chatbot.css">
+<script src="chatbot/chatbot.js"></script>
 
 
 <header>
@@ -170,6 +177,11 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
                 <?= htmlspecialchars($nomeUsuario) ?>
 
             </a>
+
+            <a href="configuracoes.php" class="menu-configuracoes">
+                    <i class="fa-solid fa-gear"></i>
+                    
+                </a>
 
         </div>
 
