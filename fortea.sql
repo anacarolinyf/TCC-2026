@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/08/2026 às 05:52
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Tempo de geração: 17-Ago-2026 às 18:11
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `configuracoes`
+-- Estrutura da tabela `configuracoes`
 --
 
 CREATE TABLE `configuracoes` (
@@ -32,10 +32,10 @@ CREATE TABLE `configuracoes` (
   `chave` varchar(100) NOT NULL,
   `valor` text DEFAULT NULL,
   `atualizado_em` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `configuracoes`
+-- Extraindo dados da tabela `configuracoes`
 --
 
 INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
@@ -62,7 +62,7 @@ INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `contatos_medicos`
+-- Estrutura da tabela `contatos_medicos`
 --
 
 CREATE TABLE `contatos_medicos` (
@@ -71,12 +71,12 @@ CREATE TABLE `contatos_medicos` (
   `medico_nome` varchar(255) NOT NULL,
   `especialidade` varchar(255) DEFAULT NULL,
   `ultima_conversa` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `favoritos`
+-- Estrutura da tabela `favoritos`
 --
 
 CREATE TABLE `favoritos` (
@@ -85,12 +85,12 @@ CREATE TABLE `favoritos` (
   `medico_nome` varchar(255) NOT NULL,
   `especialidade` varchar(255) DEFAULT NULL,
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Estrutura da tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -100,10 +100,10 @@ CREATE TABLE `usuarios` (
   `senha` varchar(255) NOT NULL,
   `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp(),
   `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Despejando dados para a tabela `usuarios`
+-- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_cadastro`, `foto`) VALUES
@@ -117,33 +117,33 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_cadastro`, `foto`)
 --
 
 --
--- Índices de tabela `configuracoes`
+-- Índices para tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `chave` (`chave`);
 
 --
--- Índices de tabela `contatos_medicos`
+-- Índices para tabela `contatos_medicos`
 --
 ALTER TABLE `contatos_medicos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `favoritos`
+-- Índices para tabela `favoritos`
 --
 ALTER TABLE `favoritos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuarios`
+-- Índices para tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --

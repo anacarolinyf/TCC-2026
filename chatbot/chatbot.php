@@ -36,7 +36,7 @@
         <div class="chatbot-messages" id="chatbotMessages">
 
             <div class="bot-message">
-                Olá! 👋<br><br>
+                Olá! <br><br>
                 Sou o assistente do ForTEA. Como posso ajudar?
             </div>
 

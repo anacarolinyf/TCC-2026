@@ -5,9 +5,7 @@ session_start();
 require_once "conexao.php";
 
 
-/* ==========================================================
-   VERIFICAR LOGIN
-========================================================== */
+
 
 if (!isset($_SESSION['usuario_id'])) {
 
@@ -22,9 +20,7 @@ $sucesso = '';
 $erro = '';
 
 
-/* ==========================================================
-   GARANTIR PREFERÊNCIAS DO USUÁRIO
-========================================================== */
+
 
 $stmt = $conexao->prepare(
     "INSERT IGNORE INTO preferencias_usuario (usuario_id)
@@ -42,18 +38,13 @@ if ($stmt) {
 }
 
 
-/* ==========================================================
-   SALVAR CONFIGURAÇÕES
-========================================================== */
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $secao = $_POST['secao'] ?? '';
 
 
-    /* ======================================================
-       APARÊNCIA
-    ====================================================== */
 
     if ($secao === 'aparencia') {
 
@@ -94,9 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    /* ======================================================
-       ACESSIBILIDADE
-    ====================================================== */
+
 
     elseif ($secao === 'acessibilidade') {
 
@@ -111,10 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $daltonismo =
             $_POST['daltonismo'] ?? 'nenhum';
 
-
-        /* -----------------------------------------------
-           VALIDAR TAMANHO DA FONTE
-        ------------------------------------------------ */
 
         $tamanhosPermitidos = [
 
@@ -139,9 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-        /* -----------------------------------------------
-           VALIDAR DALTONISMO
-        ------------------------------------------------ */
+      
 
         $daltonismoPermitido = [
 
@@ -167,9 +150,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-        /* -----------------------------------------------
-           SALVAR
-        ------------------------------------------------ */
 
         $stmt = $conexao->prepare(
             "UPDATE preferencias_usuario
@@ -211,10 +191,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
-
-    /* ======================================================
-       NOTIFICAÇÕES
-    ====================================================== */
 
     elseif ($secao === 'notificacoes') {
 
@@ -279,9 +255,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-/* ==========================================================
-   CARREGAR PREFERÊNCIAS
-========================================================== */
+
 
 $preferencias = [
 
@@ -346,9 +320,7 @@ if ($stmt) {
 }
 
 
-/* ==========================================================
-   CONFIGURAÇÕES GERAIS DO SITE
-========================================================== */
+
 
 $config = [];
 
@@ -369,9 +341,6 @@ if ($resultadoConfig) {
 }
 
 
-/* ==========================================================
-   HEADER
-========================================================== */
 
 require_once "includes/header.php";
 
@@ -411,9 +380,7 @@ require_once "includes/header.php";
     </div>
 
 
-    <!-- =====================================================
-         SUCESSO
-    ====================================================== -->
+
 
     <?php if (!empty($sucesso)): ?>
 
@@ -428,9 +395,7 @@ require_once "includes/header.php";
     <?php endif; ?>
 
 
-    <!-- =====================================================
-         ERRO
-    ====================================================== -->
+
 
     <?php if (!empty($erro)): ?>
 
@@ -445,15 +410,12 @@ require_once "includes/header.php";
     <?php endif; ?>
 
 
-    <!-- =====================================================
-         MENU
-    ====================================================== -->
+
 
     <div class="config-card">
 
 
-        <!-- MINHA CONTA -->
-
+      
         <button
             type="button"
             class="config-item"
@@ -487,7 +449,7 @@ require_once "includes/header.php";
         </button>
 
 
-        <!-- NOTIFICAÇÕES -->
+     
 
         <button
             type="button"
@@ -522,7 +484,7 @@ require_once "includes/header.php";
         </button>
 
 
-        <!-- APARÊNCIA -->
+        
 
         <button
             type="button"
@@ -557,7 +519,7 @@ require_once "includes/header.php";
         </button>
 
 
-        <!-- ACESSIBILIDADE -->
+        
 
         <button
             type="button"
@@ -592,7 +554,7 @@ require_once "includes/header.php";
         </button>
 
 
-        <!-- PRIVACIDADE -->
+        
 
         <button
             type="button"
@@ -627,7 +589,7 @@ require_once "includes/header.php";
         </button>
 
 
-        <!-- TERMOS -->
+        
 
         <button
             type="button"
@@ -666,9 +628,7 @@ require_once "includes/header.php";
 </div>
 
 
-<!-- ==========================================================
-     MODAL
-========================================================== -->
+
 
 <div
     id="configModal"
@@ -683,7 +643,7 @@ require_once "includes/header.php";
     >
 
 
-        <!-- HEADER -->
+        
 
         <div class="modal-header">
 
@@ -705,7 +665,7 @@ require_once "includes/header.php";
         </div>
 
 
-        <!-- FORM -->
+       
 
         <form
             method="POST"
@@ -754,9 +714,7 @@ require_once "includes/header.php";
 <script>
 
 
-/* ==========================================================
-   ABRIR CONFIGURAÇÃO
-========================================================== */
+
 
 function abrirConfiguracao(tipo) {
 
@@ -775,9 +733,7 @@ function abrirConfiguracao(tipo) {
     let conteudo = '';
 
 
-    /* ======================================================
-       MINHA CONTA
-    ====================================================== */
+    
 
     if (tipo === 'conta') {
 
@@ -825,9 +781,7 @@ function abrirConfiguracao(tipo) {
     }
 
 
-    /* ======================================================
-       NOTIFICAÇÕES
-    ====================================================== */
+    
 
     else if (tipo === 'notificacoes') {
 
@@ -947,9 +901,7 @@ function abrirConfiguracao(tipo) {
     }
 
 
-    /* ======================================================
-       APARÊNCIA
-    ====================================================== */
+    
 
     else if (tipo === 'aparencia') {
 
@@ -1003,9 +955,7 @@ function abrirConfiguracao(tipo) {
     }
 
 
-    /* ======================================================
-       ACESSIBILIDADE
-    ====================================================== */
+   
 
     else if (tipo === 'acessibilidade') {
 
@@ -1210,10 +1160,7 @@ function abrirConfiguracao(tipo) {
     }
 
 
-    /* ======================================================
-       PRIVACIDADE
-    ====================================================== */
-
+    
     else if (tipo === 'privacidade') {
 
         titulo.innerText =
@@ -1268,9 +1215,7 @@ function abrirConfiguracao(tipo) {
     }
 
 
-    /* ======================================================
-       TERMOS
-    ====================================================== */
+    
 
     else if (tipo === 'termos') {
 
@@ -1340,9 +1285,7 @@ function abrirConfiguracao(tipo) {
     }
 
 
-    /* ======================================================
-       INSERIR CONTEÚDO
-    ====================================================== */
+    
 
     body.innerHTML =
         conteudo;
@@ -1357,9 +1300,7 @@ function abrirConfiguracao(tipo) {
 }
 
 
-/* ==========================================================
-   FECHAR MODAL
-========================================================== */
+
 
 function fecharConfiguracao() {
 
@@ -1374,9 +1315,7 @@ function fecharConfiguracao() {
 }
 
 
-/* ==========================================================
-   FECHAR CLICANDO FORA
-========================================================== */
+
 
 function fecharModalFora(event) {
 
@@ -1393,9 +1332,7 @@ function fecharModalFora(event) {
 }
 
 
-/* ==========================================================
-   ESC
-========================================================== */
+
 
 document.addEventListener(
     'keydown',
