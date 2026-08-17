@@ -19,7 +19,7 @@
     border: none;
     border-radius: 50%;
 
-    background: #722f4f;
+    background: #1e40af;
     color: white;
 
     font-size: 27px;
@@ -33,7 +33,7 @@
 
 .chatbot-button:hover {
     transform: scale(1.08);
-    background: #5e2540;
+    background: #1e40af;
 }
 
 /* JANELA */
@@ -67,7 +67,7 @@
 /* CABEÇALHO */
 
 .chatbot-header {
-    background: #722f4f;
+    background: #1e40af;
 
     color: white;
 
@@ -140,7 +140,7 @@
 /* MENSAGEM DO USUÁRIO */
 
 .user-message {
-    background: #722f4f;
+    background: #1e40af;
 
     color: white;
 
@@ -172,7 +172,7 @@
 
     background: white;
 
-    color: #722f4f;
+    color: #1e40af;
 
     padding: 10px;
 
@@ -218,7 +218,7 @@
 }
 
 .chatbot-input-area input:focus {
-    border-color: #722f4f;
+    border-color: #1e40af;
 }
 
 .chatbot-input-area button {
@@ -232,7 +232,7 @@
 
     border-radius: 50%;
 
-    background: #722f4f;
+    background: #1e40af;
 
     color: white;
 

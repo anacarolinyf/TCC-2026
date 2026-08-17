@@ -634,3 +634,658 @@
     }
 
 }
+
+/* ==========================================================
+   ACESSIBILIDADE - TAMANHO DA FONTE
+========================================================== */
+
+body.fonte-pequena {
+    font-size: 90%;
+}
+
+body.fonte-normal {
+    font-size: 100%;
+}
+
+body.fonte-grande {
+    font-size: 115%;
+}
+
+body.fonte-muito_grande {
+    font-size: 135%;
+}
+
+
+/* ==========================================================
+   REDUZIR ANIMAÇÕES
+========================================================== */
+
+body.reduzir-animacoes *,
+body.reduzir-animacoes *::before,
+body.reduzir-animacoes *::after {
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+}
+
+
+/* ==========================================================
+   MODO ESCURO
+========================================================== */
+
+body.modo-escuro {
+
+    background: #121212;
+
+    color: #f5f5f5;
+}
+
+
+body.modo-escuro .config-container {
+
+    color: #f5f5f5;
+}
+
+
+body.modo-escuro .config-card {
+
+    background: #1e1e1e;
+
+    border-color: #333333;
+}
+
+
+body.modo-escuro .config-item {
+
+    background: #1e1e1e;
+
+    border-color: #333333;
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .config-item:hover {
+
+    background: #292929;
+}
+
+
+body.modo-escuro .config-info h3 {
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .config-info p {
+
+    color: #bdbdbd;
+}
+
+
+body.modo-escuro .config-header h1 {
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .config-header p {
+
+    color: #bdbdbd;
+}
+
+
+body.modo-escuro .config-modal-content {
+
+    background: #1e1e1e;
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .modal-header {
+
+    border-color: #333333;
+}
+
+
+body.modo-escuro .modal-header h2 {
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .modal-footer {
+
+    border-color: #333333;
+}
+
+
+body.modo-escuro .form-group label {
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .form-group input,
+body.modo-escuro .form-group textarea,
+body.modo-escuro .form-group select {
+
+    background: #292929;
+
+    border-color: #444444;
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .config-option {
+
+    border-color: #333333;
+}
+
+
+body.modo-escuro .config-option strong {
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .config-option p {
+
+    color: #bdbdbd;
+}
+
+
+body.modo-escuro .document-box {
+
+    background: #292929;
+
+    border-color: #444444;
+}
+
+
+body.modo-escuro .document-box strong {
+
+    color: #ffffff;
+}
+
+
+body.modo-escuro .document-box p {
+
+    color: #bdbdbd;
+}
+
+
+body.modo-escuro .btn-cancelar {
+
+    background: #292929;
+
+    border-color: #444444;
+
+    color: #ffffff;
+}
+
+
+
+/* ==========================================================
+   ACESSIBILIDADE - TAMANHO DA FONTE
+========================================================== */
+
+/*
+   Pequena
+*/
+
+body.fonte-pequena {
+    font-size: 90%;
+}
+
+
+/*
+   Normal
+*/
+
+body.fonte-normal {
+    font-size: 100%;
+}
+
+
+/*
+   Grande
+*/
+
+body.fonte-grande {
+    font-size: 115%;
+}
+
+
+/*
+   Muito grande
+*/
+
+body.fonte-muito_grande {
+    font-size: 135%;
+}
+
+
+/* ==========================================================
+   REDUZIR ANIMAÇÕES
+========================================================== */
+
+body.reduzir-animacoes *,
+body.reduzir-animacoes *::before,
+body.reduzir-animacoes *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+
+}
+
+
+/* ==========================================================
+   MODO ESCURO
+========================================================== */
+
+body.modo-escuro {
+
+    background-color: #121212;
+
+    color: #f5f5f5;
+
+}
+
+
+/*
+   Configurações
+*/
+
+body.modo-escuro .config-container {
+
+    color: #f5f5f5;
+
+}
+
+
+body.modo-escuro .config-header h1 {
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .config-header p {
+
+    color: #bdbdbd;
+
+}
+
+
+body.modo-escuro .config-card {
+
+    background-color: #1e1e1e;
+
+    border-color: #333333;
+
+}
+
+
+body.modo-escuro .config-item {
+
+    background-color: #1e1e1e;
+
+    border-color: #333333;
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .config-item:hover {
+
+    background-color: #292929;
+
+}
+
+
+body.modo-escuro .config-info h3 {
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .config-info p {
+
+    color: #bdbdbd;
+
+}
+
+
+body.modo-escuro .config-icon {
+
+    background-color: #293b5f;
+
+}
+
+
+body.modo-escuro .config-arrow {
+
+    color: #bdbdbd;
+
+}
+
+
+/*
+   Modal
+*/
+
+body.modo-escuro .config-modal-content {
+
+    background-color: #1e1e1e;
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .modal-header {
+
+    border-color: #333333;
+
+}
+
+
+body.modo-escuro .modal-header h2 {
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .modal-footer {
+
+    border-color: #333333;
+
+}
+
+
+body.modo-escuro .modal-close {
+
+    color: #bdbdbd;
+
+}
+
+
+/*
+   Inputs
+*/
+
+body.modo-escuro .form-group label {
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .form-group input,
+body.modo-escuro .form-group textarea,
+body.modo-escuro .form-group select {
+
+    background-color: #292929;
+
+    border-color: #444444;
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .form-group input::placeholder,
+body.modo-escuro .form-group textarea::placeholder {
+
+    color: #999999;
+
+}
+
+
+/*
+   Opções
+*/
+
+body.modo-escuro .config-option {
+
+    border-color: #333333;
+
+}
+
+
+body.modo-escuro .config-option strong {
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .config-option p {
+
+    color: #bdbdbd;
+
+}
+
+
+/*
+   Documentos
+*/
+
+body.modo-escuro .document-box {
+
+    background-color: #292929;
+
+    border-color: #444444;
+
+}
+
+
+body.modo-escuro .document-box strong {
+
+    color: #ffffff;
+
+}
+
+
+body.modo-escuro .document-box p {
+
+    color: #bdbdbd;
+
+}
+
+
+body.modo-escuro .document-box button {
+
+    background-color: #333333;
+
+    border-color: #555555;
+
+    color: #ffffff;
+
+}
+
+
+/*
+   Botão cancelar
+*/
+
+body.modo-escuro .btn-cancelar {
+
+    background-color: #292929;
+
+    border-color: #444444;
+
+    color: #ffffff;
+
+}
+
+
+/* ==========================================================
+   DALTONISMO
+========================================================== */
+
+/*
+   IMPORTANTE:
+   Os modos abaixo não alteram fotos/imagens do usuário.
+   Eles modificam a paleta usada pela interface.
+*/
+
+
+/*
+   PROTANOPIA
+   Dificuldade com vermelho.
+*/
+
+body.daltonismo-protanopia {
+
+    --cor-acessibilidade-sucesso: #0072B2;
+
+    --cor-acessibilidade-alerta: #E69F00;
+
+    --cor-acessibilidade-erro: #D55E00;
+
+    --cor-acessibilidade-info: #56B4E9;
+
+}
+
+
+/*
+   DEUTERANOPIA
+   Dificuldade com verde.
+*/
+
+body.daltonismo-deuteranopia {
+
+    --cor-acessibilidade-sucesso: #0072B2;
+
+    --cor-acessibilidade-alerta: #E69F00;
+
+    --cor-acessibilidade-erro: #D55E00;
+
+    --cor-acessibilidade-info: #56B4E9;
+
+}
+
+
+/*
+   TRITANOPIA
+   Dificuldade com azul/amarelo.
+*/
+
+body.daltonismo-tritanopia {
+
+    --cor-acessibilidade-sucesso: #009E73;
+
+    --cor-acessibilidade-alerta: #E69F00;
+
+    --cor-acessibilidade-erro: #D55E00;
+
+    --cor-acessibilidade-info: #0072B2;
+
+}
+
+
+/*
+   ACROMATOPSIA
+   Escala de cinza.
+*/
+
+body.daltonismo-acromatopsia {
+
+    filter: grayscale(100%);
+
+}
+
+
+/* ==========================================================
+   ALERTAS
+========================================================== */
+
+.alert-error {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+
+}
+
+
+body.modo-escuro .alert-error {
+
+    background: #351919;
+
+    border-color: #6b2a2a;
+
+    color: #fca5a5;
+
+}
+
+
+/* ==========================================================
+   TEXTO EXTRA
+========================================================== */
+
+.config-info-extra {
+
+    margin-top: 8px;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+}
+
+
+body.modo-escuro .config-info-extra {
+
+    color: #bdbdbd;
+
+}
+
+
+/* ==========================================================
+   FOCO PARA ACESSIBILIDADE
+========================================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+    outline: 3px solid #2454A6;
+
+    outline-offset: 3px;
+
+}

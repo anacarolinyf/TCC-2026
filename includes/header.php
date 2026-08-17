@@ -4,12 +4,19 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$nomeUsuario = $_SESSION['nome'] ?? $_SESSION['usuario_nome'] ?? null;
+$nomeUsuario =
+    $_SESSION['nome']
+    ?? $_SESSION['usuario_nome']
+    ?? null;
+
+$usuarioId =
+    $_SESSION['usuario_id']
+    ?? null;
 
 
 /*
 |--------------------------------------------------------------------------
-| CARREGAR CONFIGURAÇÕES DO SITE
+| CONFIGURAÇÕES GERAIS DO SITE
 |--------------------------------------------------------------------------
 */
 
@@ -36,13 +43,100 @@ if (isset($conexao)) {
 
 /*
 |--------------------------------------------------------------------------
-| CORES
+| CORES DO SITE
 |--------------------------------------------------------------------------
 */
 
-$corPrincipal = $configSite['cor_principal'] ?? '#2454A6';
+$corPrincipal =
+    $configSite['cor_principal']
+    ?? '#2454A6';
 
-$corSecundaria = $configSite['cor_secundaria'] ?? '#193F80';
+$corSecundaria =
+    $configSite['cor_secundaria']
+    ?? '#193F80';
+
+
+/*
+|--------------------------------------------------------------------------
+| PREFERÊNCIAS PADRÃO DO USUÁRIO
+|--------------------------------------------------------------------------
+*/
+
+$preferenciasUsuario = [
+
+    'modo_escuro' => 0,
+
+    'reduzir_animacoes' => 0,
+
+    'tamanho_fonte' => 'normal',
+
+    'daltonismo' => 'nenhum'
+
+];
+
+
+/*
+|--------------------------------------------------------------------------
+| CARREGAR PREFERÊNCIAS DO USUÁRIO LOGADO
+|--------------------------------------------------------------------------
+*/
+
+if (
+    $usuarioId &&
+    isset($conexao)
+) {
+
+    $stmtPreferencias = $conexao->prepare(
+
+        "SELECT
+            modo_escuro,
+            reduzir_animacoes,
+            tamanho_fonte,
+            daltonismo
+         FROM preferencias_usuario
+         WHERE usuario_id = ?
+         LIMIT 1"
+
+    );
+
+
+    if ($stmtPreferencias) {
+
+        $stmtPreferencias->bind_param(
+            "i",
+            $usuarioId
+        );
+
+        $stmtPreferencias->execute();
+
+
+        $resultadoPreferencias =
+            $stmtPreferencias->get_result();
+
+
+        if (
+            $resultadoPreferencias &&
+            $resultadoPreferencias->num_rows > 0
+        ) {
+
+            $dadosPreferencias =
+                $resultadoPreferencias->fetch_assoc();
+
+
+            $preferenciasUsuario =
+                array_merge(
+                    $preferenciasUsuario,
+                    $dadosPreferencias
+                );
+
+        }
+
+
+        $stmtPreferencias->close();
+
+    }
+
+}
 
 
 /*
@@ -54,38 +148,119 @@ $corSecundaria = $configSite['cor_secundaria'] ?? '#193F80';
 $classesBody = [];
 
 
-/* MODO ESCURO */
+/*
+|--------------------------------------------------------------------------
+| MODO ESCURO
+|--------------------------------------------------------------------------
+*/
 
-if (($configSite['modo_escuro'] ?? '0') === '1') {
+if (
+    (string)$preferenciasUsuario['modo_escuro']
+    === '1'
+) {
 
-    $classesBody[] = 'modo-escuro';
-
-}
-
-
-/* ALTO CONTRASTE */
-
-if (($configSite['alto_contraste'] ?? '0') === '1') {
-
-    $classesBody[] = 'alto-contraste';
-
-}
-
-
-/* REDUZIR ANIMAÇÕES */
-
-if (($configSite['reduzir_animacoes'] ?? '0') === '1') {
-
-    $classesBody[] = 'reduzir-animacoes';
+    $classesBody[] =
+        'modo-escuro';
 
 }
 
 
-/* TAMANHO DA FONTE */
+/*
+|--------------------------------------------------------------------------
+| REDUZIR ANIMAÇÕES
+|--------------------------------------------------------------------------
+*/
 
-$tamanhoFonte = $configSite['tamanho_fonte'] ?? 'normal';
+if (
+    (string)$preferenciasUsuario['reduzir_animacoes']
+    === '1'
+) {
 
-$classesBody[] = 'fonte-' . $tamanhoFonte;
+    $classesBody[] =
+        'reduzir-animacoes';
+
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| TAMANHO DA FONTE
+|--------------------------------------------------------------------------
+*/
+
+$tamanhosPermitidos = [
+
+    'pequena',
+    'normal',
+    'grande',
+    'muito_grande'
+
+];
+
+
+$tamanhoFonte =
+    $preferenciasUsuario['tamanho_fonte'];
+
+
+if (
+    !in_array(
+        $tamanhoFonte,
+        $tamanhosPermitidos,
+        true
+    )
+) {
+
+    $tamanhoFonte =
+        'normal';
+
+}
+
+
+$classesBody[] =
+    'fonte-' . $tamanhoFonte;
+
+
+/*
+|--------------------------------------------------------------------------
+| DALTONISMO
+|--------------------------------------------------------------------------
+*/
+
+$daltonismosPermitidos = [
+
+    'nenhum',
+    'protanopia',
+    'deuteranopia',
+    'tritanopia',
+    'acromatopsia'
+
+];
+
+
+$daltonismo =
+    $preferenciasUsuario['daltonismo'];
+
+
+if (
+    !in_array(
+        $daltonismo,
+        $daltonismosPermitidos,
+        true
+    )
+) {
+
+    $daltonismo =
+        'nenhum';
+
+}
+
+
+if ($daltonismo !== 'nenhum') {
+
+    $classesBody[] =
+        'daltonismo-' . $daltonismo;
+
+}
 
 ?>
 
@@ -97,40 +272,55 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
     <meta charset="UTF-8">
 
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- CSS PRINCIPAL -->
+
+    <!-- ======================================================
+         CSS PRINCIPAL
+    ======================================================= -->
 
     <link
         rel="stylesheet"
         href="css/estilo.css"
     >
 
-    <!-- CSS DAS LEIS E CONTATO -->
+
+    <!-- ======================================================
+         CSS LEIS E CONTATO
+    ======================================================= -->
 
     <link
         rel="stylesheet"
         href="css/leisecontato.css"
     >
 
-    <!-- CSS DAS CONFIGURAÇÕES -->
+
+    <!-- ======================================================
+         CSS CONFIGURAÇÕES
+    ======================================================= -->
 
     <link
         rel="stylesheet"
         href="css/configuracoes.css"
     >
 
-    <!-- CSS DO PERFIL -->
+
+    <!-- ======================================================
+         CSS PERFIL
+    ======================================================= -->
 
     <link
         rel="stylesheet"
         href="css/perfil.css"
     >
 
+
     <title>ForTEA</title>
+
 
     <link
         rel="icon"
@@ -138,10 +328,20 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
         href="img/logoo.png"
     >
 
+
+    <!-- ======================================================
+         FONTES
+    ======================================================= -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap"
         rel="stylesheet"
     >
+
+
+    <!-- ======================================================
+         FONT AWESOME
+    ======================================================= -->
 
     <link
         rel="stylesheet"
@@ -149,7 +349,9 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
     >
 
 
-    <!-- CORES PERSONALIZADAS -->
+    <!-- ======================================================
+         CORES PERSONALIZADAS
+    ======================================================= -->
 
     <style>
 
@@ -168,7 +370,11 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 </head>
 
 
-<body class="<?= htmlspecialchars(implode(' ', $classesBody)) ?>">
+<body
+    class="<?= htmlspecialchars(
+        implode(' ', $classesBody)
+    ) ?>"
+>
 
 
 <!-- ==========================================================
@@ -192,9 +398,9 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
 <script>
 
-    new window.VLibras.Widget(
-        "https://vlibras.gov.br/app"
-    );
+new window.VLibras.Widget(
+    "https://vlibras.gov.br/app"
+);
 
 </script>
 
@@ -205,10 +411,12 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
 <?php include "chatbot/chatbot.php"; ?>
 
+
 <link
     rel="stylesheet"
     href="chatbot/chatbot.css"
 >
+
 
 <script src="chatbot/chatbot.js"></script>
 
@@ -221,11 +429,14 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
     <div class="topo">
 
+
+        <!-- LOGO -->
+
         <div class="logo">
 
             <img
                 src="img/logoo.png"
-                alt="Logo"
+                alt="Logo ForTEA"
             >
 
             <h2>ForTEA</h2>
@@ -233,7 +444,12 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
         </div>
 
 
+        <!-- AÇÕES -->
+
         <div class="acoes">
+
+
+            <!-- PESQUISA -->
 
             <div class="pesquisa">
 
@@ -247,6 +463,9 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
             <?php if ($nomeUsuario): ?>
 
+
+                <!-- USUÁRIO -->
+
                 <a
                     href="perfil.php"
                     class="usuario-logado"
@@ -254,14 +473,20 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
                     <i class="fa-regular fa-user"></i>
 
-                    <?= htmlspecialchars($nomeUsuario) ?>
+                    <?= htmlspecialchars(
+                        $nomeUsuario
+                    ) ?>
 
                 </a>
 
 
+                <!-- CONFIGURAÇÕES -->
+
                 <a
                     href="configuracoes.php"
                     class="menu-configuracoes"
+                    aria-label="Configurações"
+                    title="Configurações"
                 >
 
                     <i class="fa-solid fa-gear"></i>
@@ -271,6 +496,9 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
             <?php else: ?>
 
+
+                <!-- LOGIN -->
+
                 <a href="login.php">
 
                     <i class="fa-regular fa-user"></i>
@@ -279,12 +507,18 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
 
                 </a>
 
+
             <?php endif; ?>
+
 
         </div>
 
     </div>
 
+
+    <!-- ======================================================
+         MENU
+    ======================================================= -->
 
     <nav class="menu">
 
@@ -299,11 +533,13 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
                 </a>
             </li>
 
+
             <li>
                 <a href="sobre.php">
                     Sobre
                 </a>
             </li>
+
 
             <li>
                 <a href="guia.php">
@@ -311,11 +547,13 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
                 </a>
             </li>
 
+
             <li>
                 <a href="educacaoinclusiva.php">
                     Educação Inclusiva
                 </a>
             </li>
+
 
             <li>
                 <a href="biblioteca.php">
@@ -323,17 +561,20 @@ $classesBody[] = 'fonte-' . $tamanhoFonte;
                 </a>
             </li>
 
+
             <li>
                 <a href="leis.php">
                     Direitos
                 </a>
             </li>
 
+
             <li>
                 <a href="faq.php">
                     FAQ
                 </a>
             </li>
+
 
             <li>
                 <a href="contato.php">

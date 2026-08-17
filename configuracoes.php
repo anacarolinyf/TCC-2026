@@ -2,135 +2,418 @@
 
 session_start();
 
-require_once 'conexao.php';
+require_once "conexao.php";
 
 
-/*
-|--------------------------------------------------------------------------
-| CARREGAR CONFIGURAÇÕES
-|--------------------------------------------------------------------------
-*/
+/* ==========================================================
+   VERIFICAR LOGIN
+========================================================== */
 
-$config = [];
+if (!isset($_SESSION['usuario_id'])) {
 
-$resultado = $conexao->query(
-    "SELECT chave, valor FROM configuracoes"
-);
-
-if (!$resultado) {
-    die("Erro ao carregar configurações: " . $conexao->error);
-}
-
-while ($row = $resultado->fetch_assoc()) {
-
-    $config[$row['chave']] = $row['valor'];
+    header("Location: login.php");
+    exit;
 
 }
 
-
-/*
-|--------------------------------------------------------------------------
-| AGORA CARREGA O HEADER
-|--------------------------------------------------------------------------
-*/
-
-require_once 'includes/header.php';
-
-/*
-|--------------------------------------------------------------------------
-| SALVAR CONFIGURAÇÕES
-|--------------------------------------------------------------------------
-*/
+$usuarioId = (int) $_SESSION['usuario_id'];
 
 $sucesso = '';
+$erro = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $configuracoes = [
-        'nome_site'        => $_POST['nome_site'] ?? '',
-        'descricao_site'   => $_POST['descricao_site'] ?? '',
-        'email_contato'    => $_POST['email_contato'] ?? '',
-        'telefone'         => $_POST['telefone'] ?? '',
-        'endereco'         => $_POST['endereco'] ?? '',
-        'instagram'        => $_POST['instagram'] ?? '',
-        'facebook'         => $_POST['facebook'] ?? '',
-        'youtube'          => $_POST['youtube'] ?? '',
-        'linkedin'         => $_POST['linkedin'] ?? '',
-        'cor_principal'    => $_POST['cor_principal'] ?? '#2454A6',
-        'cor_secundaria'   => $_POST['cor_secundaria'] ?? '#193F80',
-        'meta_title'       => $_POST['meta_title'] ?? '',
-        'meta_description' => $_POST['meta_description'] ?? ''
-    ];
+/* ==========================================================
+   GARANTIR PREFERÊNCIAS DO USUÁRIO
+========================================================== */
 
-    $sql = "UPDATE configuracoes
-            SET valor = ?
-            WHERE chave = ?";
+$stmt = $conexao->prepare(
+    "INSERT IGNORE INTO preferencias_usuario (usuario_id)
+     VALUES (?)"
+);
 
-    $stmt = $conexao->prepare($sql);
+if ($stmt) {
 
-    if (!$stmt) {
-        die("Erro ao preparar atualização: " . $conexao->error);
-    }
+    $stmt->bind_param("i", $usuarioId);
 
-    foreach ($configuracoes as $chave => $valor) {
-
-        $stmt->bind_param("ss", $valor, $chave);
-
-        if (!$stmt->execute()) {
-            die("Erro ao salvar configuração: " . $stmt->error);
-        }
-    }
+    $stmt->execute();
 
     $stmt->close();
 
-    $sucesso = "Configurações atualizadas com sucesso!";
 }
 
 
-/*
-|--------------------------------------------------------------------------
-| CARREGAR CONFIGURAÇÕES
-|--------------------------------------------------------------------------
-*/
+/* ==========================================================
+   SALVAR CONFIGURAÇÕES
+========================================================== */
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $secao = $_POST['secao'] ?? '';
+
+
+    /* ======================================================
+       APARÊNCIA
+    ====================================================== */
+
+    if ($secao === 'aparencia') {
+
+        $modoEscuro =
+            isset($_POST['modo_escuro']) ? 1 : 0;
+
+
+        $stmt = $conexao->prepare(
+            "UPDATE preferencias_usuario
+             SET modo_escuro = ?
+             WHERE usuario_id = ?"
+        );
+
+        if ($stmt) {
+
+            $stmt->bind_param(
+                "ii",
+                $modoEscuro,
+                $usuarioId
+            );
+
+            if ($stmt->execute()) {
+
+                $sucesso =
+                    "Aparência atualizada com sucesso!";
+
+            } else {
+
+                $erro =
+                    "Não foi possível salvar a aparência.";
+
+            }
+
+            $stmt->close();
+
+        }
+
+    }
+
+
+    /* ======================================================
+       ACESSIBILIDADE
+    ====================================================== */
+
+    elseif ($secao === 'acessibilidade') {
+
+        $reduzirAnimacoes =
+            isset($_POST['reduzir_animacoes']) ? 1 : 0;
+
+
+        $tamanhoFonte =
+            $_POST['tamanho_fonte'] ?? 'normal';
+
+
+        $daltonismo =
+            $_POST['daltonismo'] ?? 'nenhum';
+
+
+        /* -----------------------------------------------
+           VALIDAR TAMANHO DA FONTE
+        ------------------------------------------------ */
+
+        $tamanhosPermitidos = [
+
+            'pequena',
+            'normal',
+            'grande',
+            'muito_grande'
+
+        ];
+
+
+        if (
+            !in_array(
+                $tamanhoFonte,
+                $tamanhosPermitidos,
+                true
+            )
+        ) {
+
+            $tamanhoFonte = 'normal';
+
+        }
+
+
+        /* -----------------------------------------------
+           VALIDAR DALTONISMO
+        ------------------------------------------------ */
+
+        $daltonismoPermitido = [
+
+            'nenhum',
+            'protanopia',
+            'deuteranopia',
+            'tritanopia',
+            'acromatopsia'
+
+        ];
+
+
+        if (
+            !in_array(
+                $daltonismo,
+                $daltonismoPermitido,
+                true
+            )
+        ) {
+
+            $daltonismo = 'nenhum';
+
+        }
+
+
+        /* -----------------------------------------------
+           SALVAR
+        ------------------------------------------------ */
+
+        $stmt = $conexao->prepare(
+            "UPDATE preferencias_usuario
+             SET
+                reduzir_animacoes = ?,
+                tamanho_fonte = ?,
+                daltonismo = ?
+             WHERE usuario_id = ?"
+        );
+
+
+        if ($stmt) {
+
+            $stmt->bind_param(
+                "issi",
+                $reduzirAnimacoes,
+                $tamanhoFonte,
+                $daltonismo,
+                $usuarioId
+            );
+
+
+            if ($stmt->execute()) {
+
+                $sucesso =
+                    "Acessibilidade atualizada com sucesso!";
+
+            } else {
+
+                $erro =
+                    "Não foi possível salvar a acessibilidade.";
+
+            }
+
+
+            $stmt->close();
+
+        }
+
+    }
+
+
+    /* ======================================================
+       NOTIFICAÇÕES
+    ====================================================== */
+
+    elseif ($secao === 'notificacoes') {
+
+        $notificacoesSistema =
+            isset($_POST['notificacoes_sistema'])
+                ? 1
+                : 0;
+
+
+        $notificacoesLembretes =
+            isset($_POST['notificacoes_lembretes'])
+                ? 1
+                : 0;
+
+
+        $notificacoesNovidades =
+            isset($_POST['notificacoes_novidades'])
+                ? 1
+                : 0;
+
+
+        $stmt = $conexao->prepare(
+            "UPDATE preferencias_usuario
+             SET
+                notificacoes_sistema = ?,
+                notificacoes_lembretes = ?,
+                notificacoes_novidades = ?
+             WHERE usuario_id = ?"
+        );
+
+
+        if ($stmt) {
+
+            $stmt->bind_param(
+                "iiii",
+                $notificacoesSistema,
+                $notificacoesLembretes,
+                $notificacoesNovidades,
+                $usuarioId
+            );
+
+
+            if ($stmt->execute()) {
+
+                $sucesso =
+                    "Preferências de notificações salvas!";
+
+            } else {
+
+                $erro =
+                    "Não foi possível salvar as notificações.";
+
+            }
+
+
+            $stmt->close();
+
+        }
+
+    }
+
+}
+
+
+/* ==========================================================
+   CARREGAR PREFERÊNCIAS
+========================================================== */
+
+$preferencias = [
+
+    'modo_escuro' => 0,
+
+    'reduzir_animacoes' => 0,
+
+    'tamanho_fonte' => 'normal',
+
+    'daltonismo' => 'nenhum',
+
+    'notificacoes_sistema' => 1,
+
+    'notificacoes_lembretes' => 1,
+
+    'notificacoes_novidades' => 1
+
+];
+
+
+$stmt = $conexao->prepare(
+    "SELECT
+        modo_escuro,
+        reduzir_animacoes,
+        tamanho_fonte,
+        daltonismo,
+        notificacoes_sistema,
+        notificacoes_lembretes,
+        notificacoes_novidades
+     FROM preferencias_usuario
+     WHERE usuario_id = ?
+     LIMIT 1"
+);
+
+
+if ($stmt) {
+
+    $stmt->bind_param(
+        "i",
+        $usuarioId
+    );
+
+    $stmt->execute();
+
+    $resultado =
+        $stmt->get_result();
+
+
+    if ($resultado->num_rows > 0) {
+
+        $preferencias =
+            array_merge(
+                $preferencias,
+                $resultado->fetch_assoc()
+            );
+
+    }
+
+
+    $stmt->close();
+
+}
+
+
+/* ==========================================================
+   CONFIGURAÇÕES GERAIS DO SITE
+========================================================== */
 
 $config = [];
 
-$resultado = $conexao->query(
+$resultadoConfig = $conexao->query(
     "SELECT chave, valor FROM configuracoes"
 );
 
-if (!$resultado) {
-    die("Erro ao carregar configurações: " . $conexao->error);
+
+if ($resultadoConfig) {
+
+    while ($row = $resultadoConfig->fetch_assoc()) {
+
+        $config[$row['chave']] =
+            $row['valor'];
+
+    }
+
 }
 
-while ($row = $resultado->fetch_assoc()) {
-    $config[$row['chave']] = $row['valor'];
-}
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+require_once "includes/header.php";
 
 ?>
 
-<link rel="stylesheet" href="css/configuracoes.css">
+
+<link
+    rel="stylesheet"
+    href="css/configuracoes.css"
+>
 
 
 <div class="config-container">
 
-    <!-- CABEÇALHO -->
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
 
     <div class="config-header">
 
         <h1>
+
             <i class="fa-solid fa-gear"></i>
+
             Configurações
+
         </h1>
 
+
         <p>
+
             Gerencie sua conta e suas preferências
+
         </p>
 
     </div>
 
 
-    <!-- MENSAGEM DE SUCESSO -->
+    <!-- =====================================================
+         SUCESSO
+    ====================================================== -->
 
     <?php if (!empty($sucesso)): ?>
 
@@ -145,7 +428,26 @@ while ($row = $resultado->fetch_assoc()) {
     <?php endif; ?>
 
 
-    <!-- MENU DE CONFIGURAÇÕES -->
+    <!-- =====================================================
+         ERRO
+    ====================================================== -->
+
+    <?php if (!empty($erro)): ?>
+
+        <div class="alert-error">
+
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <?= htmlspecialchars($erro) ?>
+
+        </div>
+
+    <?php endif; ?>
+
+
+    <!-- =====================================================
+         MENU
+    ====================================================== -->
 
     <div class="config-card">
 
@@ -164,6 +466,7 @@ while ($row = $resultado->fetch_assoc()) {
 
             </div>
 
+
             <div class="config-info">
 
                 <h3>Minha conta</h3>
@@ -173,6 +476,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </p>
 
             </div>
+
 
             <div class="config-arrow">
 
@@ -197,6 +501,7 @@ while ($row = $resultado->fetch_assoc()) {
 
             </div>
 
+
             <div class="config-info">
 
                 <h3>Notificações</h3>
@@ -206,6 +511,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </p>
 
             </div>
+
 
             <div class="config-arrow">
 
@@ -230,6 +536,7 @@ while ($row = $resultado->fetch_assoc()) {
 
             </div>
 
+
             <div class="config-info">
 
                 <h3>Aparência</h3>
@@ -239,6 +546,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </p>
 
             </div>
+
 
             <div class="config-arrow">
 
@@ -263,6 +571,7 @@ while ($row = $resultado->fetch_assoc()) {
 
             </div>
 
+
             <div class="config-info">
 
                 <h3>Acessibilidade</h3>
@@ -272,6 +581,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </p>
 
             </div>
+
 
             <div class="config-arrow">
 
@@ -296,6 +606,7 @@ while ($row = $resultado->fetch_assoc()) {
 
             </div>
 
+
             <div class="config-info">
 
                 <h3>Privacidade e segurança</h3>
@@ -305,6 +616,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </p>
 
             </div>
+
 
             <div class="config-arrow">
 
@@ -329,6 +641,7 @@ while ($row = $resultado->fetch_assoc()) {
 
             </div>
 
+
             <div class="config-info">
 
                 <h3>Termos e privacidade</h3>
@@ -338,6 +651,7 @@ while ($row = $resultado->fetch_assoc()) {
                 </p>
 
             </div>
+
 
             <div class="config-arrow">
 
@@ -362,16 +676,21 @@ while ($row = $resultado->fetch_assoc()) {
     onclick="fecharModalFora(event)"
 >
 
+
     <div
         class="config-modal-content"
         onclick="event.stopPropagation()"
     >
+
+
+        <!-- HEADER -->
 
         <div class="modal-header">
 
             <h2 id="modalTitulo">
                 Configuração
             </h2>
+
 
             <button
                 type="button"
@@ -386,14 +705,17 @@ while ($row = $resultado->fetch_assoc()) {
         </div>
 
 
-        <form method="POST">
+        <!-- FORM -->
+
+        <form
+            method="POST"
+            id="configForm"
+        >
 
             <div
                 id="modalBody"
                 class="modal-body"
-            >
-
-            </div>
+            ></div>
 
 
             <div class="modal-footer">
@@ -403,7 +725,9 @@ while ($row = $resultado->fetch_assoc()) {
                     class="btn-cancelar"
                     onclick="fecharConfiguracao()"
                 >
+
                     Cancelar
+
                 </button>
 
 
@@ -429,25 +753,37 @@ while ($row = $resultado->fetch_assoc()) {
 
 <script>
 
+
+/* ==========================================================
+   ABRIR CONFIGURAÇÃO
+========================================================== */
+
 function abrirConfiguracao(tipo) {
 
-    const modal = document.getElementById('configModal');
-    const titulo = document.getElementById('modalTitulo');
-    const body = document.getElementById('modalBody');
+    const modal =
+        document.getElementById('configModal');
+
+
+    const titulo =
+        document.getElementById('modalTitulo');
+
+
+    const body =
+        document.getElementById('modalBody');
+
 
     let conteudo = '';
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | MINHA CONTA
-    |--------------------------------------------------------------------------
-    */
-
+    /* ======================================================
+       MINHA CONTA
+    ====================================================== */
 
     if (tipo === 'conta') {
 
-        titulo.innerText = 'Minha conta';
+        titulo.innerText =
+            'Minha conta';
+
 
         conteudo = `
 
@@ -457,43 +793,64 @@ function abrirConfiguracao(tipo) {
 
                 <input
                     type="text"
-                    name="nome_site"
-                    value="<?= htmlspecialchars($config['nome_site'] ?? '') ?>"
+                    value="<?= htmlspecialchars($_SESSION['nome'] ?? $_SESSION['usuario_nome'] ?? '') ?>"
+                    disabled
                 >
 
             </div>
 
+
             <div class="form-group">
 
-                <label>Descrição</label>
+                <label>E-mail</label>
 
-                <textarea
-                    name="descricao_site"
-                ><?= htmlspecialchars($config['descricao_site'] ?? '') ?></textarea>
+                <input
+                    type="text"
+                    value="<?= htmlspecialchars($_SESSION['email'] ?? '') ?>"
+                    disabled
+                >
 
             </div>
 
+
+            <p class="config-info-extra">
+
+                Para alterar seus dados pessoais,
+                utilize a opção de edição do perfil.
+
+            </p>
+
         `;
+
     }
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | NOTIFICAÇÕES
-    |--------------------------------------------------------------------------
-    */
+    /* ======================================================
+       NOTIFICAÇÕES
+    ====================================================== */
 
     else if (tipo === 'notificacoes') {
 
-        titulo.innerText = 'Notificações';
+        titulo.innerText =
+            'Notificações';
+
 
         conteudo = `
+
+            <input
+                type="hidden"
+                name="secao"
+                value="notificacoes"
+            >
+
 
             <div class="config-option">
 
                 <div>
 
-                    <strong>Notificações do sistema</strong>
+                    <strong>
+                        Notificações do sistema
+                    </strong>
 
                     <p>
                         Receber notificações importantes do ForTEA.
@@ -501,9 +858,17 @@ function abrirConfiguracao(tipo) {
 
                 </div>
 
+
                 <label class="switch">
 
-                    <input type="checkbox">
+                    <input
+                        type="checkbox"
+                        name="notificacoes_sistema"
+
+                        <?= $preferencias['notificacoes_sistema']
+                            ? 'checked'
+                            : '' ?>
+                    >
 
                     <span class="slider"></span>
 
@@ -516,7 +881,9 @@ function abrirConfiguracao(tipo) {
 
                 <div>
 
-                    <strong>Lembretes</strong>
+                    <strong>
+                        Lembretes
+                    </strong>
 
                     <p>
                         Receber lembretes e avisos.
@@ -524,9 +891,50 @@ function abrirConfiguracao(tipo) {
 
                 </div>
 
+
                 <label class="switch">
 
-                    <input type="checkbox">
+                    <input
+                        type="checkbox"
+                        name="notificacoes_lembretes"
+
+                        <?= $preferencias['notificacoes_lembretes']
+                            ? 'checked'
+                            : '' ?>
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="config-option">
+
+                <div>
+
+                    <strong>
+                        Novidades do ForTEA
+                    </strong>
+
+                    <p>
+                        Receber novidades e atualizações.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        name="notificacoes_novidades"
+
+                        <?= $preferencias['notificacoes_novidades']
+                            ? 'checked'
+                            : '' ?>
+                    >
 
                     <span class="slider"></span>
 
@@ -535,208 +943,290 @@ function abrirConfiguracao(tipo) {
             </div>
 
         `;
+
     }
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | APARÊNCIA
-    |--------------------------------------------------------------------------
-    */
+    /* ======================================================
+       APARÊNCIA
+    ====================================================== */
 
-   else if (tipo === 'aparencia') {
+    else if (tipo === 'aparencia') {
 
-    titulo.innerText = 'Aparência';
+        titulo.innerText =
+            'Aparência';
 
-    conteudo = `
 
-        <div class="config-option">
+        conteudo = `
 
-            <div>
+            <input
+                type="hidden"
+                name="secao"
+                value="aparencia"
+            >
 
-                <strong>Modo escuro</strong>
 
-                <p>
-                    Ativar aparência escura no ForTEA.
-                </p>
+            <div class="config-option">
+
+                <div>
+
+                    <strong>
+                        Modo escuro
+                    </strong>
+
+                    <p>
+                        Ativar aparência escura no ForTEA.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        name="modo_escuro"
+
+                        <?= $preferencias['modo_escuro']
+                            ? 'checked'
+                            : '' ?>
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
 
             </div>
 
-            <label class="switch">
+        `;
 
-                <input
-                    type="checkbox"
-                    name="modo_escuro"
-                    value="1"
-                    <?= ($config['modo_escuro'] ?? '0') === '1' ? 'checked' : '' ?>
-                >
-
-                <span class="slider"></span>
-
-            </label>
-
-        </div>
+    }
 
 
-        <div class="form-row">
+    /* ======================================================
+       ACESSIBILIDADE
+    ====================================================== */
+
+    else if (tipo === 'acessibilidade') {
+
+        titulo.innerText =
+            'Acessibilidade';
+
+
+        conteudo = `
+
+            <input
+                type="hidden"
+                name="secao"
+                value="acessibilidade"
+            >
+
+
+            <!-- REDUZIR ANIMAÇÕES -->
+
+            <div class="config-option">
+
+                <div>
+
+                    <strong>
+                        Reduzir animações
+                    </strong>
+
+                    <p>
+                        Reduz movimentos e efeitos visuais.
+                    </p>
+
+                </div>
+
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        name="reduzir_animacoes"
+
+                        <?= $preferencias['reduzir_animacoes']
+                            ? 'checked'
+                            : '' ?>
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- TAMANHO DA FONTE -->
 
             <div class="form-group">
 
-                <label>Cor principal</label>
+                <label>
+                    Tamanho da fonte
+                </label>
 
-                <input
-                    type="color"
-                    class="color-picker"
-                    name="cor_principal"
-                    value="<?= htmlspecialchars($config['cor_principal'] ?? '#2454A6') ?>"
-                >
+
+                <select name="tamanho_fonte">
+
+
+                    <option
+                        value="pequena"
+
+                        <?= $preferencias['tamanho_fonte'] === 'pequena'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Pequena
+
+                    </option>
+
+
+                    <option
+                        value="normal"
+
+                        <?= $preferencias['tamanho_fonte'] === 'normal'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Normal
+
+                    </option>
+
+
+                    <option
+                        value="grande"
+
+                        <?= $preferencias['tamanho_fonte'] === 'grande'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Grande
+
+                    </option>
+
+
+                    <option
+                        value="muito_grande"
+
+                        <?= $preferencias['tamanho_fonte'] === 'muito_grande'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Muito grande
+
+                    </option>
+
+                </select>
 
             </div>
 
+
+            <!-- DALTONISMO -->
 
             <div class="form-group">
 
-                <label>Cor secundária</label>
+                <label>
+                    Adaptação para daltonismo
+                </label>
 
-                <input
-                    type="color"
-                    class="color-picker"
-                    name="cor_secundaria"
-                    value="<?= htmlspecialchars($config['cor_secundaria'] ?? '#193F80') ?>"
-                >
+
+                <select name="daltonismo">
+
+
+                    <option
+                        value="nenhum"
+
+                        <?= $preferencias['daltonismo'] === 'nenhum'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Normal
+
+                    </option>
+
+
+                    <option
+                        value="protanopia"
+
+                        <?= $preferencias['daltonismo'] === 'protanopia'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Protanopia
+
+                    </option>
+
+
+                    <option
+                        value="deuteranopia"
+
+                        <?= $preferencias['daltonismo'] === 'deuteranopia'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Deuteranopia
+
+                    </option>
+
+
+                    <option
+                        value="tritanopia"
+
+                        <?= $preferencias['daltonismo'] === 'tritanopia'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Tritanopia
+
+                    </option>
+
+
+                    <option
+                        value="acromatopsia"
+
+                        <?= $preferencias['daltonismo'] === 'acromatopsia'
+                            ? 'selected'
+                            : '' ?>
+                    >
+
+                        Acromatopsia
+
+                    </option>
+
+                </select>
 
             </div>
 
-        </div>
+        `;
 
-    `;
-}
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACESSIBILIDADE
-    |--------------------------------------------------------------------------
-    */
-
-   else if (tipo === 'acessibilidade') {
-
-    titulo.innerText = 'Acessibilidade';
-
-    conteudo = `
-
-        <div class="config-option">
-
-            <div>
-
-                <strong>Alto contraste</strong>
-
-                <p>
-                    Aumenta o contraste visual dos elementos.
-                </p>
-
-            </div>
-
-            <label class="switch">
-
-                <input
-                    type="checkbox"
-                    name="alto_contraste"
-                    value="1"
-                    <?= ($config['alto_contraste'] ?? '0') === '1' ? 'checked' : '' ?>
-                >
-
-                <span class="slider"></span>
-
-            </label>
-
-        </div>
+    }
 
 
-        <div class="config-option">
-
-            <div>
-
-                <strong>Reduzir animações</strong>
-
-                <p>
-                    Reduz efeitos e movimentos da interface.
-                </p>
-
-            </div>
-
-            <label class="switch">
-
-                <input
-                    type="checkbox"
-                    name="reduzir_animacoes"
-                    value="1"
-                    <?= ($config['reduzir_animacoes'] ?? '0') === '1' ? 'checked' : '' ?>
-                >
-
-                <span class="slider"></span>
-
-            </label>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>Tamanho da fonte</label>
-
-            <select name="tamanho_fonte">
-
-                <option
-                    value="normal"
-                    <?= ($config['tamanho_fonte'] ?? 'normal') === 'normal'
-                        ? 'selected'
-                        : '' ?>
-                >
-                    Normal
-                </option>
-
-                <option
-                    value="grande"
-                    <?= ($config['tamanho_fonte'] ?? '') === 'grande'
-                        ? 'selected'
-                        : '' ?>
-                >
-                    Grande
-                </option>
-
-                <option
-                    value="muito_grande"
-                    <?= ($config['tamanho_fonte'] ?? '') === 'muito_grande'
-                        ? 'selected'
-                        : '' ?>
-                >
-                    Muito grande
-                </option>
-
-            </select>
-
-        </div>
-
-    `;
-}
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | PRIVACIDADE
-    |--------------------------------------------------------------------------
-    */
+    /* ======================================================
+       PRIVACIDADE
+    ====================================================== */
 
     else if (tipo === 'privacidade') {
 
-        titulo.innerText = 'Privacidade e segurança';
+        titulo.innerText =
+            'Privacidade e segurança';
+
 
         conteudo = `
 
             <div class="form-group">
 
-                <label>Senha atual</label>
+                <label>
+                    Senha atual
+                </label>
 
                 <input
                     type="password"
@@ -748,7 +1238,9 @@ function abrirConfiguracao(tipo) {
 
             <div class="form-group">
 
-                <label>Nova senha</label>
+                <label>
+                    Nova senha
+                </label>
 
                 <input
                     type="password"
@@ -760,7 +1252,9 @@ function abrirConfiguracao(tipo) {
 
             <div class="form-group">
 
-                <label>Confirmar nova senha</label>
+                <label>
+                    Confirmar nova senha
+                </label>
 
                 <input
                     type="password"
@@ -770,18 +1264,19 @@ function abrirConfiguracao(tipo) {
             </div>
 
         `;
+
     }
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | TERMOS
-    |--------------------------------------------------------------------------
-    */
+    /* ======================================================
+       TERMOS
+    ====================================================== */
 
     else if (tipo === 'termos') {
 
-        titulo.innerText = 'Termos e privacidade';
+        titulo.innerText =
+            'Termos e privacidade';
+
 
         conteudo = `
 
@@ -789,14 +1284,25 @@ function abrirConfiguracao(tipo) {
 
                 <i class="fa-solid fa-file-contract"></i>
 
-                <strong>Termos de uso</strong>
+
+                <strong>
+                    Termos de uso
+                </strong>
+
 
                 <p>
-                    Consulte os termos de utilização da plataforma ForTEA.
+                    Consulte os termos de utilização
+                    da plataforma ForTEA.
                 </p>
 
-                <button type="button">
+
+                <button
+                    type="button"
+                    onclick="alert('Página de termos será adicionada.')"
+                >
+
                     Visualizar termos
+
                 </button>
 
             </div>
@@ -806,30 +1312,54 @@ function abrirConfiguracao(tipo) {
 
                 <i class="fa-solid fa-shield-halved"></i>
 
-                <strong>Política de privacidade</strong>
+
+                <strong>
+                    Política de privacidade
+                </strong>
+
 
                 <p>
-                    Consulte a política de privacidade do ForTEA.
+                    Consulte a política de privacidade
+                    do ForTEA.
                 </p>
 
-                <button type="button">
+
+                <button
+                    type="button"
+                    onclick="alert('Página de privacidade será adicionada.')"
+                >
+
                     Visualizar política
+
                 </button>
 
             </div>
 
         `;
+
     }
 
 
-    body.innerHTML = conteudo;
+    /* ======================================================
+       INSERIR CONTEÚDO
+    ====================================================== */
+
+    body.innerHTML =
+        conteudo;
+
 
     modal.classList.add('active');
 
-    document.body.style.overflow = 'hidden';
+
+    document.body.style.overflow =
+        'hidden';
 
 }
 
+
+/* ==========================================================
+   FECHAR MODAL
+========================================================== */
 
 function fecharConfiguracao() {
 
@@ -837,17 +1367,24 @@ function fecharConfiguracao() {
         .getElementById('configModal')
         .classList.remove('active');
 
-    document.body.style.overflow = '';
+
+    document.body.style.overflow =
+        '';
 
 }
 
+
+/* ==========================================================
+   FECHAR CLICANDO FORA
+========================================================== */
 
 function fecharModalFora(event) {
 
-    if (
-        event.target ===
-        document.getElementById('configModal')
-    ) {
+    const modal =
+        document.getElementById('configModal');
+
+
+    if (event.target === modal) {
 
         fecharConfiguracao();
 
@@ -856,17 +1393,21 @@ function fecharModalFora(event) {
 }
 
 
-document.addEventListener('keydown', function(event) {
+/* ==========================================================
+   ESC
+========================================================== */
 
-    if (event.key === 'Escape') {
+document.addEventListener(
+    'keydown',
+    function(event) {
 
-        fecharConfiguracao();
+        if (event.key === 'Escape') {
+
+            fecharConfiguracao();
+
+        }
 
     }
-
-});
+);
 
 </script>
-
-</body>
-</html>
