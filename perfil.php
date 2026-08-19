@@ -81,26 +81,25 @@ while ($favorito = $resultadoFavoritos->fetch_assoc()) {
    CONTATOS REALIZADOS
    ========================= */
 
-$contatos = [];
+$profissionais = [];
 
-$sqlContatos = "
+$sqlProfissionais = "
     SELECT *
-    FROM contatos_medicos
-    WHERE usuario_id = ?
-    ORDER BY ultima_conversa DESC
+    FROM profissionais
+    WHERE ativo = 1
+    ORDER BY nome ASC
 ";
 
-$stmtContatos = $conexao->prepare($sqlContatos);
 
-$stmtContatos->bind_param("i", $usuarioId);
+$stmtProfissionais = $conexao->prepare($sqlProfissionais);
 
-$stmtContatos->execute();
+$stmtProfissionais->execute();
 
-$resultadoContatos = $stmtContatos->get_result();
+$resultadoProfissionais = $stmtProfissionais->get_result();
 
-while ($contato = $resultadoContatos->fetch_assoc()) {
+while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
-    $contatos[] = $contato;
+    $profissionais[] = $profissional;
 
 }
 
@@ -317,7 +316,7 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
 
 
             <button class="aba"
-                    onclick="mostrarAba('contatos', this)">
+                    onclick="mostrarAba('profissionais', this)">
 
                 <i class="fa-regular fa-comments"></i>
 
@@ -420,7 +419,7 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
                                 <h3>
 
                                     <?= htmlspecialchars(
-                                        $favorito['medico_nome']
+                                        $favorito['nome']
                                     ) ?>
 
                                 </h3>
@@ -478,7 +477,7 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
              CONTATOS
              ========================= -->
 
-        <div id="contatos"
+        <div id="profissionais"
              class="conteudo-aba">
 
 
@@ -495,13 +494,13 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
             </div>
 
 
-            <?php if (count($contatos) > 0): ?>
+            <?php if (count($profissionais) > 0): ?>
 
 
                 <div class="lista-profissionais">
 
 
-                    <?php foreach ($contatos as $contato): ?>
+                    <?php foreach ($profissionais as $profissional): ?>
 
 
                         <div class="profissional-card">
@@ -519,7 +518,7 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
                                 <h3>
 
                                     <?= htmlspecialchars(
-                                        $contato['medico_nome']
+                                        $profissional['nome']
                                     ) ?>
 
                                 </h3>
@@ -528,29 +527,16 @@ while ($contato = $resultadoContatos->fetch_assoc()) {
                                 <p>
 
                                     <?= htmlspecialchars(
-                                        $contato['especialidade']
+                                        $profissional['especialidade']
                                     ) ?>
 
                                 </p>
 
 
-                                <small>
-
-                                    Última conversa:
-
-                                    <?= date(
-                                        "d/m/Y",
-                                        strtotime(
-                                            $contato['ultima_conversa']
-                                        )
-                                    ) ?>
-
-                                </small>
-
                             </div>
 
 
-                            <a href="chat.php?medico=<?= $contato['id'] ?>"
+                            <a href="chat.php?medico=<?= $profissional['id'] ?>"
                                class="botao-conversar">
 
                                 Conversar novamente

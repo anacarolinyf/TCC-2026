@@ -2488,3 +2488,202 @@ section {
 .config-icon {
     background: var(--cor-principal);
 }
+
+/* =========================
+   PROFISSIONAIS ESPECIALIZADOS
+========================= */
+
+.profissionais-section {
+    width: 100%;
+    padding: 60px 0;
+    background: #f5f7fb;
+}
+
+.profissionais-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profissionais-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profissionais-titulo h2 {
+    color: #2345b5;
+    font-size: 32px;
+    margin: 0 0 12px;
+}
+
+.profissionais-titulo p {
+    color: #555;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ================================
+   PROFISSIONAIS - CARDS MENORES
+================================ */
+
+.profissionais-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1080px;
+    margin: 25px auto;
+}
+
+.profissional-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    background: #ffffff;
+    border: 1px solid #dfe6f0;
+    border-radius: 12px;
+
+    padding: 16px;
+    min-height: 240px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* FOTO */
+
+.profissional-foto {
+    flex-shrink: 0;
+    width: 125px;
+    height: 165px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.profissional-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SEM FOTO */
+
+.sem-foto {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f4f8;
+    color: #6b7a90;
+    font-size: 35px;
+}
+
+/* INFORMAÇÕES */
+
+.profissional-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profissional-info h3 {
+    font-size: 15px;
+    line-height: 1.45;
+    margin: 0 0 5px;
+    color: #003b7a;
+}
+
+.profissional-especialidade {
+    display: block;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: #164ea6;
+    margin-bottom: 12px;
+}
+
+.profissional-info p {
+    font-size: 12px;
+    line-height: 1.5;
+
+    color: #6b7280;
+
+    margin: 0 0 8px;
+}
+
+.profissional-contato {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.profissional-contato strong {
+    display: block;
+    font-size: 12px;
+}
+
+.profissional-contato span {
+    color: #555;
+}
+
+/* BOTÃO WHATSAPP */
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px 11px;
+
+    background: #20c967;
+    color: white;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.btn-whatsapp i {
+    font-size: 13px;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-1px);
+    background: #19b85b;
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 1000px) {
+
+    .profissionais-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .profissionais-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profissional-card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+}

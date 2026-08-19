@@ -61,6 +61,7 @@ function getBotResponse(question) {
             O <strong>ForTEA</strong> é uma plataforma criada para
             facilitar o acesso a informações relacionadas à inclusão,
             educação e direitos.
+            
         `;
 
     }
@@ -77,7 +78,24 @@ function getBotResponse(question) {
             respeitando suas necessidades e particularidades.
             <br><br>
             Você pode acessar a área de Educação Inclusiva
-            pelo menu principal do site.
+            pelo menu principal do site. 
+            <a href="educacaoinclusiva.php">Clique aqui</a> para ir para a página.
+        `;
+
+    }
+
+    if (
+        text.includes("guia") ||
+        text.includes("familias") ||
+        text.includes("inclusiva") ||
+        text.includes("inclusão")
+    ) {
+
+        return `
+            O <strong>Guia para Famílias</strong> foi criado para oferecer suporte e informações importantes sobre a educação inclusiva.
+            <br><br>
+            Você pode acessar o guia pelo menu principal do site. 
+            <a href="guia.php">Clique aqui</a> para ir para a página.
         `;
 
     }
@@ -92,6 +110,7 @@ function getBotResponse(question) {
             Na área de <strong>Direitos</strong> você encontra
             informações importantes sobre os direitos das pessoas
             com deficiência e suas famílias.
+            <a href="leis.php">Clique aqui</a> para ir para a página.
         `;
 
     }
@@ -106,6 +125,7 @@ function getBotResponse(question) {
             A <strong>Biblioteca</strong> reúne materiais e
             conteúdos que podem ajudar famílias, estudantes
             e profissionais.
+            <a href="biblioteca.php">Clique aqui</a> para ir para a página.
         `;
 
     }

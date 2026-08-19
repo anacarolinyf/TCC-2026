@@ -1,6 +1,4 @@
-<!-- =========================
-     CHATBOT FORTEA
-========================= -->
+
 
 <div class="chatbot-container">
 
@@ -10,7 +8,7 @@
         aria-label="Abrir assistente ForTEA"
         type="button"
     >
-        💬
+        <img src="img/mascote.png" alt="Ícone do chatbot">
     </button>
 
     <div class="chatbot-box" id="chatbotBox">
@@ -56,6 +54,10 @@
 
                 <button type="button" data-question="Quero acessar a biblioteca">
                     Biblioteca
+                </button>
+
+                <button type="button" data-question="Quero acessar o guia para famílias">
+                    Guia para Famílias
                 </button>
 
                 <button type="button" data-question="Preciso de ajuda">

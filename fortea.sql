@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Ago-2026 às 18:11
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.2
+-- Tempo de geração: 19/08/2026 às 02:53
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `configuracoes`
+-- Estrutura para tabela `configuracoes`
 --
 
 CREATE TABLE `configuracoes` (
@@ -32,15 +32,15 @@ CREATE TABLE `configuracoes` (
   `chave` varchar(100) NOT NULL,
   `valor` text DEFAULT NULL,
   `atualizado_em` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `configuracoes`
+-- Despejando dados para a tabela `configuracoes`
 --
 
 INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
-(1, 'nome_site', '', '2026-08-15 03:48:18'),
-(2, 'descricao_site', '', '2026-08-15 03:48:18'),
+(1, 'nome_site', '', '2026-08-17 01:08:08'),
+(2, 'descricao_site', '', '2026-08-17 01:08:08'),
 (3, 'email_contato', '', '2026-08-14 17:17:25'),
 (4, 'telefone', '', '2026-08-14 17:17:25'),
 (5, 'endereco', '', '2026-08-14 17:17:25'),
@@ -48,8 +48,8 @@ INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
 (7, 'facebook', '', '2026-08-14 17:17:25'),
 (8, 'youtube', '', '2026-08-14 17:17:25'),
 (9, 'linkedin', '', '2026-08-14 17:17:25'),
-(10, 'cor_principal', '#2454A6', '2026-08-15 03:50:07'),
-(11, 'cor_secundaria', '#193F80', '2026-08-15 03:50:07'),
+(10, 'cor_principal', '#2454A6', '2026-08-17 01:08:19'),
+(11, 'cor_secundaria', '#193F80', '2026-08-17 01:08:19'),
 (12, 'meta_title', '', '2026-08-14 17:17:25'),
 (13, 'meta_description', '', '2026-08-14 17:17:25'),
 (14, 'modo_escuro', '0', '2026-08-15 03:32:13'),
@@ -62,7 +62,7 @@ INSERT INTO `configuracoes` (`id`, `chave`, `valor`, `atualizado_em`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contatos_medicos`
+-- Estrutura para tabela `contatos_medicos`
 --
 
 CREATE TABLE `contatos_medicos` (
@@ -71,12 +71,12 @@ CREATE TABLE `contatos_medicos` (
   `medico_nome` varchar(255) NOT NULL,
   `especialidade` varchar(255) DEFAULT NULL,
   `ultima_conversa` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `favoritos`
+-- Estrutura para tabela `favoritos`
 --
 
 CREATE TABLE `favoritos` (
@@ -85,12 +85,39 @@ CREATE TABLE `favoritos` (
   `medico_nome` varchar(255) NOT NULL,
   `especialidade` varchar(255) DEFAULT NULL,
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `preferencias_usuario`
+--
+
+CREATE TABLE `preferencias_usuario` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `modo_escuro` tinyint(1) NOT NULL DEFAULT 0,
+  `reduzir_animacoes` tinyint(1) NOT NULL DEFAULT 0,
+  `tamanho_fonte` enum('pequena','normal','grande','muito_grande') NOT NULL DEFAULT 'normal',
+  `daltonismo` enum('nenhum','protanopia','deuteranopia','tritanopia','acromatopsia') NOT NULL DEFAULT 'nenhum',
+  `notificacoes_sistema` tinyint(1) NOT NULL DEFAULT 1,
+  `notificacoes_lembretes` tinyint(1) NOT NULL DEFAULT 1,
+  `notificacoes_novidades` tinyint(1) NOT NULL DEFAULT 1,
+  `notificacoes_navegador` tinyint(1) NOT NULL DEFAULT 0,
+  `atualizado_em` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `preferencias_usuario`
+--
+
+INSERT INTO `preferencias_usuario` (`id`, `usuario_id`, `modo_escuro`, `reduzir_animacoes`, `tamanho_fonte`, `daltonismo`, `notificacoes_sistema`, `notificacoes_lembretes`, `notificacoes_novidades`, `notificacoes_navegador`, `atualizado_em`) VALUES
+(1, 1, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-08-18 01:42:08');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -100,14 +127,14 @@ CREATE TABLE `usuarios` (
   `senha` varchar(255) NOT NULL,
   `data_cadastro` timestamp NOT NULL DEFAULT current_timestamp(),
   `foto` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
+-- Despejando dados para a tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_cadastro`, `foto`) VALUES
-(1, 'Isadora Ribeiro Jans', 'isadoraribeiro2708@gmail.com', '$2y$10$XheseoIDhwIf9gaNNsHqeuNANUArTvj9ZM39J7oC9zUU/JAtzecs.', '2026-08-14 00:45:39', 'uploads/perfis/perfil_1_1786676593.jpg'),
+(1, 'Isadora Ribeiro Jans', 'isadoraribeiro2708@gmail.com', '$2y$10$XheseoIDhwIf9gaNNsHqeuNANUArTvj9ZM39J7oC9zUU/JAtzecs.', '2026-08-14 00:45:39', 'uploads/perfis/perfil_1_1787016896.jpg'),
 (2, 'heloisa lima', 'heloisa123@gmail.com', '$2y$10$kYmEqryTDjLpCg026aYHA.3s7k9VT6S1s0KhdvVjTUrdvQ7b1DXZW', '2026-08-14 01:11:35', NULL),
 (3, 'Alex Jans', 'alex.jans2015@gmsil.com', '$2y$10$o1LjUAzFSCw11DiCyf2wNOyIzoB.QJJEedCGYCf14IExKQJ7SWF6a', '2026-08-14 01:15:27', NULL),
 (4, 'Isabella', 'isabellajans.2021@gmail.com', '$2y$10$is98987DZCmh1MobF09VQOc7TMKBP4uK88OMdgLWmHGGGUtHCy3Ra', '2026-08-14 01:22:34', NULL);
@@ -117,33 +144,40 @@ INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_cadastro`, `foto`)
 --
 
 --
--- Índices para tabela `configuracoes`
+-- Índices de tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `chave` (`chave`);
 
 --
--- Índices para tabela `contatos_medicos`
+-- Índices de tabela `contatos_medicos`
 --
 ALTER TABLE `contatos_medicos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `favoritos`
+-- Índices de tabela `favoritos`
 --
 ALTER TABLE `favoritos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `preferencias_usuario`
+--
+ALTER TABLE `preferencias_usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario_id` (`usuario_id`);
+
+--
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
@@ -163,6 +197,12 @@ ALTER TABLE `contatos_medicos`
 --
 ALTER TABLE `favoritos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `preferencias_usuario`
+--
+ALTER TABLE `preferencias_usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
