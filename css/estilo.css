@@ -1699,107 +1699,255 @@ bottom:15px;
     line-height: 1.7;
 }
 
+/* ==========================
+   FAQ
+========================== */
 
-/* FAQ */
-
-.faq-banner{
-    padding:40px 70px;
-    background:#fff;
+.faq-banner {
+    padding: 55px 40px 70px;
+    background: #ffffff;
 }
 
-.faq-topo{
-    margin-bottom:35px;
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.faq-topo h1{
-    font-size:2.2rem;
-    color:#21479B;
-    margin-bottom:8px;
+/* TOPO */
+
+.faq-topo {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    text-align: center;
 }
 
-.faq-topo p{
-    color:#6B7280;
-    font-size:1rem;
+.faq-topo h1 {
+    font-size: 2.3rem;
+    color: #21479B;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
 
-/* Layout */
+.faq-topo h1 i {
+    margin-right: 8px;
+}
 
-.faq-conteudo{
-    display:grid;
-    grid-template-columns:220px 1fr 260px;
-    gap:30px;
-    align-items:flex-start;
+.faq-topo p {
+    color: #6B7280;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* PERGUNTAS */
+
+.perguntas {
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* CARD */
+
+.accordion {
+    background: #ffffff;
+    border: 1px solid #E3EAF5;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.accordion:hover {
+    transform: translateY(-2px);
+    border-color: #C9D8F2;
+    box-shadow: 0 8px 22px rgba(33, 71, 155, 0.08);
+}
+
+/* BOTÃO */
+
+.accordion-btn {
+    width: 100%;
+    border: none;
+    background: #ffffff;
+    padding: 20px 24px;
+    text-align: left;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #26364D;
+
+    transition: background 0.25s ease,
+                color 0.25s ease;
+}
+
+.accordion-btn:hover {
+    background: #F8FAFE;
+}
+
+.accordion-btn::after {
+    content: "+";
+
+    min-width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: #EAF2FF;
+    color: #21479B;
+
+    font-size: 20px;
+    font-weight: 400;
+
+    transition: 0.3s;
+}
+
+.accordion-btn.active {
+    color: #21479B;
+    background: #F8FAFE;
+}
+
+.accordion-btn.active::after {
+    content: "−";
+    background: #21479B;
+    color: #ffffff;
+}
+
+/* RESPOSTA */
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #F8FAFE;
+    transition: max-height 0.35s ease;
+}
+
+.accordion-content p {
+    padding: 0 24px 23px;
+    margin: 0;
+
+    line-height: 1.8;
+    font-size: 15px;
+    color: #5B6575;
+}
+
+/* EM DESTAQUE */
+
+.accordion.destaque {
+    margin-top: 20px;
+
+    border: 1px solid #BFD1F2;
+
+    background: linear-gradient(
+        135deg,
+        #F8FBFF,
+        #EAF2FF
+    );
+
+    box-shadow: 0 10px 28px rgba(33, 71, 155, 0.10);
+}
+
+.accordion.destaque:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(33, 71, 155, 0.14);
+}
+
+.accordion.destaque .accordion-btn {
+    background: transparent;
+    color: #21479B;
+    font-size: 17px;
+    justify-content: flex-start;
+}
+
+.accordion.destaque .accordion-btn::before {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    margin-right: 2px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    border-radius: 50%;
+
+    font-size: 17px;
+
+    box-shadow: 0 3px 10px rgba(33, 71, 155, 0.10);
+}
+
+.accordion.destaque .accordion-btn::after {
+    margin-left: auto;
+}
+
+.accordion.destaque .accordion-content {
+    background: rgba(255, 255, 255, 0.45);
+}
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media (max-width: 768px) {
+
+    .faq-banner {
+        padding: 40px 18px 55px;
+    }
+
+    .faq-topo {
+        margin-bottom: 30px;
+    }
+
+    .faq-topo h1 {
+        font-size: 1.8rem;
+    }
+
+    .faq-topo p {
+        font-size: 0.95rem;
+    }
+
+    .accordion-btn {
+        padding: 17px 18px;
+        font-size: 15px;
+    }
+
+    .accordion-content p {
+        padding: 0 18px 20px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .accordion.destaque .accordion-btn {
+        font-size: 15px;
+    }
+
+    .accordion.destaque .accordion-btn::before {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
 }
 
 
-/* Perguntas */
-
-.perguntas{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.accordion{
-    background:#fff;
-    border:1px solid #E5E7EB;
-    border-radius:15px;
-    overflow:hidden;
-    transition:.3s;
-}
-
-.accordion:hover{
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.accordion-btn{
-    width:100%;
-    border:none;
-    background:#fff;
-    padding:18px 25px;
-    text-align:left;
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:16px;
-    font-weight:600;
-    color:#1F2937;
-    transition:.3s;
-}
-
-.accordion-btn::after{
-    content:"+";
-    font-size:24px;
-    color:#21479B;
-    transition:.3s;
-}
-
-.accordion-btn.active::after{
-    content:"−";
-}
-
-.accordion-btn.active{
-    color:#21479B;
-}
-
-.accordion-content{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .35s ease;
-}
-
-.accordion-content p{
-    padding:0 25px 22px;
-    line-height:1.8;
-    color:#555;
-}
-
-.container{
-    width:200%;
-    max-width:1200px;
-    margin:auto;
-}
 
   /* CSS DA TELA EDUCAÇÃO INCLUSIVA \*
 /* ==========================================================================
@@ -2227,171 +2375,7 @@ section {
 }
 
 
-/* ==========================
-   FAQ - CARD TEA
-========================== */
 
-.faq-conexao {
-    width: 100%;
-    padding: 60px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #f5f7fb;
-    box-sizing: border-box;
-}
-
-.faq-card {
-    width: 100%;
-    max-width: 1100px;
-    background: linear-gradient(135deg,#F8FBFF,#EAF2FF);
-    border-radius: 18px;
-    padding: 45px 55px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    box-sizing: border-box;
-
-    /* Sombra suave */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-
-    /* Pequena borda */
-    border: 1px solid #e8edf5;
-
-    transition: all 0.3s ease;
-}
-
-/* Efeito ao passar o mouse */
-.faq-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
-}
-
-
-/* Ícone */
-.faq-icone {
-    width: 65px;
-    height: 65px;
-    min-width: 65px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #eaf2ff;
-    border-radius: 50%;
-}
-
-.faq-icone i {
-    font-size: 30px;
-    color: #2454a6;
-}
-
-
-/* Área do texto */
-.faq-texto {
-    flex: 1;
-}
-
-.faq-texto h2 {
-    margin: 0 0 15px 0;
-
-    font-size: 30px;
-    line-height: 1.2;
-    font-weight: 700;
-
-    color: #2454a6;
-}
-
-.faq-texto p {
-    margin: 0 0 25px 0;
-
-    max-width: 900px;
-
-    font-size: 16px;
-    line-height: 1.8;
-
-    color: #5d6878;
-}
-
-
-/* Botão */
-.btn-faq {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 13px 22px;
-
-    background: #2454a6;
-    color: #ffffff;
-
-    border-radius: 8px;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    text-decoration: none;
-
-    transition: all 0.3s ease;
-}
-
-.btn-faq:hover {
-    background: #193f80;
-    color: #ffffff;
-
-    transform: translateX(3px);
-}
-
-.btn-faq i {
-    font-size: 14px;
-    transition: transform 0.3s ease;
-}
-
-.btn-faq:hover i {
-    transform: translateX(4px);
-}
-
-
-/* ==========================
-   RESPONSIVIDADE
-========================== */
-
-@media (max-width: 768px) {
-
-    .faq-conexao {
-        padding: 40px 15px;
-    }
-
-    .faq-card {
-        padding: 35px 25px;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .faq-icone {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-    }
-
-    .faq-icone i {
-        font-size: 27px;
-    }
-
-    .faq-texto h2 {
-        font-size: 25px;
-    }
-
-    .faq-texto p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    .btn-faq {
-        justify-content: center;
-    }
-}
 
 .btn-salvar {
     background: var(--cor-principal);
