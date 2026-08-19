@@ -29,8 +29,9 @@
         <h3>Conteúdo</h3>
 
      <a href="#oquee">O que é o TEA?</a>
-        <a href="#primeiros-sinais">Primeiros sinais</a>
-        <a href="#niveis-suporte">Níveis de suporte</a> 
+<a href="#primeiros-sinais">Primeiros sinais</a>
+<a href="#diagnostico-tea">Como é feito o diagnóstico?</a>
+<a href="#niveis-suporte">Níveis de suporte</a>
 
     </aside>
 
@@ -202,6 +203,137 @@
 
 </div>
 
+<!-- COMO É FEITO O DIAGNÓSTICO -->
+<section id="diagnostico-tea" class="diagnostico-tea reveal">
+
+    <div class="titulo">
+        <h2>Como é feito o diagnóstico?</h2>
+
+        <p>
+            O diagnóstico do Transtorno do Espectro Autista (TEA) é realizado
+            por meio de uma avaliação clínica. Não existe um exame único que
+            confirme o autismo. Os profissionais analisam diferentes aspectos
+            do desenvolvimento, da comunicação, da interação social e do
+            comportamento da pessoa.
+        </p>
+    </div>
+
+    <div class="diagnostico-passos">
+
+        <div class="diagnostico-card">
+            <div class="diagnostico-icone">
+                <i class="fa-solid fa-eye"></i>
+            </div>
+
+            <div class="diagnostico-conteudo">
+                <span>01</span>
+                <h3>Identificação dos sinais</h3>
+
+                <p>
+                    O processo pode começar quando familiares, professores
+                    ou profissionais percebem características que podem estar
+                    relacionadas ao TEA.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="diagnostico-card">
+            <div class="diagnostico-icone">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <div class="diagnostico-conteudo">
+                <span>02</span>
+                <h3>Entrevista e histórico</h3>
+
+                <p>
+                    O profissional conversa com a pessoa e, quando necessário,
+                    com familiares ou responsáveis para conhecer seu
+                    desenvolvimento, comportamento e histórico.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="diagnostico-card">
+            <div class="diagnostico-icone">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+
+            <div class="diagnostico-conteudo">
+                <span>03</span>
+                <h3>Avaliação clínica</h3>
+
+                <p>
+                    São observados aspectos como comunicação, interação social,
+                    comportamentos, interesses e outras características
+                    relacionadas ao desenvolvimento.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="diagnostico-card">
+            <div class="diagnostico-icone">
+                <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+
+            <div class="diagnostico-conteudo">
+                <span>04</span>
+                <h3>Instrumentos de avaliação</h3>
+
+                <p>
+                    Questionários, escalas e outros instrumentos podem ser
+                    utilizados para auxiliar os profissionais durante a
+                    avaliação.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="diagnostico-card">
+            <div class="diagnostico-icone">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="diagnostico-conteudo">
+                <span>05</span>
+                <h3>Análise dos resultados</h3>
+
+                <p>
+                    As informações reunidas são analisadas em conjunto para
+                    compreender as características apresentadas e as
+                    necessidades individuais da pessoa.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="diagnostico-card">
+            <div class="diagnostico-icone">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <div class="diagnostico-conteudo">
+                <span>06</span>
+                <h3>Diagnóstico e acompanhamento</h3>
+
+                <p>
+                    Após a avaliação, os profissionais podem estabelecer o
+                    diagnóstico e orientar sobre os apoios e acompanhamentos
+                    necessários.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+
+</section>
+
         
 <section id="niveis-suporte" class="niveis-suporte">
 
@@ -288,52 +420,91 @@
 
 </div>
 
-<section class="faq-conexao reveal">
+<!-- SEÇÃO: CAUSAS DO TEA -->
+<section class="causas-tea reveal">
 
-    <div class="faq-card">
+    <div class="causas-container">
 
-        <div class="faq-icone">
-            <i class="fa-solid fa-circle-question"></i>
-        </div>
+        <div class="causas-intro">
+            <span class="causas-tag">Entendendo o TEA</span>
 
-        <div class="faq-texto">
-
-            <h2>Ainda tem dúvidas sobre o TEA?</h2>
+            <h2>O que causa o TEA?</h2>
 
             <p>
-                Existem muitas informações incorretas sobre o Transtorno do Espectro Autista.
-                Para ajudar você a compreender melhor o tema, reunimos respostas para as
-                perguntas mais frequentes sobre diagnóstico, causas, tratamento, inclusão,
-                mitos e verdades.
+                O Transtorno do Espectro Autista (TEA) não possui uma causa única.
+                Pesquisas indicam que seu desenvolvimento está relacionado
+                principalmente à combinação de fatores genéticos e ambientais.
             </p>
+        </div>
 
-            <a href="faq.php" class="btn-faq">
-                Acessar Perguntas Frequentes
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
+        <div class="causas-grid">
+
+            <div class="causa-card">
+                <div class="causa-icone">
+                    <i class="fa-solid fa-dna"></i>
+                </div>
+
+                <div>
+                    <h3>Fatores genéticos</h3>
+
+                    <p>
+                        A genética possui um papel importante no desenvolvimento
+                        do TEA. Diferentes alterações e combinações de genes
+                        podem estar relacionadas ao autismo.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="causa-card">
+                <div class="causa-icone">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <div>
+                    <h3>Desenvolvimento cerebral</h3>
+
+                    <p>
+                        O TEA está relacionado a diferenças no desenvolvimento
+                        e no funcionamento do cérebro, que podem influenciar
+                        a comunicação, a interação social e o processamento
+                        de informações.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="causa-card">
+                <div class="causa-icone">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <div>
+                    <h3>Fatores ambientais</h3>
+
+                    <p>
+                        Alguns fatores relacionados à gestação e ao desenvolvimento
+                        inicial podem estar associados a uma maior probabilidade
+                        de ocorrência do TEA.
+                    </p>
+                </div>
+            </div>
 
         </div>
 
-    </div>
+        
+
+
+<section class="cta-final">
+
+    <h2>O conhecimento também é uma forma de acolher.</h2>
+
+    <p>
+        Quanto mais compreendemos o TEA, mais preparados estamos para
+        respeitar diferenças, combater preconceitos e promover inclusão.
+    </p>
 
 </section>
-
-</section>
-
-        <!-- CTA FINAL -->
-        <section class="cta-final">
-
-            <h2>Informar é o primeiro passo.</h2>
-
-            <p>
-                Conhecimento, respeito e inclusão transformam vidas.
-            </p>
-
-        </section>
-
-    </div>
-
-</div>
 
 <script>
 function toggleTooltip(el) {
