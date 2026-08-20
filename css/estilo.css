@@ -315,6 +315,128 @@ footer{
 
 }
 
+/* BIBLIOTECA - SUBMENU */
+
+.menu-dropdown {
+    position: relative;
+}
+
+.biblioteca-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Setinha */
+.biblioteca-link::after {
+    content: "⌄";
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+/* Caixa do submenu */
+.submenu-biblioteca {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+
+    width: 220px;
+
+    background: #ffffff;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    padding: 8px 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 1000;
+}
+
+/* Pequena setinha do submenu */
+.submenu-biblioteca::before {
+    content: "";
+
+    position: absolute;
+
+    top: -7px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 14px;
+    height: 14px;
+
+    background: #ffffff;
+
+    rotate: 45deg;
+}
+
+/* Links */
+.submenu-biblioteca a {
+    display: block;
+
+    padding: 13px 18px;
+
+    color: #333 !important;
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+/* Hover */
+.submenu-biblioteca a:hover {
+    background: #eef4ff;
+
+    color: #21479b !important;
+}
+
+
+.menu-dropdown:hover .submenu-biblioteca {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Girar a setinha */
+.menu-dropdown:hover .biblioteca-link::after {
+    transform: rotate(180deg);
+}
+
+/* Mantém Biblioteca exatamente alinhada aos outros itens */
+.menu-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-dropdown > .biblioteca-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+}
+
 /* HERO  INICIO */
 
 .hero{

@@ -352,10 +352,6 @@ new window.VLibras.Widget(
 </script>
 
 
-<!-- ==========================================================
-     CHATBOT
-========================================================== -->
-
 <?php include "chatbot/chatbot.php"; ?>
 
 
@@ -368,9 +364,6 @@ new window.VLibras.Widget(
 <script src="chatbot/chatbot.js"></script>
 
 
-<!-- ==========================================================
-     HEADER
-========================================================== -->
 
 <header>
 
@@ -462,11 +455,6 @@ new window.VLibras.Widget(
 
     </div>
 
-
-    <!-- ======================================================
-         MENU
-    ======================================================= -->
-
     <nav class="menu">
 
         <ul
@@ -502,13 +490,31 @@ new window.VLibras.Widget(
             </li>
 
 
-            <li>
-                <a href="biblioteca.php">
-                    Biblioteca
-                </a>
-            </li>
+            <li class="menu-dropdown">
+    <a href="#" class="biblioteca-link">
+        Biblioteca
+    </a>
 
+    <div class="submenu-biblioteca">
 
+        <a href="artigos.php">
+            Profissionais especializados 
+        </a>
+
+        <a href="materiais.php">
+            Materiais Pedagógicos
+        </a>
+
+        <a href="noticias.php">
+            Notícias
+        </a>
+
+        <a href="relatos.php">
+            Relatos de Experiências
+        </a>
+
+    </div>
+</li>
             <li>
                 <a href="leis.php">
                     Direitos
