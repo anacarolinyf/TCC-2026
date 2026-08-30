@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <strong>E-mail</strong>
 
                             <span>
-                                teatcc26@gmail.com
+                                projetofortea@gmail.com
                             </span>
 
                         </div>
@@ -219,3 +219,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
 </main>
+
+<?php include 'includes/footer.php'; ?>

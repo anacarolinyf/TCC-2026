@@ -3,7 +3,6 @@
 <link rel="icon" type="image" href="img/logoo.png">
 
 <main>
-    <!-- Seção Hero: Texto e Imagem lado a lado -->
     <section class="hero">
         <div class="hero-texto">
             <h1>Informação, orientação e acolhimento para toda a família.</h1>
@@ -17,11 +16,10 @@
             </div>
         </div>
         <div class="hero-imagem">
-            <img src="img/banner.png" alt="Família">
+            <img src="img/banner.png" alt="Familiaa">
         </div>
     </section>
 
-    <!-- Seção de Cards de Funcionalidades -->
     <section class="cards">
         <div class="card">
             <i class="fa-solid fa-puzzle-piece"></i>
@@ -81,7 +79,7 @@
             <i class="fa-solid fa-chevron-right"></i>
         </span>
 
-        <a href="apoio.php" class="passo">
+        <a href="profissionais.php" class="passo">
             <div class="icone">
                 <i class="fa-solid fa-user-doctor"></i>
             </div>

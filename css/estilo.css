@@ -58,7 +58,7 @@ input {
 /* HEADER  */
 
 header {
-    background: #1e40af;
+    background: #21479b;
     position: fixed;
     top: 0;
     left: 0;
@@ -132,7 +132,7 @@ header a {
 /* menu principal  */
 
 .menu {
-    background: #1e40af;
+    background: #21479b;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
@@ -1322,60 +1322,108 @@ header a {
 }
 
 
-/*niveis de suporte*/
+/* ======================================================
+   NÍVEIS DE SUPORTE
+====================================================== */
 
+.niveis-suporte {
+    margin-top: 50px;
+}
+
+/* Título da seção */
+.niveis-suporte .titulo {
+    margin-bottom: 28px;
+}
+
+.niveis-suporte .titulo h2 {
+    margin-bottom: 12px;
+}
+
+.niveis-suporte .titulo p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Cards dos níveis */
 .niveis-suporte details {
     background: #fff;
 
-    border-radius: 16px;
+    border-radius: 14px;
 
     overflow: hidden;
 
-    margin-bottom: 18px;
+    margin-bottom: 12px;
 
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.05);
+        0 5px 16px rgba(0, 0, 0, 0.05);
 
-    transition: 0.35s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .niveis-suporte details:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
 
     box-shadow:
-        0 18px 35px rgba(0, 0, 0, 0.12);
+        0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
+/* Título clicável */
 .niveis-suporte summary {
-    padding: 20px;
+    padding: 16px 20px;
 
     cursor: pointer;
 
     color: #21479B;
 
     font-weight: 600;
+
+    font-size: 1rem;
+
+    list-style-position: inside;
 }
 
-.niveis-suporte p {
-    padding: 0 20px 20px;
+/* Espaçamento interno dos textos */
+.niveis-suporte details p {
+    padding: 0 20px;
+
+    margin: 0 0 14px;
+
+    color: #374151;
+
+    line-height: 1.55;
+
+    font-size: 0.98rem;
 }
 
+/* Último parágrafo não fica com espaço extra */
+.niveis-suporte details p:last-child {
+    margin-bottom: 18px;
+}
+
+/* Cores laterais */
 .nivel1 {
-    border-left: 6px solid #22C55E;
+    border-left: 5px solid #22C55E;
 }
 
 .nivel2 {
-    border-left: 6px solid #FACC15;
+    border-left: 5px solid #FACC15;
 }
 
 .nivel3 {
-    border-left: 6px solid #EF4444;
+    border-left: 5px solid #EF4444;
 }
 
-.info-destaque {
-    margin-top: 30px;
 
-    padding: 20px;
+/* ======================================================
+   AVISO SOBRE OS NÍVEIS
+====================================================== */
+
+.info-destaque {
+    margin-top: 24px;
+
+    padding: 18px 20px;
 
     background: #F7F9FC;
 
@@ -1387,193 +1435,572 @@ header a {
 .info-destaque h4 {
     color: #21479B;
 
-    margin-bottom: 12px;
+    margin: 0 0 8px;
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 }
 
 .info-destaque p {
-    margin: 1px 0;
+    margin: 0 0 10px;
 
     color: #374151;
 
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
+.info-destaque p:last-child {
+    margin-bottom: 0;
+}
 
-/* causas do tea */
+/* CAUSAS DO TEA */
 
 .causas-tea {
-    padding: 90px 8%;
-
-    background: #f7f9fc;
-}
-
-.causas-container {
-    max-width: 1200px;
-
-    margin: 0 auto;
+    padding: 100px 6% 65px;
+    background: transparent;
 }
 
 .causas-intro {
-    max-width: 750px;
-
-    margin: 0 auto 50px;
-
+    max-width: 700px;
+    margin: 0 auto 20px;
     text-align: center;
 }
 
-.causas-tag {
-    display: inline-block;
-
-    padding: 8px 18px;
-
-    margin-bottom: 15px;
-
-    background: #eaf2ff;
-
-    color: #3467eb;
-
-    border-radius: 30px;
-
-    font-size: 14px;
-
-    font-weight: 600;
+.causas-container {
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
+
 .causas-intro h2 {
-    margin-bottom: 18px;
+    margin: 0 0 12px;
 
     color: #21479b;
 
-    font-size: 36px;
-
+    font-size: 32px;
     font-weight: 700;
 }
 
 .causas-intro p {
-    color: #5b6472;
-
-    font-size: 17px;
-
-    line-height: 1.7;
-}
-
-.causas-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-
-    margin-bottom: 35px;
-}
-
-.causa-card {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    padding: 35px 28px;
-
-    background: #ffffff;
-
-    border-radius: 20px;
-
-    text-align: center;
-
-    box-shadow:
-        0 8px 25px rgba(33, 71, 155, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.causa-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 14px 30px rgba(33, 71, 155, 0.13);
-}
-
-.causa-icone {
-    width: 75px;
-    height: 75px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 22px;
-
-    background: #eaf2ff;
-
-    color: #3467eb;
-
-    border-radius: 50%;
-}
-
-.causa-icone i {
-    font-size: 32px;
-}
-
-.causa-card h3 {
-    margin-bottom: 12px;
-
-    color: #21479b;
-
-    font-size: 21px;
-}
-
-.causa-card p {
     margin: 0;
 
     color: #5b6472;
 
     font-size: 15px;
-
     line-height: 1.7;
 }
 
 
-/* CTA FINAL  */
+/* ======================================================
+   CONTEÚDO EDITORIAL
+======================================================= */
+
+.causas-editorial {
+    width: 100%;
+}
+
+.causa-editorial-item {
+    display: flex;
+    align-items: flex-start;
+
+    width: 94%;
+
+    padding: 32px 0;
+
+    border-bottom: 1px solid #dfe5ee;
+}
+
+.causa-editorial-item {
+    display: flex;
+    align-items: flex-start;
+
+    width: 94%;
+
+    padding: 32px 0;
+
+    border-bottom: 1px solid #dfe5ee;
+}
+
+.causa-editorial-item.direita {
+    width: 94%;
+    margin-left: auto;
+}
+
+.causa-editorial-item:first-child {
+    padding-top: 15px;
+}
+
+
+
+
+/* ======================================================
+   NÚMERO
+======================================================= */
+
+.causa-numero {
+    width: 65px;
+
+    flex-shrink: 0;
+
+    padding-top: 1px;
+
+    color: #b8cbea;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* ======================================================
+   TEXTO
+======================================================= */
+
+.causa-texto {
+    max-width: 670px;
+}
+
+
+/* ======================================================
+   CATEGORIA
+======================================================= */
+
+.causa-categoria {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #3467eb;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+/* ======================================================
+   TÍTULO
+======================================================= */
+
+.causa-texto h3 {
+    margin: 0 0 12px;
+
+    color: #21479b;
+
+    font-size: 22px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+
+/* ======================================================
+   PARÁGRAFO
+======================================================= */
+
+.causa-texto p {
+    max-width: 620px;
+
+    margin: 0;
+
+    color: #5b6472;
+
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* ======================================================
+   RESPONSIVO
+======================================================= */
+
+@media (max-width: 900px) {
+
+    .causa-editorial-item {
+        width: 95%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .causas-tea {
+        padding: 55px 6% 60px;
+    }
+
+    .causas-intro {
+        margin-bottom: 35px;
+    }
+
+    .causas-intro h2 {
+        font-size: 28px;
+    }
+
+    .causas-intro p {
+        font-size: 14px;
+    }
+
+    .causa-editorial-item,
+    .causa-editorial-item.direita {
+        display: block;
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 32px 0;
+    }
+
+    .causa-numero {
+        width: auto;
+
+        margin-bottom: 8px;
+
+        font-size: 15px;
+    }
+
+    .causa-categoria {
+        margin-bottom: 8px;
+    }
+
+    .causa-texto h3 {
+        font-size: 20px;
+    }
+
+    .causa-texto p {
+        font-size: 14px;
+    }
+
+}
+
+/* ======================================================
+   CTA / FECHAMENTO FINAL
+======================================================= */
 
 .cta-final {
-    padding: 100px 8%;
+    position: relative;
+
+    width: 100%;
+    min-height: 78vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 90px 6%;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(214, 228, 255, 0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(214, 228, 255, 0.10),
+            transparent 25%
+        ),
+        #21479b;
 
     text-align: center;
 }
 
-.cta-final h2 {
-    max-width: 900px;
 
-    margin: 0 auto 20px;
+/* ======================================================
+   CONTEÚDO
+======================================================= */
 
-    color: #21479b;
+.cta-conteudo {
+    position: relative;
+    z-index: 2;
 
-    font-size: 38px;
+    width: 100%;
+    max-width: 850px;
 
-    line-height: 1.3;
+    opacity: 0;
+    transform: translateY(35px);
 
-    font-weight: 700;
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
 }
 
-.cta-final p {
-    max-width: 700px;
+
+/* quando aparece na tela */
+
+.cta-final.visivel .cta-conteudo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ======================================================
+   MARCA
+======================================================= */
+
+.cta-marca {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #d6e4ff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+/* ======================================================
+   LINHA
+======================================================= */
+
+.cta-linha {
+    width: 55px;
+    height: 2px;
+
+    margin: 0 auto 28px;
+
+    background: #d6e4ff;
+
+    opacity: 0.8;
+}
+
+
+/* ======================================================
+   TÍTULO
+======================================================= */
+
+.cta-final h2 {
+    max-width: 850px;
+
+    margin: 0 auto 25px;
+
+    color: #ffffff;
+
+    font-size: 48px;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+
+/* segunda parte do título */
+
+.cta-final h2 span {
+    display: inline-block;
+
+    color: #d6e4ff;
+}
+
+
+/* ======================================================
+   TEXTO PRINCIPAL
+======================================================= */
+
+.cta-principal {
+    max-width: 680px;
 
     margin: 0 auto;
 
-    color: #5b6472;
+    color: #ffffff;
 
-    font-size: 17px;
-
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.8;
 }
 
+
+/* ======================================================
+   TEXTO SECUNDÁRIO
+======================================================= */
+
+.cta-secundario {
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color: #dce7fa;
+
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* ======================================================
+   BOTÃO
+======================================================= */
+
+.cta-botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 36px;
+
+    padding: 14px 25px;
+
+    background: #ffffff;
+    color: #21479b;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.cta-botao i {
+    font-size: 13px;
+
+    transition: transform 0.25s ease;
+}
+
+
+.cta-botao:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+
+.cta-botao:hover i {
+    transform: translateX(4px);
+}
+
+
+/* ======================================================
+   ELEMENTOS DECORATIVOS
+======================================================= */
+
+.cta-decoracao {
+    position: absolute;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    pointer-events: none;
+}
+
+
+/* círculo maior */
+
+.cta-decoracao-1 {
+    width: 420px;
+    height: 420px;
+
+    top: -190px;
+    left: -150px;
+}
+
+
+/* círculo menor */
+
+.cta-decoracao-2 {
+    width: 280px;
+    height: 280px;
+
+    right: -100px;
+    bottom: -100px;
+}
+
+
+/* ======================================================
+   RESPONSIVIDADE
+======================================================= */
+
+@media (max-width: 900px) {
+
+    .cta-final {
+        min-height: 70vh;
+
+        padding: 80px 7%;
+    }
+
+    .cta-final h2 {
+        font-size: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cta-final {
+        min-height: 70vh;
+        margin-bottom: 0%;
+        padding: 70px 8%;
+    }
+
+    .cta-marca {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .cta-final h2 {
+        font-size: 32px;
+
+        line-height: 1.2;
+    }
+
+    .cta-principal {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .cta-secundario {
+        font-size: 14px;
+    }
+
+    .cta-botao {
+        padding: 13px 21px;
+
+        font-size: 13px;
+    }
+
+    .cta-decoracao-1 {
+        width: 250px;
+        height: 250px;
+
+        top: -120px;
+        left: -120px;
+    }
+
+    .cta-decoracao-2 {
+        width: 180px;
+        height: 180px;
+
+        right: -80px;
+        bottom: -80px;
+    }
+
+}
+
+.cta-final {
+    margin-bottom: 0 !important;
+}
+
+footer {
+    margin-top: 0 !important;
+}
 
 /* PAG FAQ*/
 
@@ -2344,7 +2771,7 @@ header a {
 #topBtn {
     position: fixed;
 
-    right: 25px;
+    left: 25px;
     bottom: 25px;
 
     width: 55px;
@@ -2371,7 +2798,7 @@ header a {
     box-shadow:
         0 15px 30px rgba(0, 0, 0, 0.15);
 
-    z-index: 10000; // arrumar isso dps 
+    z-index: 10000;
 }
 
 #topBtn.show {
@@ -2535,19 +2962,7 @@ header a {
     .sobre-imagem {
         order: -1;
     }
-
-
-    /* Causas */
-
-    .causas-tea {
-        padding: 60px 5%;
-    }
-
-    .causas-intro h2 {
-        font-size: 30px;
-    }
-
-
+    
     /* Biblioteca */
 
     .profissionais-grid {
@@ -2665,7 +3080,7 @@ header a {
 /* footer */
 
 footer {
-    background: #1E40AF;
+    background: #21479b;
 
     border-top: 4px solid #60A5FA;
 

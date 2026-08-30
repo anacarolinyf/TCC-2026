@@ -26,12 +26,14 @@
 
     <aside class="menu-lateral">
 
-        <h3>Conteúdo</h3>
+    <h3>Conteúdo</h3>
 
-     <a href="#oquee">O que é o TEA?</a>
-<a href="#primeiros-sinais">Primeiros sinais</a>
-<a href="#diagnostico-tea">Como é feito o diagnóstico?</a>
-<a href="#niveis-suporte">Níveis de suporte</a>
+    <a href="#oquee">O que é o TEA?</a>
+    <a href="#primeiros-sinais">Primeiros sinais</a>
+    <a href="#diagnostico-tea">Como é feito o diagnóstico?</a>
+    <a href="#niveis-suporte">Níveis de suporte</a>
+    <a href="#causas-tea">O que causa o TEA?</a>
+
 
     </aside>
 
@@ -369,7 +371,6 @@
     <p>
         Pessoas com TEA nível 2 apresentam dificuldades mais perceptíveis na comunicação e na interação social, podendo precisar de apoio frequente para realizar atividades do cotidiano e participar de diferentes ambientes.
 </p>
-    </p>
 
     <p>
         Algumas pessoas podem apresentar
@@ -420,91 +421,155 @@
 
 </div>
 
-<!-- SEÇÃO: CAUSAS DO TEA -->
-<section class="causas-tea reveal">
+ <section id="causas-tea" class="causas-tea">
 
     <div class="causas-container">
 
         <div class="causas-intro">
-            <span class="causas-tag">Entendendo o TEA</span>
 
             <h2>O que causa o TEA?</h2>
 
             <p>
-                O Transtorno do Espectro Autista (TEA) não possui uma causa única.
-                Pesquisas indicam que seu desenvolvimento está relacionado
-                principalmente à combinação de fatores genéticos e ambientais.
+                Atualmente, as pesquisas indicam que o TEA possui
+                origem multifatorial, envolvendo diferentes fatores
+                genéticos e biológicos. Não existe uma causa única
+                conhecida.
             </p>
-        </div>
-
-        <div class="causas-grid">
-
-            <div class="causa-card">
-                <div class="causa-icone">
-                    <i class="fa-solid fa-dna"></i>
-                </div>
-
-                <div>
-                    <h3>Fatores genéticos</h3>
-
-                    <p>
-                        A genética possui um papel importante no desenvolvimento
-                        do TEA. Diferentes alterações e combinações de genes
-                        podem estar relacionadas ao autismo.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="causa-card">
-                <div class="causa-icone">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-
-                <div>
-                    <h3>Desenvolvimento cerebral</h3>
-
-                    <p>
-                        O TEA está relacionado a diferenças no desenvolvimento
-                        e no funcionamento do cérebro, que podem influenciar
-                        a comunicação, a interação social e o processamento
-                        de informações.
-                    </p>
-                </div>
-            </div>
-
-
-            <div class="causa-card">
-                <div class="causa-icone">
-                    <i class="fa-solid fa-leaf"></i>
-                </div>
-
-                <div>
-                    <h3>Fatores ambientais</h3>
-
-                    <p>
-                        Alguns fatores relacionados à gestação e ao desenvolvimento
-                        inicial podem estar associados a uma maior probabilidade
-                        de ocorrência do TEA.
-                    </p>
-                </div>
-            </div>
 
         </div>
 
-        
+
+        <div class="causas-editorial">
+
+            <!-- 01 -->
+            <article class="causa-editorial-item">
+
+                <div class="causa-numero">
+                    01
+                </div>
+
+                <div class="causa-texto">
+
+                    <span class="causa-categoria">
+                        FATORES GENÉTICOS
+                    </span>
+
+                    <h3>
+                        A genética possui um papel importante
+                        no desenvolvimento do TEA
+                    </h3>
+
+                    <p>
+                        A genética possui um papel importante no
+                        desenvolvimento do TEA. Diferentes alterações
+                        e combinações de genes podem estar relacionadas
+                        ao autismo.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+            <article class="causa-editorial-item direita">
+
+                <div class="causa-numero">
+                    02
+                </div>
+
+                <div class="causa-texto">
+
+                    <span class="causa-categoria">
+                        DESENVOLVIMENTO CEREBRAL
+                    </span>
+
+                    <h3>
+                        Diferenças no desenvolvimento e funcionamento
+                        do cérebro também estão relacionadas ao TEA
+                    </h3>
+
+                    <p>
+                        O TEA está relacionado a diferenças no
+                        desenvolvimento e no funcionamento do cérebro,
+                        que podem influenciar aspectos como a comunicação,
+                        a interação social e o processamento de informações.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+            <article class="causa-editorial-item">
+
+                <div class="causa-numero">
+                    03
+                </div>
+
+                <div class="causa-texto">
+
+                    <span class="causa-categoria">
+                        FATORES AMBIENTAIS
+                    </span>
+
+                    <h3>
+                        Alguns fatores podem estar relacionados
+                        ao período de gestação e desenvolvimento
+                    </h3>
+
+                    <p>
+                        Alguns fatores relacionados à gestação e ao
+                        desenvolvimento inicial podem estar associados
+                        a uma maior probabilidade de ocorrência do TEA.
+                        Esses fatores não atuam isoladamente e não
+                        determinam que uma pessoa terá autismo.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div> 
+
+</div> 
 
 
 <section class="cta-final">
 
-    <h2>O conhecimento também é uma forma de acolher.</h2>
+    <div class="cta-decoracao cta-decoracao-1"></div>
+    <div class="cta-decoracao cta-decoracao-2"></div>
 
-    <p>
-        Quanto mais compreendemos o TEA, mais preparados estamos para
-        respeitar diferenças, combater preconceitos e promover inclusão.
-    </p>
+    <div class="cta-conteudo">
+
+
+        <div class="cta-linha"></div>
+
+        <h2>
+            Conhecer é o primeiro
+            <span>passo para acolher.</span>
+        </h2>
+
+        <p class="cta-principal">
+            Compreender o TEA é também aprender a olhar para as diferenças com mais respeito, empatia e acolhimento. Continue explorando o ForTEA e descubra como a informação pode contribuir para uma sociedade mais inclusiva.
+</p>
+
+        <a href="educacaoinclusiva.php" class="cta-botao">
+            Conheça mais sobre inclusão
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
 
 </section>
+
 
 <script>
 function toggleTooltip(el) {
@@ -520,6 +585,43 @@ document.addEventListener("click", function (e) {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cta = document.querySelector(".cta-final");
+
+    if (!cta) return;
+
+
+    const observador = new IntersectionObserver(
+        function (entradas) {
+
+            entradas.forEach(function (entrada) {
+
+                if (entrada.isIntersecting) {
+
+                    cta.classList.add("visivel");
+
+                    observador.unobserve(cta);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.25
+        }
+    );
+
+
+    observador.observe(cta);
+
+});
+
+
+
 </script>
 
 </main>

@@ -37,10 +37,6 @@
         <i class="fa-brands fa-github"></i>
     </a>
 
-    <a href="#">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-
     <a href="mailto:projetofortea@gmail.com">
         <i class="fa-solid fa-envelope"></i>
     </a>
