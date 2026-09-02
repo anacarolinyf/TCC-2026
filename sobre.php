@@ -78,12 +78,10 @@
             <span class="tooltip-termo" onclick="toggleTooltip(this)">
                 sorriso social
                 <span class="tooltip-text">
-                    É quando o bebê sorri espontaneamente em resposta ao rosto, à voz ou à interação com outra pessoa.
+                É quando o bebê sorri espontaneamente em resposta ao rosto, à voz ou à interação com outra pessoa.
                 </span>
-            </span>,
-            pouca resposta às interações sociais, dificuldade em acompanhar o olhar e as expressões faciais dos cuidadores, além de menor interesse em interações com as pessoas ao seu redor.
+            </span>, pouca resposta às interações sociais, dificuldade em acompanhar o olhar e as expressões faciais dos cuidadores, além de menor interesse em interações com as pessoas ao seu redor.
         </p>
-
     </div>
 </div>
 
@@ -430,10 +428,7 @@
             <h2>O que causa o TEA?</h2>
 
             <p>
-                Atualmente, as pesquisas indicam que o TEA possui
-                origem multifatorial, envolvendo diferentes fatores
-                genéticos e biológicos. Não existe uma causa única
-                conhecida.
+                O TEA não possui uma causa única conhecida. As pesquisas indicam que seu desenvolvimento está relacionado à combinação de diferentes fatores, principalmente genéticos e biológicos, que podem influenciar a forma como o cérebro se desenvolve e funciona. Por isso, compreender o autismo envolve considerar diversos aspectos, e não apenas um único fator.
             </p>
 
         </div>
@@ -455,15 +450,11 @@
                     </span>
 
                     <h3>
-                        A genética possui um papel importante
-                        no desenvolvimento do TEA
+                        A genética desempenha um papel importante no desenvolvimento do TEA
                     </h3>
 
                     <p>
-                        A genética possui um papel importante no
-                        desenvolvimento do TEA. Diferentes alterações
-                        e combinações de genes podem estar relacionadas
-                        ao autismo.
+                        O TEA está relacionado a diferentes alterações e combinações genéticas. Essas características podem influenciar o desenvolvimento neurológico e contribuir para o surgimento do transtorno.
                     </p>
 
                 </div>
@@ -485,15 +476,11 @@
                     </span>
 
                     <h3>
-                        Diferenças no desenvolvimento e funcionamento
-                        do cérebro também estão relacionadas ao TEA
+                        O desenvolvimento e o funcionamento do cérebro também estão relacionados ao TEA
                     </h3>
 
                     <p>
-                        O TEA está relacionado a diferenças no
-                        desenvolvimento e no funcionamento do cérebro,
-                        que podem influenciar aspectos como a comunicação,
-                        a interação social e o processamento de informações.
+                        Pessoas com TEA podem apresentar diferenças na forma como o cérebro se desenvolve e processa informações. Essas diferenças podem estar relacionadas à comunicação, à interação social e à percepção de estímulos.
                     </p>
 
                 </div>
@@ -515,16 +502,11 @@
                     </span>
 
                     <h3>
-                        Alguns fatores podem estar relacionados
-                        ao período de gestação e desenvolvimento
+                        Alguns fatores podem estar associados ao período de gestação e ao desenvolvimento inicial
                     </h3>
 
                     <p>
-                        Alguns fatores relacionados à gestação e ao
-                        desenvolvimento inicial podem estar associados
-                        a uma maior probabilidade de ocorrência do TEA.
-                        Esses fatores não atuam isoladamente e não
-                        determinam que uma pessoa terá autismo.
+                       Determinados fatores relacionados à gestação e aos primeiros períodos do desenvolvimento podem estar associados a uma maior probabilidade de ocorrência do TEA. Entretanto, esses fatores não atuam de forma isolada e não significam que uma pessoa necessariamente desenvolverá autismo.
                     </p>
 
                 </div>
