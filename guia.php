@@ -1,7 +1,6 @@
 <?php include 'includes/header.php'; ?>
 
 <link rel="stylesheet" href="css/estilo.css">
-
 <main>
 
     <section class="sobre-banner">

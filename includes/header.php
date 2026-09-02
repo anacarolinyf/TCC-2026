@@ -497,7 +497,7 @@ new window.VLibras.Widget(
 
     <div class="submenu-biblioteca">
 
-        <a href="profissionais.php">
+        <a href="Profissionais.php">
             Profissionais especializados 
         </a>
 
@@ -534,6 +534,20 @@ new window.VLibras.Widget(
                     Contato
                 </a>
             </li>
+
+              <li>
+                <a href="relatos.php">
+                  
+                </a>
+            </li>
+
+            
+              <li>
+                <a href="material.php">
+                  
+                </a>
+            </li>
+
 
         </ul>
 
