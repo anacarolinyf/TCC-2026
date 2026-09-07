@@ -91,7 +91,7 @@
             <i class="fa-solid fa-chevron-right"></i>
         </span>
 
-        <a href="direitos.php" class="passo">
+        <a href="leis.php" class="passo">
             <div class="icone">
                 <i class="fa-solid fa-scale-balanced"></i>
             </div>

@@ -324,10 +324,6 @@ if ($daltonismo !== 'nenhum') {
 >
 
 
-<!-- ==========================================================
-     VLIBRAS
-========================================================== -->
-
 <div vw class="enabled">
 
     <div vw-access-button class="active"></div>
