@@ -208,6 +208,66 @@
 
             </div>
 
+            <!-- CARD 5 - CAPS -->
+            <div class="card escola-card">
+
+                <img
+                    src="img/caps.png"
+                    alt="Crianças participando de atividade escolar"
+                >
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <h3>
+                    Centros de Atenção Psicossocial (CAPS)
+                </h3>
+
+                <p>
+                Os Centros de Atenção Psicossocial, conhecidos como CAPS,
+                desempenham um papel fundamental no suporte a pessoas com 
+                Transtorno do Espectro Autista (TEA) no Brasil, atuando de 
+                forma integrada pelo Sistema Único de Saúde (SUS). O principal
+                objetivo dessas unidades é oferecer um cuidado integral que
+                promova a autonomia, a inclusão social e a melhoria da qualidade
+                de vida do paciente, sempre considerando a singularidade de cada
+                indivíducio.
+                </p>
+
+            </div>
+
+            <!-- CARD 5 - CENTRO TEA -->
+            <div class="card escola-card">
+
+                <img
+                    src="img/centrotea.jpg"
+                    alt="Crianças participando de atividade escolar"
+                >
+
+                <div class="card-icon">
+                    <i class="fa-solid fa-book"></i>
+                </div>
+
+                <h3>
+                    CENTRO TEA
+                </h3>
+
+                <p>
+                O primeiro Centro Municipal para Pessoas com Transtorno do Espectro do Autismo
+                "Dra. Marina Magro Beringhs Martinez" da Prefeitura de São Paulo é um espaço
+                de convivência para pessoas que estão no espectro, seus familiares e o público
+                profissional. O equipamento de mais de 5.000 m2 tem o objetivo de promover
+                a autonomia, participação, inclusão e acolhimento.
+                O Centro TEA Paulista funciona 24 horas, todos os dias da semana, com teleatendimento
+                no período noturno (das 18h às 8h) e com regime ininterrupto aos fins de semana e feriados.
+                O objetivo é facilitar o acesso e estabelecer um canal de apoio e orientação em diferentes situações
+                e contextos, nas quais as pessoas com Transtorno do Espectro Autista (TEA), seus familiares e cuidadores
+                possam ter um atendimento remoto, acessível e humanizado.
+                </p>
+
+            </div>
+
 
         </div>
 
