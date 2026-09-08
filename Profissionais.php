@@ -1,14 +1,11 @@
 <?php
 
-// Inicia a sessão caso ainda não esteja iniciada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Carrega a conexão com o banco
 require_once __DIR__ . '/conexao.php';
 
-// Carrega o cabeçalho
 include __DIR__ . '/includes/header.php';
 
 ?>
@@ -17,18 +14,12 @@ include __DIR__ . '/includes/header.php';
 
 <?php
 
-/* =========================
-   BUSCAR PROFISSIONAIS
-========================= */
-
 $profissionais = [];
 
-// Verifica se a conexão existe
 if (!isset($conexao) || !$conexao) {
     die("Erro: conexão com o banco de dados não foi encontrada.");
 }
 
-// Consulta os profissionais ativos
 $sqlProfissionais = "
     SELECT
         id,
@@ -45,25 +36,18 @@ $sqlProfissionais = "
 
 $resultadoProfissionais = $conexao->query($sqlProfissionais);
 
-// Verifica se houve erro na consulta
 if (!$resultadoProfissionais) {
     die("Erro ao buscar profissionais: " . $conexao->error);
 }
 
-// Guarda os profissionais encontrados
 while ($profissional = $resultadoProfissionais->fetch_assoc()) {
     $profissionais[] = $profissional;
 }
 
 ?>
 
-<main class="Profissionais-page">
+<main class="profissionais-page">
 
-    <h1>Biblioteca</h1>
-
-    <!-- =========================
-         PROFISSIONAIS ESPECIALIZADOS
-    ========================= -->
 
     <section class="profissionais-section">
 
@@ -80,7 +64,6 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
             </div>
 
-
             <?php if (!empty($profissionais)): ?>
 
                 <div class="profissionais-grid">
@@ -89,16 +72,14 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
                         <div class="profissional-card">
 
-                            <!-- FOTO -->
-
                             <div class="profissional-foto">
 
                                 <?php if (!empty($profissional['foto'])): ?>
 
-                                    <img
-                                        src="<?= htmlspecialchars($profissional['foto']) ?>"
-                                        alt="Foto de <?= htmlspecialchars($profissional['nome']) ?>"
-                                    >
+                                   <img
+    src="<?= htmlspecialchars($profissional['foto']) ?>"
+    alt="Foto de <?= htmlspecialchars($profissional['nome']) ?>"
+>
 
                                 <?php else: ?>
 
@@ -110,62 +91,43 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
                             </div>
 
-
-                            <!-- INFORMAÇÕES -->
-
                             <div class="profissional-info">
 
                                 <h3>
                                     <?= htmlspecialchars($profissional['nome']) ?>
                                 </h3>
 
-
                                 <?php if (!empty($profissional['especialidade'])): ?>
-
                                     <span class="profissional-especialidade">
                                         <?= htmlspecialchars($profissional['especialidade']) ?>
                                     </span>
-
                                 <?php endif; ?>
 
-
                                 <?php if (!empty($profissional['descricao'])): ?>
-
                                     <p>
                                         <?= nl2br(htmlspecialchars($profissional['descricao'])) ?>
                                     </p>
-
                                 <?php endif; ?>
-
 
                                 <?php if (!empty($profissional['telefone'])): ?>
 
                                     <div class="profissional-contato">
-
                                         <strong>Contato:</strong>
-
                                         <span>
                                             <?= htmlspecialchars($profissional['telefone']) ?>
                                         </span>
-
                                     </div>
 
                                 <?php endif; ?>
 
-
-                                <!-- WHATSAPP -->
-
                                 <?php if (!empty($profissional['whatsapp'])): ?>
 
                                     <?php
-
-                                    // Remove tudo que não for número
                                     $whatsapp = preg_replace(
                                         '/[^0-9]/',
                                         '',
                                         $profissional['whatsapp']
                                     );
-
                                     ?>
 
                                     <?php if (!empty($whatsapp)): ?>
@@ -176,11 +138,8 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
                                             rel="noopener noreferrer"
                                             class="btn-whatsapp"
                                         >
-
                                             <i class="fa-brands fa-whatsapp"></i>
-
                                             Conversar pelo WhatsApp
-
                                         </a>
 
                                     <?php endif; ?>
@@ -194,7 +153,6 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
                     <?php endforeach; ?>
 
                 </div>
-
 
             <?php else: ?>
 
@@ -215,6 +173,5 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
     </section>
 
 </main>
-
 
 <?php include __DIR__ . '/includes/footer.php'; ?>
