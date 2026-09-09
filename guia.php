@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; ?>
 
-<link rel="stylesheet" href="css/guia.css">
+<link rel="stylesheet" href="css/estilo.css">
 <main>
 
     <section class="sobre-banner">
@@ -196,6 +196,103 @@
 
         </div>
     </section>
+
+    <!-- =====================================================
+     ORGANIZE SUA TRAJETÓRIA
+===================================================== -->
+
+<section class="trajetoria">
+    <div class="container">
+
+        <div class="trajetoria-intro">
+            <span class="trajetoria-label">ORGANIZAÇÃO E ACOMPANHAMENTO</span>
+
+            <h2>Organize sua trajetória</h2>
+
+            <p>
+                Cada família vivencia essa jornada de uma maneira.
+                O ForTEA oferece ferramentas para registrar informações,
+                organizar momentos importantes e acompanhar essa trajetória
+                ao longo do tempo.
+            </p>
+        </div>
+
+        <div class="trajetoria-conteudo">
+
+            <div class="trajetoria-texto">
+
+                <span class="trajetoria-numero">01</span>
+
+                <h3>Registre momentos importantes</h3>
+
+                <p>
+                    Crie registros sobre acontecimentos, observações,
+                    consultas, reuniões escolares e outros momentos
+                    que façam parte da trajetória.
+                </p>
+
+                <a href="minha-trajetoria.php" class="trajetoria-link">
+                    Acessar minha trajetória
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="trajetoria-ferramentas">
+
+                <div class="ferramenta">
+                    <span class="ferramenta-icone">
+                        <i class="fas fa-check"></i>
+                    </span>
+
+                    <div>
+                        <span class="ferramenta-numero">02</span>
+                        <h4>Checklists</h4>
+                        <p>
+                            Preencha checklists diretamente pelo site
+                            ou baixe uma versão para imprimir.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="ferramenta">
+                    <span class="ferramenta-icone">
+                        <i class="fas fa-file-arrow-down"></i>
+                    </span>
+
+                    <div>
+                        <span class="ferramenta-numero">03</span>
+                        <h4>Materiais de apoio</h4>
+                        <p>
+                            Encontre fichas, planners, registros e
+                            outros materiais disponíveis na Biblioteca.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="ferramenta">
+                    <span class="ferramenta-icone">
+                        <i class="fas fa-user"></i>
+                    </span>
+
+                    <div>
+                        <span class="ferramenta-numero">04</span>
+                        <h4>Tudo no seu perfil</h4>
+                        <p>
+                            Seus registros e checklists preenchidos
+                            podem ficar vinculados à sua conta.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
 
 </main>
 

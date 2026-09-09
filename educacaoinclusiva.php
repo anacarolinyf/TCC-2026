@@ -241,7 +241,7 @@
             <div class="card escola-card">
 
                 <img
-                    src="img/centrotea.jpg"
+                    src="img/centrotea.png"
                     alt="Crianças participando de atividade escolar"
                 >
 
