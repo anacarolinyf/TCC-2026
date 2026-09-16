@@ -6,6 +6,9 @@
 -- Tempo de geração: 09/09/2026 às 18:16
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
+-- Tempo de geração: 16/09/2026 às 01:51
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -143,6 +146,32 @@ INSERT INTO `profissionais` (`id`, `nome`, `especialidade`, `descricao`, `telefo
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `profissionais`
+--
+
+CREATE TABLE `profissionais` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(150) NOT NULL,
+  `especialidade` varchar(150) DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
+  `telefone` varchar(30) DEFAULT NULL,
+  `whatsapp` varchar(30) DEFAULT NULL,
+  `foto` varchar(255) DEFAULT NULL,
+  `ativo` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `profissionais`
+--
+
+INSERT INTO `profissionais` (`id`, `nome`, `especialidade`, `descricao`, `telefone`, `whatsapp`, `foto`, `ativo`) VALUES
+(1, 'Dra. Raphaella Gomes', 'Psicóloga', 'Psicóloga especializada no atendimento de pessoas com Transtorno do Espectro Autista (TEA).', '(11) 99999-1111', '5511999991111', 'uploads/profissionais/raphaella-gomes.png', 1),
+(2, 'Dr. Alexandre Nascimento', 'Fonoaudiólogo', 'Fonoaudiólogo especializado em comunicação e desenvolvimento de pessoas com TEA.', '(11) 98888-2222', '5511988882222', 'uploads/profissionais/alexandre-nascimento.png', 1),
+(3, 'Dra. Gabriella Oliveira', 'Terapeuta Ocupacional', 'Terapeuta ocupacional com experiência em desenvolvimento da autonomia e habilidades sociais.', '(11) 97777-3333', '5511977773333', 'uploads/profissionais/gabriella-oliveira.png', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `usuarios`
 --
 
@@ -235,7 +264,6 @@ ALTER TABLE `favoritos`
 --
 ALTER TABLE `preferencias_usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
-
 --
 -- AUTO_INCREMENT de tabela `profissionais`
 --

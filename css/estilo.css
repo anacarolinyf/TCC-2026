@@ -3198,5 +3198,649 @@ footer {
     font-size: 0.9rem;
 }
 
+/* Pagina Guia */
+
+:root {
+    --azul: #3467EB;
+    --azul-escuro: #21479B;
+    --azul-claro: #EAF2FF;
+    --verde: #4CAF50;
+    --fundo: #F7F9FC;
+    --texto: #374151;
+    --suave: #667085;
+    --branco: #fff;
+    --borda: #E4E9F2;
+    --sombra: 0 12px 30px rgba(33, 71, 155, .08);
+}
+
+main {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1180px;
+    margin: auto;
+}
+
+/* Banner */
+.sobre-banner {
+    position: relative;
+    padding: 90px 0 100px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #F8FAFF 0%, #EAF2FF 100%);
+}
+
+.sobre-banner::after {
+    content: "";
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    right: -120px;
+    bottom: -180px;
+    border-radius: 50%;
+    background: rgba(52, 103, 235, .08);
+}
+
+.sobre-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.primeiros-sinais h1 {
+    max-width: 650px;
+    margin: 0 0 25px;
+    color: var(--azul-escuro);
+    font-size: clamp(2.7rem, 5vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.primeiros-sinais h1::before {
+    content: "GUIA PARA FAMÍLIAS";
+    display: block;
+    margin-bottom: 16px;
+    color: var(--azul);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.texto-lg {
+    color: var(--suave);
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+.sobre-imagem {
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-imagem img {
+    width: min(100%, 450px);
+    filter: drop-shadow(0 20px 20px rgba(33, 71, 155, .12));
+    transition: .3s;
+}
+
+.sobre-imagem img:hover {
+    transform: translateY(-8px);
+}
+
+/* Seções */
+.sinais,
+.secao-destaque {
+    padding: 90px 0;
+}
+
+.secao-destaque {
+    background: var(--branco);
+}
+
+.titulo-secao {
+    margin-bottom: 12px;
+    color: var(--azul-escuro);
+    font-size: 2.35rem;
+    line-height: 1.15;
+}
+
+.titulo-secao::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 15px;
+    border-radius: 10px;
+    background: var(--azul);
+}
+
+.descricao {
+    max-width: 720px;
+    margin-bottom: 42px;
+    color: var(--suave);
+    line-height: 1.7;
+}
+
+/* Cards */
+.cards-sinais,
+.grid-informacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-sinal,
+.card-info {
+    position: relative;
+    padding: 28px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    background: var(--branco);
+    box-shadow: 0 5px 18px rgba(31, 45, 61, .035);
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+
+.card-sinal::before,
+.card-info::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--azul);
+}
+
+.card-sinal:hover,
+.card-info:hover {
+    transform: translateY(-6px);
+    border-color: #D2DDF5;
+    box-shadow: var(--sombra);
+}
+
+.card-sinal h3,
+.card-info h4 {
+    margin-bottom: 12px;
+    color: var(--azul-escuro);
+    line-height: 1.35;
+}
+
+.card-sinal p,
+.texto-card {
+    margin-bottom: 0;
+    color: var(--suave);
+    font-size: .92rem;
+    line-height: 1.7;
+}
+
+.secao-destaque .card-sinal::before {
+    background: var(--verde);
+}
+
+/* Diagnóstico */
+.painel-diagnostico {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 35px 0 20px;
+    padding: 32px;
+    border: 1px solid #D7E3FA;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--azul-claro), #F8FAFF);
+}
+
+.painel-diagnostico .texto-lg {
+    margin: 0;
+    color: var(--texto);
+}
+
+.alerta-terreno {
+    margin-bottom: 50px;
+    padding: 20px 25px;
+    border-left: 4px solid var(--verde);
+    border-radius: 0 14px 14px 0;
+    background: #EDF8EE;
+}
+
+.texto-destaque {
+    margin: 0;
+    color: #35603A;
+    line-height: 1.7;
+}
+
+/* Etapas */
+.bloco-educacao {
+    margin-bottom: 25px;
+    padding: 32px;
+    border: 1px solid var(--borda);
+    border-radius: 22px;
+    background: var(--branco);
+    box-shadow: 0 5px 20px rgba(31, 45, 61, .035);
+}
+
+.cabecalho-etapa {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.numero-passo {
+    display: grid;
+    place-items: center;
+    min-width: 52px;
+    height: 52px;
+    border-radius: 15px;
+    background: var(--azul);
+    color: var(--branco);
+    font-size: 1.1rem;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(52, 103, 235, .2);
+}
+
+.cabecalho-etapa h3 {
+    margin: 0 0 5px;
+    color: var(--azul-escuro);
+}
+
+.subtitulo-etapa {
+    margin: 0;
+    color: var(--suave);
+    font-size: .9rem;
+}
+
+.card-info {
+    background: #FCFDFE;
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: .68rem;
+    font-weight: 800;
+}
+
+.badge.azul {
+    background: var(--azul-claro);
+    color: var(--azul-escuro);
+}
+
+.badge.verde {
+    background: #EDF8EE;
+    color: #347A39;
+}
+
+.badge.atencao {
+    background: #FFF4D6;
+    color: #916800;
+}
+
+/* Responsivo */
+@media (max-width: 850px) {
+    .sobre-grid,
+    .painel-diagnostico {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .primeiros-sinais h1 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .cards-sinais,
+    .grid-informacoes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .descricao {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 550px) {
+    .sobre-banner {
+        padding: 65px 0 75px;
+    }
+
+    .sinais,
+    .secao-destaque {
+        padding: 65px 0;
+    }
+
+    .primeiros-sinais h1 {
+        font-size: 2.35rem;
+    }
+
+    .titulo-secao {
+        font-size: 2rem;
+    }
+
+    .cards-sinais,
+    .grid-informacoes {
+        grid-template-columns: 1fr;
+    }
+
+    .bloco-educacao,
+    .painel-diagnostico {
+        padding: 24px;
+    }
+}
+
+
+/* =====================================================
+   ORGANIZE SUA TRAJETÓRIA
+===================================================== */
+
+.trajetoria {
+    padding: 100px 0;
+    background: #F7F9FC;
+}
+
+.trajetoria-intro {
+    max-width: 760px;
+    margin-bottom: 55px;
+}
+
+.trajetoria-label {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--azul);
+    font-size: .72rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.trajetoria-intro h2 {
+    margin-bottom: 18px;
+
+    color: var(--azul-escuro);
+    font-size: 2.45rem;
+    line-height: 1.15;
+}
+
+.trajetoria-intro h2::after {
+    content: "";
+    display: block;
+
+    width: 48px;
+    height: 4px;
+
+    margin-top: 15px;
+
+    border-radius: 10px;
+    background: var(--azul);
+}
+
+.trajetoria-intro p {
+    max-width: 700px;
+
+    color: var(--suave);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* Conteúdo */
+
+.trajetoria-conteudo {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 60px;
+
+    padding: 45px;
+
+    border-radius: 26px;
+
+    background: #FFFFFF;
+
+    border: 1px solid var(--borda);
+
+    box-shadow: 0 12px 35px rgba(33, 71, 155, .06);
+}
+
+
+/* Texto principal */
+
+.trajetoria-texto {
+    padding: 10px 15px;
+}
+
+.trajetoria-numero {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #B8CBEA;
+
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.trajetoria-texto h3 {
+    max-width: 400px;
+
+    margin-bottom: 15px;
+
+    color: var(--azul-escuro);
+
+    font-size: 1.8rem;
+    line-height: 1.25;
+}
+
+.trajetoria-texto p {
+    max-width: 420px;
+
+    margin-bottom: 25px;
+
+    color: var(--suave);
+
+    line-height: 1.75;
+}
+
+
+/* Link */
+
+.trajetoria-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 13px 20px;
+
+    border-radius: 10px;
+
+    background: var(--azul);
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: .9rem;
+    font-weight: 700;
+
+    transition: .25s;
+}
+
+.trajetoria-link:hover {
+    background: var(--azul-escuro);
+    transform: translateY(-3px);
+}
+
+.trajetoria-link i {
+    font-size: .75rem;
+
+    transition: .25s;
+}
+
+.trajetoria-link:hover i {
+    transform: translateX(4px);
+}
+
+
+/* Ferramentas */
+
+.trajetoria-ferramentas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ferramenta {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+
+    padding: 22px;
+
+    border: 1px solid #E7ECF4;
+
+    border-radius: 16px;
+
+    background: #FCFDFE;
+
+    transition: .25s;
+}
+
+.ferramenta:hover {
+    transform: translateX(5px);
+
+    border-color: #D2DDF5;
+
+    box-shadow: 0 8px 22px rgba(33, 71, 155, .07);
+}
+
+
+/* Ícone */
+
+.ferramenta-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+    background: var(--azul-claro);
+    color: var(--azul);
+
+    font-size: 18px;
+}
+
+.ferramenta:nth-child(2) .ferramenta-icone {
+    background: #EDF8EE;
+    color: var(--verde);
+}
+
+.ferramenta:nth-child(3) .ferramenta-icone {
+    background: #F1EDFF;
+    color: #7655D6;
+}
+
+
+/* Texto */
+
+.ferramenta-numero {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #9AA8BD;
+
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.ferramenta h4 {
+    margin-bottom: 5px;
+
+    color: var(--azul-escuro);
+
+    font-size: 1.05rem;
+}
+
+.ferramenta p {
+    margin: 0;
+
+    color: var(--suave);
+
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+
+/* Responsivo */
+
+@media (max-width: 850px) {
+
+    .trajetoria {
+        padding: 70px 0;
+    }
+
+    .trajetoria-conteudo {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .trajetoria-intro {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .trajetoria-intro h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .trajetoria-texto {
+        text-align: center;
+    }
+
+    .trajetoria-texto h3,
+    .trajetoria-texto p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .trajetoria {
+        padding: 60px 0;
+    }
+
+    .trajetoria-intro h2 {
+        font-size: 2rem;
+    }
+
+    .trajetoria-conteudo {
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .ferramenta {
+        padding: 18px;
+    }
+
+}
 
 
