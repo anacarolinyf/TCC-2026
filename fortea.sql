@@ -3,10 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09/09/2026 às 18:16
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
--- Tempo de geração: 16/09/2026 às 01:51
+-- Tempo de geração: 19/09/2026 às 03:07
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -115,7 +112,8 @@ CREATE TABLE `preferencias_usuario` (
 --
 
 INSERT INTO `preferencias_usuario` (`id`, `usuario_id`, `modo_escuro`, `reduzir_animacoes`, `tamanho_fonte`, `daltonismo`, `notificacoes_sistema`, `notificacoes_lembretes`, `notificacoes_novidades`, `notificacoes_navegador`, `atualizado_em`) VALUES
-(1, 1, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-09 16:15:26');
+(1, 1, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-09 16:15:26'),
+(0, 0, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-19 00:17:26');
 
 -- --------------------------------------------------------
 
@@ -146,6 +144,31 @@ INSERT INTO `profissionais` (`id`, `nome`, `especialidade`, `descricao`, `telefo
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `recuperacao_senha`
+--
+
+CREATE TABLE `recuperacao_senha` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `codigo_hash` varchar(255) NOT NULL,
+  `expira_em` datetime NOT NULL,
+  `usado` tinyint(1) DEFAULT 0,
+  `criado_em` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `recuperacao_senha`
+--
+
+INSERT INTO `recuperacao_senha` (`id`, `usuario_id`, `codigo_hash`, `expira_em`, `usado`, `criado_em`) VALUES
+(1, 0, '$2y$10$QWSCxA59A957NYtYfx.VpuWCJN8ElePbM9K9bsFusagu1C4ec1Q6S', '2026-09-19 02:59:29', 1, '2026-09-18 21:49:29'),
+(2, 0, '$2y$10$YgUSLtWBuI89G3p5Gr9yBeWu9l0SffRg1AfWm9y1Wu2pGzpX1JHbm', '2026-09-19 02:59:51', 1, '2026-09-18 21:49:51'),
+(3, 0, '$2y$10$EZ8S1AFapGGjwMKAgezrteewboDqCApaWUVyYL8upaSI/eUu0wx3W', '2026-09-19 03:01:22', 1, '2026-09-18 21:51:22'),
+(4, 0, '$2y$10$q4IfJqMsnStAwiqCbl52DOx7VNdXVIO4iHt8OkNhZPLveRXNRzpjC', '2026-09-19 03:01:29', 0, '2026-09-18 21:51:29');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `usuarios`
 --
 
@@ -163,91 +186,26 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_cadastro`, `foto`) VALUES
-(1, 'Isadora Ribeiro Jans', 'isadoraribeiro2708@gmail.com', '$2y$10$XheseoIDhwIf9gaNNsHqeuNANUArTvj9ZM39J7oC9zUU/JAtzecs.', '2026-08-14 00:45:39', 'uploads/perfis/perfil_1_1787016896.jpg'),
-(2, 'heloisa lima', 'heloisa123@gmail.com', '$2y$10$kYmEqryTDjLpCg026aYHA.3s7k9VT6S1s0KhdvVjTUrdvQ7b1DXZW', '2026-08-14 01:11:35', NULL),
-(3, 'Alex Jans', 'alex.jans2015@gmsil.com', '$2y$10$o1LjUAzFSCw11DiCyf2wNOyIzoB.QJJEedCGYCf14IExKQJ7SWF6a', '2026-08-14 01:15:27', NULL),
-(4, 'Isabella', 'isabellajans.2021@gmail.com', '$2y$10$is98987DZCmh1MobF09VQOc7TMKBP4uK88OMdgLWmHGGGUtHCy3Ra', '2026-08-14 01:22:34', NULL);
+(0, 'ISADORA RIBEIRO JANS', 'isadoraribeiro2708@gmail.com', '$2y$10$TOhFaTl7TtGcFOincqvaOOurWp9CEOm2dRB9yodNT/lWFQxDldDYC', '2026-09-19 00:14:18', NULL);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `configuracoes`
+-- Índices de tabela `recuperacao_senha`
 --
-ALTER TABLE `configuracoes`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `chave` (`chave`);
-
---
--- Índices de tabela `contatos_medicos`
---
-ALTER TABLE `contatos_medicos`
+ALTER TABLE `recuperacao_senha`
   ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `favoritos`
---
-ALTER TABLE `favoritos`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `preferencias_usuario`
---
-ALTER TABLE `preferencias_usuario`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `usuario_id` (`usuario_id`);
-
---
--- Índices de tabela `profissionais`
---
-ALTER TABLE `profissionais`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `configuracoes`
+-- AUTO_INCREMENT de tabela `recuperacao_senha`
 --
-ALTER TABLE `configuracoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT de tabela `contatos_medicos`
---
-ALTER TABLE `contatos_medicos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `favoritos`
---
-ALTER TABLE `favoritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `preferencias_usuario`
---
-ALTER TABLE `preferencias_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
---
--- AUTO_INCREMENT de tabela `profissionais`
---
-ALTER TABLE `profissionais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-ALTER TABLE `usuarios`
+ALTER TABLE `recuperacao_senha`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
