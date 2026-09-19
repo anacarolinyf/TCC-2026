@@ -4,32 +4,12 @@
 
 <main class="pagina-sobre">
 
-    <section class="sobre-banner">
-
-        <div class="banner-conteudo">
-
-            <span class="banner-label">SOBRE O PROJETO</span>
-
-            <h1>
-                Informação que
-                <strong>acolhe.</strong>
-            </h1>
-
-            <p>
-                Um espaço criado para tornar o conhecimento sobre
-                o Transtorno do Espectro Autista mais acessível,
-                claro e próximo de quem precisa dele.
-            </p>
-
-        </div>
-
-    </section>
-
     <section class="sobre-texto">
 
         <div class="texto-container">
 
             <div class="texto-introducao">
+
 
                 <span class="texto-label">O ForTEA</span>
 
@@ -39,22 +19,13 @@
                 </h2>
 
             </div>
-
-
             <div class="texto-corpo">
 
-                <p>
-                  O ForTEA nasceu da percepção de que encontrar informações confiáveis sobre o Transtorno do Espectro Autista nem sempre é simples. Para famílias, cuidadores e professores, principalmente após uma suspeita ou diagnóstico, surgem muitas dúvidas sobre o que fazer, onde buscar orientação e quais direitos e estratégias podem fazer parte da rotina.
+                <p>O ForTEA nasceu da percepção de que encontrar informações confiáveis sobre o Transtorno do Espectro Autista nem sempre é simples. Após uma suspeita ou diagnóstico, famílias, cuidadores e professores podem se deparar com muitas dúvidas sobre o que fazer, onde buscar orientação, quais são seus direitos e quais estratégias podem fazer parte da rotina.</p>
 
-                  Ao pesquisar sobre o tema, percebemos que muitas informações estão espalhadas por diferentes fontes ou são apresentadas por meio de uma linguagem muito técnica, dificultando o acesso de quem precisa compreender o assunto de forma clara e prática.
+                <p>Durante nossas pesquisas, percebemos que o conteúdo sobre o TEA está distribuído entre diferentes fontes e, muitas vezes, apresentado por meio de uma linguagem técnica. Isso pode dificultar a compreensão de quem busca respostas de forma clara e prática.
 
-                  </p>
-                  <p>
-                Por isso, criamos o ForTEA: para reunir informações, orientações e materiais em um único espaço, com uma linguagem mais acessível e uma navegação simples. O projeto busca aproximar o conhecimento de quem está no dia a dia ao lado de uma pessoa com TEA, oferecendo conteúdos sobre direitos, educação, rotina, estímulos e diferentes situações que podem fazer parte dessa jornada.
-
-                Mais do que desenvolver um site, nosso objetivo foi utilizar a tecnologia para transformar informação em uma ferramenta de apoio. Queremos contribuir para que famílias e profissionais se sintam mais orientados e preparados, ajudando a combater a desinformação e os estigmas relacionados ao autismo.
-                </p>
-
+                A partir dessa necessidade, criamos o ForTEA, reunindo em um único espaço conteúdos sobre direitos, educação, rotina, estímulos e outras questões relacionadas ao TEA. Nosso objetivo é tornar o acesso ao conhecimento mais simples e contribuir para uma compreensão mais ampla do autismo, utilizando a tecnologia como uma ferramenta de informação e apoio.</p>
             </div>
 
         </div>
@@ -94,18 +65,16 @@
 
             <div class="equipe-membro">
                 <div class="foto-redonda">
-                    <img src="img/ana-beatriz.jpg" alt="Ana Beatriz Gilarde Portela">
+                    <img src="img/anaportela.jpeg" alt="Ana Beatriz Gilarde Portela">
                 </div>
                 <h3>Ana Beatriz Gilarde Portela</h3>
-                <p class="membro-funcao">Desenvolvedora</p>
             </div>
 
             <div class="equipe-membro">
                 <div class="foto-redonda">
-                    <img src="img/ana-caroliny.jpg" alt="Ana Caroliny Fortes">
+                    <img src="img/anafortes.jpeg" alt="Ana Caroliny Fortes">
                 </div>
                 <h3>Ana Caroliny Fortes</h3>
-                <p class="membro-funcao">Desenvolvedora</p>
             </div>
 
             <div class="equipe-membro">
@@ -113,15 +82,13 @@
                     <img src="img/heloisa.jpeg" alt="Heloísa Lima Rodrigues">
                 </div>
                 <h3>Heloísa Lima Rodrigues</h3>
-                <p class="membro-funcao">Desenvolvedora</p>
             </div>
 
             <div class="equipe-membro">
                 <div class="foto-redonda">
-                    <img src="img/isadora.jpg" alt="Isadora Ribeiro Jans">
+                    <img src="img/isadora.jpeg" alt="Isadora Ribeiro Jans">
                 </div>
                 <h3>Isadora Ribeiro Jans</h3>
-                <p class="membro-funcao">Desenvolvedora</p>
             </div>
 
         </div>
@@ -129,11 +96,10 @@
     </div>
 
 </section>  
-
 </main>
 
-
 <?php include 'includes/footer.php'; ?>
+
 
 
 <script>

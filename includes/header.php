@@ -365,9 +365,6 @@ new window.VLibras.Widget(
 
     <div class="topo">
 
-
-        <!-- LOGO -->
-
         <div class="logo">
 
             <img
@@ -379,28 +376,24 @@ new window.VLibras.Widget(
 
         </div>
 
-
-        <!-- AÇÕES -->
-
         <div class="acoes">
+<form class="pesquisa" action="pesquisa.php" method="GET">
 
+    <input
+        type="search"
+        name="busca"
+        placeholder="O que você procura?"
+        aria-label="Pesquisar no site"
+        required
+    >
 
-            <!-- PESQUISA -->
+    <button type="submit" aria-label="Pesquisar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
 
-            <div class="pesquisa">
-
-                <input
-                    type="text"
-                    placeholder="O que você procura?"
-                >
-
-            </div>
-
+</form>
 
             <?php if ($nomeUsuario): ?>
-
-
-                <!-- USUÁRIO -->
 
                 <a
                     href="perfil.php"
@@ -414,9 +407,6 @@ new window.VLibras.Widget(
                     ) ?>
 
                 </a>
-
-
-                <!-- CONFIGURAÇÕES -->
 
                 <a
                     href="configuracoes.php"
@@ -432,17 +422,9 @@ new window.VLibras.Widget(
 
             <?php else: ?>
 
-
-                <!-- LOGIN -->
-
-                <a href="login.php">
-
-                    <i class="fa-regular fa-user"></i>
-
-                    Login
-
-                </a>
-
+             <a href="login.php">
+    <i class="fa-solid fa-circle-user"></i>
+        </a>
 
             <?php endif; ?>
 

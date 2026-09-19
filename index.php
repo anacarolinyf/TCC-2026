@@ -128,9 +128,6 @@
         </a>
 
     </div>
-
-</section>
-</div>
 </section>
 
     <?php include 'includes/footer.php'; ?>
