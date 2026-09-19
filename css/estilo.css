@@ -3778,25 +3778,6 @@ main {
     gap: 70px;
 }
 
-.primeiros-sinais h1 {
-    max-width: 650px;
-    margin: 0 0 25px;
-    color: var(--azul-escuro);
-    font-size: clamp(2.7rem, 5vw, 4.2rem);
-    line-height: 1;
-    letter-spacing: -2px;
-}
-
-.primeiros-sinais h1::before {
-    content: "GUIA PARA FAMÍLIAS";
-    display: block;
-    margin-bottom: 16px;
-    color: var(--azul);
-    font-size: .75rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
 .texto-lg {
     color: var(--suave);
     font-size: 1rem;
