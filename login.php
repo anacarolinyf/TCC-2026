@@ -1,10 +1,13 @@
 <div class="pagina-contaa">
 
     <link rel="stylesheet" href="css/style.css">
+    <linkrel="icon" type="image" href="img/logoo.png">
 
     <div class="container-conta">
 
         <div class="conta-imagem">
+    
+
 
             <a href="index.php" class="voltar-site">
                 ← Voltar
@@ -69,7 +72,7 @@
                         Lembrar de mim
                     </label>
 
-                    <a href="#" class="link">
+                    <a href="redefinir_senha.php" class="link">
                         Esqueci minha senha
                     </a>
 

@@ -53,3 +53,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
+
+  <link
+        rel="icon"
+        type="image"
+        href="img/logoo.png"
+    >

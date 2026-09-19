@@ -1,6 +1,3 @@
-/* =========================
-   CHATBOT FORTEA
-========================= */
 
 const chatbotButton = document.getElementById("chatbotButton");
 const chatbotBox = document.getElementById("chatbotBox");

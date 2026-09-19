@@ -52,3 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $conexao->close();
 
 ?>
+
+  <link
+        rel="icon"
+        type="image"
+        href="img/logoo.png"
+    >

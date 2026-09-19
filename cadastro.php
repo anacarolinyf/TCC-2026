@@ -7,6 +7,9 @@
 
         <div class="conta-imagem">
 
+          <linkrel="icon" type="image" href="img/logoo.png">
+
+
             <a href="login.php" class="voltar-site">
                 ← Voltar
             </a>
