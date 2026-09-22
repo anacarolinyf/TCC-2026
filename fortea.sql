@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/09/2026 às 03:07
+-- Tempo de geração: 22/09/2026 às 04:24
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -82,10 +82,21 @@ CREATE TABLE `contatos_medicos` (
 CREATE TABLE `favoritos` (
   `id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
+  `tipo` varchar(30) NOT NULL DEFAULT 'profissional',
+  `item_id` int(11) DEFAULT NULL,
+  `titulo` varchar(255) DEFAULT NULL,
+  `url` varchar(500) DEFAULT NULL,
   `medico_nome` varchar(255) NOT NULL,
   `especialidade` varchar(255) DEFAULT NULL,
   `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `favoritos`
+--
+
+INSERT INTO `favoritos` (`id`, `usuario_id`, `tipo`, `item_id`, `titulo`, `url`, `medico_nome`, `especialidade`, `criado_em`) VALUES
+(0, 4, 'lei', 0, '<br />\r\n<b>Warning</b>:  Undefined variable $lei in <b>C:\\xampp\\htdocs\\TCC-2026\\leis.php</b> on line <b>45</b><br />\r\n<br />\r\n<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\\xampp\\htdocs\\TCC-2026\\leis.php</b> on line <b>45</b', 'direitos.php#lei-<br />\r\n<b>Warning</b>:  Undefined variable $lei in <b>C:\\xampp\\htdocs\\TCC-2026\\leis.php</b> on line <b>54</b><br />\r\n<br />\r\n<b>Warning</b>:  Trying to access array offset on value of type null in <b>C:\\xampp\\htdocs\\TCC-2026\\leis.php</b> on line <b>54</b><br />\r\n0', '', '', '2026-09-22 01:50:08');
 
 -- --------------------------------------------------------
 
@@ -113,7 +124,17 @@ CREATE TABLE `preferencias_usuario` (
 
 INSERT INTO `preferencias_usuario` (`id`, `usuario_id`, `modo_escuro`, `reduzir_animacoes`, `tamanho_fonte`, `daltonismo`, `notificacoes_sistema`, `notificacoes_lembretes`, `notificacoes_novidades`, `notificacoes_navegador`, `atualizado_em`) VALUES
 (1, 1, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-09 16:15:26'),
-(0, 0, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-19 00:17:26');
+(0, 0, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-19 00:17:26'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 00:35:45'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 00:38:22'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:08:46'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:10:33'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:11:03'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:12:52'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:13:21'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:14:50'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 01:28:34'),
+(0, 4, 0, 0, 'normal', 'nenhum', 1, 1, 1, 0, '2026-09-22 02:23:30');
 
 -- --------------------------------------------------------
 
@@ -186,16 +207,32 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `data_cadastro`, `foto`) VALUES
-(0, 'ISADORA RIBEIRO JANS', 'isadoraribeiro2708@gmail.com', '$2y$10$TOhFaTl7TtGcFOincqvaOOurWp9CEOm2dRB9yodNT/lWFQxDldDYC', '2026-09-19 00:14:18', NULL);
+(1, 'ISADORA RIBEIRO JANS', 'isadoraribeiro2708@gmail.com', '$2y$10$TOhFaTl7TtGcFOincqvaOOurWp9CEOm2dRB9yodNT/lWFQxDldDYC', '2026-09-19 00:14:18', NULL),
+(2, 'isadora', 'isadora@gmail.com', '$2y$10$x0juacZNT1NxUDSA32LQYeeFPA1f3cr184mkd1aqEkXyKTyN97ee2', '2026-09-21 23:45:12', NULL),
+(3, 'isadora', 'isaa@gmail.com', '$2y$10$vuMNRI4VJg0wzpaBGV7JveNCSzPFlBVF31BNwa7zUr9e0mIreAPxO', '2026-09-22 00:01:19', NULL),
+(4, 'isa jans', 'isa@gmail.com', '$2y$10$lJsGC4LkhVzjqKSZFwpTme4guEdClkdty/MaTwAzC/yGJYc0xXlcK', '2026-09-22 00:09:46', NULL);
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
+-- Índices de tabela `favoritos`
+--
+ALTER TABLE `favoritos`
+  ADD KEY `idx_favoritos_usuario_tipo` (`usuario_id`,`tipo`),
+  ADD KEY `idx_favoritos_item` (`item_id`);
+
+--
 -- Índices de tabela `recuperacao_senha`
 --
 ALTER TABLE `recuperacao_senha`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -206,6 +243,12 @@ ALTER TABLE `recuperacao_senha`
 -- AUTO_INCREMENT de tabela `recuperacao_senha`
 --
 ALTER TABLE `recuperacao_senha`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 

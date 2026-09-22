@@ -174,4 +174,6 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js"></script>
+
 <?php include __DIR__ . '/includes/footer.php'; ?>

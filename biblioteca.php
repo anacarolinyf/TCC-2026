@@ -59,7 +59,7 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
 <main class="Profissionais-page">
 
-    <h1>Biblioteca</h1>
+
 
     <!-- =========================
          PROFISSIONAIS ESPECIALIZADOS
@@ -87,8 +87,10 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
 
                     <?php foreach ($profissionais as $profissional): ?>
 
-                        <div class="profissional-card">
-
+                       <div
+    class="profissional-card"
+    id="profissional-<?= (int) $profissional['id'] ?>"
+>
                             <!-- FOTO -->
 
                             <div class="profissional-foto">
@@ -114,6 +116,81 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
                             <!-- INFORMAÇÕES -->
 
                             <div class="profissional-info">
+                            
+                                
+<!-- BOTÃO FAVORITAR PROFISSIONAL -->
+
+<form
+    action="favoritar.php"
+    method="POST"
+    class="form-favorito"
+>
+
+    <input
+        type="hidden"
+        name="tipo"
+        value="profissional"
+    >
+
+    <input
+        type="hidden"
+        name="item_id"
+        value="<?= (int) $profissional['id'] ?>"
+    >
+
+    <input
+        type="hidden"
+        name="titulo"
+        value="<?= htmlspecialchars(
+            $profissional['nome'],
+            ENT_QUOTES,
+            'UTF-8'
+        ) ?>"
+    >
+
+    <input
+        type="hidden"
+        name="medico_nome"
+        value="<?= htmlspecialchars(
+            $profissional['nome'],
+            ENT_QUOTES,
+            'UTF-8'
+        ) ?>"
+    >
+
+    <input
+        type="hidden"
+        name="especialidade"
+        value="<?= htmlspecialchars(
+            $profissional['especialidade'] ?? '',
+            ENT_QUOTES,
+            'UTF-8'
+        ) ?>"
+    >
+
+    <input
+        type="hidden"
+        name="url"
+        value="biblioteca.php#profissional-<?= (int) $profissional['id'] ?>"
+    >
+
+    <input
+        type="hidden"
+        name="voltar"
+        value="biblioteca.php"
+    >
+
+    <button
+        type="submit"
+        class="btn-favorito"
+        title="Favoritar profissional"
+    >
+
+        <i class="fa-regular fa-heart"></i>
+
+    </button>
+
+</form>
 
                                 <h3>
                                     <?= htmlspecialchars($profissional['nome']) ?>

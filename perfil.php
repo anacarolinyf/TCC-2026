@@ -395,61 +395,6 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
             </div>
 
 
-            <?php if (count($favoritos) > 0): ?>
-
-
-                <div class="lista-profissionais">
-
-
-                    <?php foreach ($favoritos as $favorito): ?>
-
-
-                        <div class="profissional-card">
-
-
-                            <div class="profissional-icone">
-
-                                <i class="fa-solid fa-user-doctor"></i>
-
-                            </div>
-
-
-                            <div class="profissional-info">
-
-                                <h3>
-
-                                    <?= htmlspecialchars(
-                                        $favorito['nome']
-                                    ) ?>
-
-                                </h3>
-
-
-                                <p>
-
-                                    <?= htmlspecialchars(
-                                        $favorito['especialidade']
-                                    ) ?>
-
-                                </p>
-
-                            </div>
-
-
-                            <i class="fa-solid fa-heart coracao-favorito"></i>
-
-
-                        </div>
-
-
-                    <?php endforeach; ?>
-
-
-                </div>
-
-
-            <?php else: ?>
-
 
                 <div class="estado-vazio">
 
@@ -467,7 +412,6 @@ while ($profissional = $resultadoProfissionais->fetch_assoc()) {
                 </div>
 
 
-            <?php endif; ?>
 
 
         </div>

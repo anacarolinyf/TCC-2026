@@ -249,9 +249,7 @@ if ($daltonismo !== 'nenhum') {
         href="css/estilo.css"
     >
 
-
-   
-
+    
     <link
         rel="stylesheet"
         href="css/leisecontato.css"
@@ -530,5 +528,7 @@ new window.VLibras.Widget(
         </ul>
 
     </nav>
+
+        <script src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js"></script>
 
 </header>

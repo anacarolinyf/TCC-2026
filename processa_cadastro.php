@@ -9,8 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST["senha"];
     $confirmar = $_POST["confirmar"];
 
+    // Verifica se as senhas são iguais
     if ($senha !== $confirmar) {
-        die("As senhas não coincidem.");
+        header("Location: cadastro.php?erro=senhas");
+        exit;
     }
 
     // Verifica se o e-mail já existe
@@ -18,10 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
+
     $resultado = $stmt->get_result();
 
     if ($resultado->num_rows > 0) {
-        die("Este e-mail já está cadastrado.");
+        header("Location: cadastro.php?erro=email");
+        exit;
     }
 
     // Criptografa a senha
@@ -36,21 +40,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
 
-        echo "<script>
-                alert('Cadastro realizado com sucesso!');
-                window.location.href = 'login.php';
-              </script>";
+    header("Location: login.php?cadastro=sucesso");
+    exit;
 
-    } else {
+} else {
 
-        echo "Erro ao cadastrar: " . $conexao->error;
-    }
+    header("Location: cadastro.php?erro=geral");
+    exit;
+}
 
     $stmt->close();
 }
 
 $conexao->close();
-
 ?>
 
   <link

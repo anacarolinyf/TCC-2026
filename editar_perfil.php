@@ -732,5 +732,7 @@ if (
 
 </main>
 
+<script src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js"></script>
+
 </body>
 </html>

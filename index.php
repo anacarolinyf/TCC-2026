@@ -1,5 +1,7 @@
 <?php include 'includes/header.php'; ?>
-
+<?php
+$entrada = isset($_GET["entrada"]) && $_GET["entrada"] === "1";
+?>
 <link rel="icon" type="image" href="img/logoo.png">
 
 <main>
@@ -131,6 +133,9 @@
 </section>
 
     <?php include 'includes/footer.php'; ?>
+    
+<script src="https://cdn.jsdelivr.net/npm/accessibility-widgets@latest/widget.js"></script>
+</script>
 </main>
 </body>
 </html>

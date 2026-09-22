@@ -1,3 +1,7 @@
+<?php
+$erro = $_GET["erro"] ?? "";
+$sucesso = $_GET["sucesso"] ?? "";
+?>
 
 <div class="pagina-contaa">
 
@@ -37,8 +41,25 @@
             <h2>Cadastro</h2>
 
             <p class="conta-subtitulo">
-                Crie sua conta para acessar nossa plataforma.
+            Crie sua conta para acessar nossa plataforma.
             </p>
+
+            <?php if ($erro): ?>
+
+    <div class="mensagem-erro">
+        <?php
+        if ($erro == "senhas") {
+            echo "As senhas não coincidem.";
+        } elseif ($erro == "email") {
+            echo "Este e-mail já está cadastrado.";
+        } elseif ($erro == "geral") {
+            echo "Erro ao cadastrar. Tente novamente.";
+        }
+        ?>
+    </div>
+
+<?php endif; ?>
+
 
           <form action="processa_cadastro.php" method="POST">
 

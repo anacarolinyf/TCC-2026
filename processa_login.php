@@ -29,23 +29,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["usuario_nome"] = $usuario["nome"];
             $_SESSION["usuario_email"] = $usuario["email"];
 
-            header("Location: index.php");
+            // Login correto → vai para a página inicial com animação
+            header("Location: index.php?entrada=1");
             exit;
 
         } else {
 
-            echo "<script>
-                    alert('Senha incorreta!');
-                    window.location.href = 'login.php';
-                  </script>";
+            // Senha incorreta
+            header("Location: login.php?erro=senha");
+            exit;
         }
 
     } else {
 
-        echo "<script>
-                alert('E-mail não encontrado!');
-                window.location.href = 'login.php';
-              </script>";
+        // E-mail não encontrado
+        header("Location: login.php?erro=email");
+        exit;
     }
 
     $stmt->close();
@@ -53,9 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-  <link
-        rel="icon"
-        type="image"
-        href="img/logoo.png"
-    >
