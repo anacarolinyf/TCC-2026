@@ -1,0 +1,867 @@
+.trajetoria-pagina {
+    padding: 45px 0 70px;
+    background: #f7f9fc;
+}
+
+.container-trajetoria {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.voltar-trajetoria {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #374151;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.voltar-trajetoria:hover {
+    color: #3467eb;
+}
+
+.trajetoria-intro {
+    max-width: 720px;
+    margin-bottom: 35px;
+}
+
+.trajetoria-intro span,
+.area-titulo span {
+    color: #3467eb;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.trajetoria-intro h1 {
+    color: #21479b;
+    font-size: 34px;
+    margin: 8px 0 12px;
+}
+
+.trajetoria-intro p {
+    color: #5f6773;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+.resumo-trajetoria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.resumo-card {
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.resumo-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #eaf2ff;
+    color: #3467eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resumo-card strong {
+    display: block;
+    color: #21479b;
+    font-size: 22px;
+}
+
+.resumo-card span {
+    color: #697386;
+    font-size: 13px;
+}
+
+
+.trajetoria-layout {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.checklist-area {
+    height: fit-content;
+}
+
+.registro-area,
+.checklist-area,
+.registros-area {
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 16px;
+    padding: 27px;
+}
+
+.area-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.area-titulo h2 {
+    color: #263b63;
+    font-size: 21px;
+    margin: 5px 0 0;
+}
+
+.area-titulo > i {
+    color: #3467eb;
+    font-size: 21px;
+}
+
+
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.campo-trajetoria {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+}
+
+.campo-trajetoria label {
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.campo-trajetoria input,
+.campo-trajetoria select,
+.campo-trajetoria textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+    padding: 11px 12px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #374151;
+    background: white;
+    outline: none;
+}
+
+.campo-trajetoria input:focus,
+.campo-trajetoria select:focus,
+.campo-trajetoria textarea:focus {
+    border-color: #3467eb;
+}
+
+.campo-trajetoria textarea {
+    resize: vertical;
+}
+
+.linha-campos {
+    display: flex;
+    gap: 14px;
+}
+
+.botao-adicionar {
+    border: none;
+    background: #3467eb;
+    color: white;
+    border-radius: 9px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.botao-adicionar:hover {
+    background: #21479b;
+}
+
+
+.progresso {
+    margin-bottom: 23px;
+}
+
+.progresso-texto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.progresso-texto span {
+    color: #697386;
+    font-size: 13px;
+}
+
+.progresso-texto strong {
+    color: #21479b;
+    font-size: 13px;
+}
+
+.progresso-barra {
+    width: 100%;
+    height: 8px;
+    background: #eaf2ff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progresso-barra div {
+    height: 100%;
+    background: #3467eb;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+
+.lista-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-checklist {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.item-checklist span {
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.check {
+    min-width: 25px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    background: white;
+    color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.check.concluido {
+    background: #3467eb;
+    border-color: #3467eb;
+    color: white;
+}
+
+.texto-concluido {
+    text-decoration: line-through;
+    color: #9ca3af !important;
+}
+
+
+.registros-area {
+    margin-top: 22px;
+}
+
+.lista-registros {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.registro-card {
+    display: flex;
+    gap: 18px;
+    padding: 18px;
+    border: 1px solid #e5eaf2;
+    border-radius: 12px;
+    position: relative;
+}
+
+.registro-data {
+    min-width: 55px;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.registro-data strong {
+    display: block;
+    color: #21479b;
+    font-size: 18px;
+}
+
+.registro-data span {
+    color: #8a94a5;
+    font-size: 12px;
+}
+
+.registro-conteudo {
+    flex: 1;
+}
+
+.registro-tipo {
+    display: inline-block;
+    background: #eaf2ff;
+    color: #3467eb;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.registro-conteudo h3 {
+    color: #263b63;
+    font-size: 17px;
+    margin: 8px 0;
+}
+
+.registro-conteudo p {
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+.registro-detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.registro-detalhes span {
+    color: #697386;
+    font-size: 12px;
+}
+
+.registro-detalhes i {
+    color: #3467eb;
+    margin-right: 4px;
+}
+
+.excluir-registro {
+    color: #9ca3af;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.excluir-registro:hover {
+    color: #d9534f;
+}
+
+
+.sem-registros {
+    text-align: center;
+    padding: 35px 20px;
+    border: 1px dashed #dce2eb;
+    border-radius: 12px;
+}
+
+.sem-registros i {
+    color: #9aa5b5;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.sem-registros h3 {
+    color: #374151;
+    font-size: 17px;
+    margin: 0 0 6px;
+}
+
+.sem-registros p {
+    color: #7b8493;
+    font-size: 13px;
+    margin: 0;
+}
+
+
+.privacidade-trajetoria {
+    margin-top: 20px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    background: #eaf2ff;
+    border-radius: 12px;
+}
+
+.privacidade-trajetoria > i {
+    color: #3467eb;
+    font-size: 18px;
+}
+
+.privacidade-trajetoria strong {
+    color: #21479b;
+    font-size: 14px;
+}
+
+.privacidade-trajetoria p {
+    color: #5f6773;
+    font-size: 12px;
+    margin: 4px 0 0;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 850px) {
+
+    .trajetoria-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo-trajetoria {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .trajetoria-pagina {
+        padding: 30px 0 50px;
+    }
+
+    .container-trajetoria {
+        width: 92%;
+    }
+
+    .trajetoria-intro h1 {
+        font-size: 27px;
+    }
+
+    .registro-area,
+    .checklist-area,
+    .registros-area {
+        padding: 20px;
+    }
+
+    .linha-campos {
+        flex-direction: column;
+    }
+
+    .registro-card {
+        gap: 12px;
+    }
+
+    .registro-data {
+        min-width: 45px;
+    }
+
+    .privacidade-trajetoria {
+        align-items: flex-start;
+    }
+
+}
+
+
+
+.checklist-intro {
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: -10px 0 20px;
+}
+
+.lista-checklists {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.checklist-card {
+    display: flex;
+    gap: 13px;
+    padding: 16px;
+    border: 1px solid #e5eaf2;
+    border-radius: 12px;
+    transition: .2s;
+}
+
+.checklist-card:hover {
+    border-color: #cbd9f5;
+    transform: translateY(-1px);
+}
+
+.checklist-icone {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #eaf2ff;
+    color: #3467eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checklist-card-conteudo {
+    flex: 1;
+}
+
+.checklist-card h3 {
+    color: #263b63;
+    font-size: 15px;
+    margin: 0 0 5px;
+}
+
+.checklist-card p {
+    color: #697386;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 0 0 12px;
+}
+
+.checklist-progresso {
+    margin-bottom: 11px;
+}
+
+.checklist-progresso-texto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.checklist-progresso-texto span {
+    color: #697386;
+    font-size: 11px;
+}
+
+.checklist-progresso-texto strong {
+    color: #3467eb;
+    font-size: 11px;
+}
+
+.checklist-barra {
+    height: 6px;
+    background: #eaf2ff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.checklist-barra div {
+    height: 100%;
+    background: #3467eb;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.botao-checklist {
+    border: none;
+    background: none;
+    padding: 0;
+    color: #3467eb;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.botao-checklist i {
+    margin-left: 4px;
+}
+
+.checklist-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(25, 39, 64, .45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.checklist-modal.ativo {
+    display: flex;
+}
+
+body.modal-aberto {
+    overflow: hidden;
+}
+
+.checklist-modal-conteudo {
+    width: 100%;
+    max-width: 600px;
+    max-height: 85vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.fechar-checklist {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f5f8;
+    color: #697386;
+    cursor: pointer;
+}
+
+.fechar-checklist:hover {
+    background: #eaf2ff;
+    color: #3467eb;
+}
+
+.modal-cabecalho {
+    display: flex;
+    gap: 15px;
+    padding-right: 35px;
+    margin-bottom: 25px;
+}
+
+.modal-icone {
+    min-width: 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    background: #eaf2ff;
+    color: #3467eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+
+.modal-cabecalho span {
+    color: #3467eb;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.modal-cabecalho h2 {
+    color: #21479b;
+    font-size: 22px;
+    margin: 4px 0;
+}
+
+.modal-cabecalho p {
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.modal-progresso {
+    padding: 15px;
+    background: #f7f9fc;
+    border-radius: 11px;
+    margin-bottom: 20px;
+}
+
+.modal-progresso-texto {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.texto-progresso {
+    color: #697386;
+    font-size: 13px;
+}
+
+.porcentagem-progresso {
+    color: #3467eb;
+    font-size: 13px;
+}
+
+.itens-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.item-modal {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px;
+    border: 1px solid #e5eaf2;
+    border-radius: 10px;
+    background: white;
+    color: #374151;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.item-modal:hover {
+    border-color: #cbd9f5;
+    background: #f9fbff;
+}
+
+.check-modal {
+    min-width: 24px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+}
+
+.item-concluido {
+    background: #f7f9fc;
+}
+
+.item-concluido .check-modal {
+    background: #3467eb;
+    border-color: #3467eb;
+    color: white;
+}
+
+.item-concluido > span:last-child {
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+@media (max-width: 600px) {
+
+    .checklist-modal {
+        padding: 12px;
+    }
+
+    .checklist-modal-conteudo {
+        padding: 22px;
+        max-height: 90vh;
+    }
+
+    .modal-cabecalho h2 {
+        font-size: 19px;
+    }
+
+    .checklist-card {
+        padding: 13px;
+    }
+
+}
+
+
+.confirmacao-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(25, 39, 64, .45);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.confirmacao-modal.ativo {
+    display: flex;
+}
+
+.confirmacao-caixa {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.fechar-confirmacao {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #f3f5f8;
+    color: #697386;
+    cursor: pointer;
+}
+
+.confirmacao-icone {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #eaf2ff;
+    color: #3467eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.confirmacao-caixa h3 {
+    color: #21479b;
+    font-size: 20px;
+    margin: 0 0 8px;
+}
+
+.confirmacao-caixa p {
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 auto 22px;
+}
+
+.confirmacao-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.botao-cancelar,
+.botao-confirmar {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.botao-cancelar {
+    border: 1px solid #dfe4ec;
+    background: #fff;
+    color: #697386;
+}
+
+.botao-confirmar {
+    border: none;
+    background: #3467eb;
+    color: #fff;
+}
+
+.botao-confirmar:hover {
+    background: #21479b;
+}
+
+.botao-cancelar:hover {
+    background: #f7f9fc;
+}

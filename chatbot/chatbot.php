@@ -59,6 +59,10 @@
                 <button type="button" data-question="Quero acessar o guia para famílias">
                     Guia para Famílias
                 </button>
+                
+                <button type="button" data-question="Quero fazer minha trajetória">
+                    Minha Trajetória
+                </button>
 
                 <button type="button" data-question="Preciso de ajuda">
                     Preciso de ajuda

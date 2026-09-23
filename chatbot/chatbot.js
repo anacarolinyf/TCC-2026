@@ -63,6 +63,36 @@ function getBotResponse(question) {
 
     }
 
+    
+    if (
+    text.includes("minha trajetória") ||
+    text.includes("minha trajetoria") ||
+    text.includes("fazer minha trajetoria") ||
+    text.includes("criar minha trajetória") ||
+    text.includes("criar minha trajetoria") ||
+    text.includes("trajetória") ||
+    text.includes("trajetoria")
+    ) {
+
+    return `
+        A <strong>Minha Trajetória</strong> é um espaço para
+        organizar e acompanhar informações importantes ao longo
+        de cada etapa.
+        <br><br>
+        Você pode acompanhar <strong>checklists</strong> e registrar
+        informações sobre consultas, profissionais, avaliações,
+        escola e outros momentos importantes.
+        <br><br>
+        Para utilizar esse espaço, é necessário estar conectado
+        à sua conta.
+        <br><br>
+        <a href="minha-trajetoria.php">
+            Acessar Minha Trajetória
+        </a>
+    `;
+
+}
+
 
     if (
         text.includes("educação") ||

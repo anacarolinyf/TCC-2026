@@ -4043,292 +4043,9 @@ main {
     }
 }
 
-
 /* =====================================================
-   ORGANIZE SUA TRAJETÓRIA
+   GUIA PARA FAMÍLIAS
 ===================================================== */
-
-.trajetoria {
-    padding: 100px 0;
-    background: #F7F9FC;
-}
-
-.trajetoria-intro {
-    max-width: 760px;
-    margin-bottom: 55px;
-}
-
-.trajetoria-label {
-    display: block;
-    margin-bottom: 12px;
-
-    color: var(--azul);
-    font-size: .72rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.trajetoria-intro h2 {
-    margin-bottom: 18px;
-
-    color: var(--azul-escuro);
-    font-size: 2.45rem;
-    line-height: 1.15;
-}
-
-.trajetoria-intro h2::after {
-    content: "";
-    display: block;
-
-    width: 48px;
-    height: 4px;
-
-    margin-top: 15px;
-
-    border-radius: 10px;
-    background: var(--azul);
-}
-
-.trajetoria-intro p {
-    max-width: 700px;
-
-    color: var(--suave);
-    font-size: 1rem;
-    line-height: 1.8;
-}
-
-/* Conteúdo */
-
-.trajetoria-conteudo {
-    display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 60px;
-
-    padding: 45px;
-
-    border-radius: 26px;
-
-    background: #FFFFFF;
-
-    border: 1px solid var(--borda);
-
-    box-shadow: 0 12px 35px rgba(33, 71, 155, .06);
-}
-
-/* Texto principal */
-
-.trajetoria-texto {
-    padding: 10px 15px;
-}
-
-
-.trajetoria-texto h3 {
-    max-width: 400px;
-
-    margin-bottom: 15px;
-
-    color: var(--azul-escuro);
-
-    font-size: 1.8rem;
-    line-height: 1.25;
-}
-
-.trajetoria-texto p {
-    max-width: 420px;
-
-    margin-bottom: 25px;
-
-    color: var(--suave);
-
-    line-height: 1.75;
-}
-
-/* Link */
-
-.trajetoria-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    padding: 13px 20px;
-
-    border-radius: 10px;
-
-    background: var(--azul);
-    color: #fff;
-
-    text-decoration: none;
-
-    font-size: .9rem;
-    font-weight: 700;
-
-    transition: .25s;
-}
-
-.trajetoria-link:hover {
-    background: var(--azul-escuro);
-    transform: translateY(-3px);
-}
-
-.trajetoria-link i {
-    font-size: .75rem;
-
-    transition: .25s;
-}
-
-.trajetoria-link:hover i {
-    transform: translateX(4px);
-}
-
-/* Ferramentas */
-
-.trajetoria-ferramentas {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.ferramenta {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-
-    padding: 22px;
-
-    border: 1px solid #E7ECF4;
-
-    border-radius: 16px;
-
-    background: #FCFDFE;
-
-    transition: .25s;
-}
-
-.ferramenta:hover {
-    transform: translateX(5px);
-
-    border-color: #D2DDF5;
-
-    box-shadow: 0 8px 22px rgba(33, 71, 155, .07);
-}
-
-/* Ícone */
-
-.ferramenta-icone {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 14px;
-
-    background: var(--azul-claro);
-    color: var(--azul);
-
-    font-size: 18px;
-}
-
-.ferramenta:nth-child(2) .ferramenta-icone {
-    background: #EDF8EE;
-    color: var(--verde);
-}
-
-.ferramenta:nth-child(3) .ferramenta-icone {
-    background: #F1EDFF;
-    color: #7655D6;
-}
-
-/* Texto */
-
-.ferramenta-numero {
-    display: block;
-
-    margin-bottom: 3px;
-
-    color: #9AA8BD;
-
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.ferramenta h4 {
-    margin-bottom: 5px;
-
-    color: var(--azul-escuro);
-
-    font-size: 1.05rem;
-}
-
-.ferramenta p {
-    margin: 0;
-
-    color: var(--suave);
-
-    font-size: .88rem;
-    line-height: 1.6;
-}
-
-/* Responsivo */
-
-@media (max-width: 850px) {
-
-    .trajetoria {
-        padding: 70px 0;
-    }
-
-    .trajetoria-conteudo {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .trajetoria-intro {
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .trajetoria-intro h2::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .trajetoria-texto {
-        text-align: center;
-    }
-
-    .trajetoria-texto h3,
-    .trajetoria-texto p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-}
-
-@media (max-width: 550px) {
-
-    .trajetoria {
-        padding: 60px 0;
-    }
-
-    .trajetoria-intro h2 {
-        font-size: 2rem;
-    }
-
-    .trajetoria-conteudo {
-        padding: 25px;
-        border-radius: 20px;
-    }
-
-    .ferramenta {
-        padding: 18px;
-    }
-
-}
 
 /* INTRO */
 
@@ -4411,7 +4128,10 @@ main {
     line-height: 1.6;
 }
 
-/* COMEÇO */
+
+/* =====================================================
+   COMEÇO
+===================================================== */
 
 .guia-comeco {
     background: #f7f9fc;
@@ -4480,7 +4200,10 @@ main {
     font-size: 14px;
 }
 
-/* SINAIS */
+
+/* =====================================================
+   SINAIS
+===================================================== */
 
 .guia-sinais {
     max-width: 1130px;
@@ -4564,14 +4287,17 @@ main {
     font-size: 14px;
 }
 
+
+/* =====================================================
+   ROTINA
+===================================================== */
+
 .guia-rotina {
     max-width: 1130px;
     margin: 90px auto;
     padding: 0 25px;
     scroll-margin-top: 155px;
 }
-
-/* INTRO */
 
 .guia-rotina-intro {
     display: grid;
@@ -4598,7 +4324,6 @@ main {
 .guia-rotina-intro h2 {
     max-width: 700px;
     margin: 9px 0 16px;
-
     color: #21479B;
     font-size: 34px;
     line-height: 1.2;
@@ -4607,13 +4332,13 @@ main {
 .guia-rotina-intro p {
     max-width: 700px;
     margin: 0;
-
     color: #687281;
     font-size: 15px;
     line-height: 1.8;
 }
 
-/* LISTA DE ESTRATÉGIAS */
+
+/* ESTRATÉGIAS */
 
 .guia-rotina-conteudo {
     border-top: 1px solid #dfe5ee;
@@ -4623,11 +4348,8 @@ main {
     display: grid;
     grid-template-columns: 55px 1fr;
     gap: 22px;
-
     padding: 30px 0;
-
     border-bottom: 1px solid #dfe5ee;
-
     transition: .25s ease;
 }
 
@@ -4635,23 +4357,16 @@ main {
     padding-left: 10px;
 }
 
-/* ÍCONE */
-
 .estrategia-icone {
     width: 46px;
     height: 46px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 14px;
-
     background: #EAF2FF;
     color: #3467EB;
-
     font-size: 18px;
-
     transition: .25s ease;
 }
 
@@ -4660,15 +4375,10 @@ main {
     color: #fff;
 }
 
-/* TEXTO */
-
 .estrategia-texto span {
     display: block;
-
     margin-bottom: 6px;
-
     color: #9AA8BD;
-
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -4676,58 +4386,47 @@ main {
 
 .estrategia-texto h3 {
     margin: 0 0 7px;
-
     color: #21479B;
-
     font-size: 19px;
 }
 
 .estrategia-texto p {
     max-width: 720px;
-
     margin: 0;
-
     color: #687281;
-
     font-size: 14px;
     line-height: 1.7;
 }
+
+
+/* ATENÇÃO */
 
 .guia-rotina-atencao {
     display: grid;
     grid-template-columns: 50px 1fr;
     gap: 20px;
-
     margin-top: 35px;
     padding: 25px;
-
     border: 1px solid #E8E0C9;
     border-radius: 18px;
-
     background: #FFFCF5;
 }
 
 .atencao-icone {
     width: 44px;
     height: 44px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 13px;
-
     background: #FFF1CF;
     color: #B98219;
 }
 
 .guia-rotina-atencao span {
     display: block;
-
     margin-bottom: 5px;
-
     color: #B98219;
-
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 1.2px;
@@ -4735,68 +4434,22 @@ main {
 
 .guia-rotina-atencao h3 {
     margin: 0 0 7px;
-
     color: #5F4B22;
-
     font-size: 17px;
 }
 
 .guia-rotina-atencao p {
     max-width: 800px;
-
     margin: 0;
-
     color: #756A55;
-
     font-size: 14px;
     line-height: 1.7;
 }
 
+
 /* =====================================================
-   RESPONSIVO
+   DIAGNÓSTICO
 ===================================================== */
-
-@media (max-width: 650px) {
-
-    .guia-rotina {
-        margin: 65px auto;
-    }
-
-    .guia-rotina-intro {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin-bottom: 35px;
-    }
-
-    .guia-rotina-intro h2 {
-        font-size: 28px;
-    }
-
-    .estrategia {
-        grid-template-columns: 45px 1fr;
-        gap: 15px;
-        padding: 25px 0;
-    }
-
-    .estrategia-icone {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-
-    .estrategia-texto h3 {
-        font-size: 17px;
-    }
-
-    .guia-rotina-atencao {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 20px;
-    }
-
-}
-
-/* DIAGNÓSTICO */
 
 .guia-diagnostico {
     background: #f7f9fc;
@@ -4854,7 +4507,10 @@ main {
     font-size: 14px;
 }
 
-/* EQUIPE */
+
+/* =====================================================
+   REDE DE APOIO
+===================================================== */
 
 .guia-equipe {
     max-width: 1130px;
@@ -4914,3 +4570,460 @@ main {
     font-weight: 700;
 }
 
+
+/* =====================================================
+   ORGANIZE SUA TRAJETÓRIA
+===================================================== */
+
+.trajetoria {
+    padding: 90px 0;
+    background: #F7F9FC;
+}
+
+.trajetoria-cabecalho {
+    display: grid;
+    grid-template-columns: 1fr .8fr;
+    gap: 70px;
+    align-items: end;
+    margin-bottom: 40px;
+}
+
+.trajetoria-cabecalho span,
+.checklist-topo span {
+    color: #3467EB;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.trajetoria-cabecalho h2 {
+    margin-top: 8px;
+    color: #21479B;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.trajetoria-cabecalho p {
+    color: #687281;
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 470px;
+}
+
+
+/* PAINEL */
+
+.trajetoria-painel {
+    background: #fff;
+    border: 1px solid #E1E7F0;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(33, 71, 155, .06);
+}
+
+.trajetoria-painel-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 28px 32px;
+    border-bottom: 1px solid #E8EDF4;
+}
+
+.trajetoria-titulo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.trajetoria-icone {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #EAF2FF;
+    color: #3467EB;
+    border-radius: 14px;
+    font-size: 19px;
+}
+
+.trajetoria-titulo small {
+    color: #8A97AA;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.trajetoria-titulo h3 {
+    margin-top: 4px;
+    color: #21479B;
+    font-size: 20px;
+}
+
+
+/* BOTÃO */
+
+.trajetoria-adicionar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 17px;
+    border-radius: 9px;
+    background: #3467EB;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: .25s;
+}
+
+.trajetoria-adicionar:hover {
+    background: #21479B;
+    transform: translateY(-2px);
+}
+
+
+/* CORPO */
+
+.trajetoria-corpo {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 45px;
+    padding: 32px;
+}
+
+
+/* INFORMAÇÕES */
+
+.trajetoria-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.trajetoria-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.trajetoria-info-item > i {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #F4F7FC;
+    color: #3467EB;
+    border-radius: 10px;
+}
+
+.trajetoria-info-item strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #263B63;
+    font-size: 15px;
+}
+
+.trajetoria-info-item p {
+    margin: 0;
+    max-width: 430px;
+    color: #687281;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* CHECKLIST */
+
+.trajetoria-checklist {
+    padding: 24px;
+    border-radius: 16px;
+    background: #F8FAFD;
+    border: 1px solid #E4EAF2;
+}
+
+.checklist-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.checklist-topo h4 {
+    margin-top: 4px;
+    color: #21479B;
+    font-size: 17px;
+}
+
+.checklist-topo > i {
+    color: #3467EB;
+    font-size: 22px;
+}
+
+.progresso-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 9px;
+    color: #526176;
+    font-size: 12px;
+}
+
+.progresso-info strong {
+    color: #21479B;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 7px;
+    overflow: hidden;
+    background: #DCE5F4;
+    border-radius: 20px;
+}
+
+.barra-progresso div {
+    width: 0;
+    height: 100%;
+    background: #3467EB;
+    border-radius: inherit;
+}
+
+.checklist-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 20px;
+    color: #3467EB;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.checklist-link i {
+    font-size: 10px;
+    transition: .2s;
+}
+
+.checklist-link:hover i {
+    transform: translateX(4px);
+}
+
+
+/* AVISO */
+
+.trajetoria-nota {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 18px 20px;
+    border-left: 4px solid #4CAF4E;
+    background: #EDF8EE;
+    border-radius: 10px;
+}
+
+.trajetoria-nota > i {
+    color: #4CAF4E;
+    margin-top: 3px;
+}
+
+.trajetoria-nota strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #347A39;
+    font-size: 13px;
+}
+
+.trajetoria-nota p {
+    margin: 0;
+    color: #5E7060;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .guia-intro {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .guia-comeco-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .guia-diagnostico {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .guia-equipe {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .trajetoria-cabecalho {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .trajetoria-corpo {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .guia-intro-texto h1 {
+        font-size: 36px;
+    }
+
+    .guia-intro-texto p {
+        font-size: 16px;
+    }
+
+    .guia-sinais-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .guia-sinais-lista article:nth-child(odd) {
+        border-right: none;
+        padding-left: 0;
+    }
+
+    .guia-sinais-lista article:nth-child(even) {
+        padding-right: 0;
+    }
+
+    .guia-rotina {
+        margin: 65px auto;
+    }
+
+    .guia-rotina-intro {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 35px;
+    }
+
+    .guia-rotina-intro h2 {
+        font-size: 28px;
+    }
+
+    .estrategia {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+        padding: 25px 0;
+    }
+
+    .estrategia-icone {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .estrategia-texto h3 {
+        font-size: 17px;
+    }
+
+    .guia-rotina-atencao {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .guia-equipe-texto h2 {
+        font-size: 29px;
+    }
+
+    .guia-equipe-itens {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .trajetoria {
+        padding: 65px 0;
+    }
+
+    .trajetoria-cabecalho h2 {
+        font-size: 29px;
+    }
+
+    .trajetoria-painel-topo {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .trajetoria-corpo {
+        padding: 24px;
+        gap: 30px;
+    }
+
+    .trajetoria-adicionar {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .trajetoria-titulo h3 {
+        font-size: 17px;
+    }
+
+    .progresso-info {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .guia-intro {
+        margin-top: 35px;
+        margin-bottom: 60px;
+    }
+
+    .guia-intro-texto h1 {
+        font-size: 31px;
+    }
+
+    .guia-intro-destaque {
+        padding: 28px;
+    }
+
+    .guia-titulo h2,
+    .guia-cabecalho h2,
+    .guia-diagnostico-intro h2 {
+        font-size: 29px;
+    }
+
+    .guia-equipe-itens {
+        grid-template-columns: 1fr;
+    }
+
+    .trajetoria-titulo {
+        align-items: flex-start;
+    }
+
+    .trajetoria-icone {
+        width: 43px;
+        height: 43px;
+    }
+
+}

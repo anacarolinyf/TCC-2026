@@ -1,6 +1,64 @@
+<?php
+
+session_start();
+
+require_once "conexao.php";
+
+$checklists_concluidas = 0;
+$total_checklists = 4;
+$progresso_trajetoria = 0;
+
+if (isset($_SESSION["usuario_id"])) {
+
+    $usuario_id = $_SESSION["usuario_id"];
+
+    $sql = "SELECT 
+                c.id,
+                COUNT(i.id) AS total_itens,
+                SUM(i.concluida) AS itens_concluidos
+            FROM trajetoria_checklists c
+            LEFT JOIN trajetoria_itens i
+                ON c.id = i.checklist_id
+            WHERE c.usuario_id = ?
+            GROUP BY c.id";
+
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param("i", $usuario_id);
+    $stmt->execute();
+
+    $resultado_checklists = $stmt->get_result();
+
+    $total_itens = 0;
+    $total_concluidos = 0;
+
+    while ($checklist = $resultado_checklists->fetch_assoc()) {
+
+        $itens = (int) $checklist["total_itens"];
+        $concluidos = (int) $checklist["itens_concluidos"];
+
+        $total_itens += $itens;
+        $total_concluidos += $concluidos;
+
+        if ($itens > 0 && $itens == $concluidos) {
+            $checklists_concluidas++;
+        }
+    }
+
+    if ($total_itens > 0) {
+        $progresso_trajetoria = round(
+            ($total_concluidos / $total_itens) * 100
+        );
+    }
+
+    $stmt->close();
+}
+
+?>
+
+
 <?php include 'includes/header.php'; ?>
 
-<link rel="stylesheet" href="css/guia.css">
+<link rel="stylesheet" href="css/estilo.css">
 
 <main>
 
@@ -374,97 +432,189 @@
     </section>
 
 
-    <!-- =====================================================
-     ORGANIZE SUA TRAJETÓRIA
-===================================================== -->
 
 <section class="trajetoria">
+
     <div class="container">
 
-        <div class="trajetoria-intro">
-            <span class="trajetoria-label">ORGANIZAÇÃO E ACOMPANHAMENTO</span>
+        <div class="trajetoria-cabecalho">
 
-            <h2>Organize sua trajetória</h2>
+            <div>
+                <span>ORGANIZAÇÃO E ACOMPANHAMENTO</span>
+                <h2>Organize sua trajetória</h2>
+            </div>
 
-            <p>
-                Cada família vivencia essa jornada de uma maneira.
-                O ForTEA oferece ferramentas para registrar informações,
-                organizar momentos importantes e acompanhar essa trajetória
-                ao longo do tempo.
-            </p>
         </div>
 
-        <div class="trajetoria-conteudo">
 
-            <div class="trajetoria-texto">
+        <div class="trajetoria-painel">
+
+            <div class="trajetoria-painel-topo">
+
+                <div class="trajetoria-titulo">
+
+                    <div class="trajetoria-icone">
+                        <i class="fas fa-route"></i>
+                    </div>
+
+                    <div>
+                        <small>MINHA TRAJETÓRIA</small>
+                        <h3>Registre o que acontece ao longo do caminho</h3>
+                    </div>
+
+                </div>
 
 
-                <h3>Registre momentos importantes</h3>
+                <a href="minha-trajetoria.php" class="trajetoria-adicionar">
 
-                <p>
-                    Crie registros sobre acontecimentos, observações,
-                    consultas, reuniões escolares e outros momentos
-                    que façam parte da trajetória.
-                </p>
+                    <i class="fas fa-plus"></i>
 
-                <a href="minha-trajetoria.php" class="trajetoria-link">
-                    Acessar minha trajetória
-                    <i class="fas fa-arrow-right"></i>
+                    Adicionar registro
+
                 </a>
 
             </div>
 
-            <div class="trajetoria-ferramentas">
 
-                <div class="ferramenta">
-                    <span class="ferramenta-icone">
-                        <i class="fas fa-check"></i>
-                    </span>
+            <div class="trajetoria-corpo">
 
-                    <div>
-                        <h4>Checklists</h4>
-                        <p>
-                            Preencha checklists diretamente pelo site
-                            ou baixe uma versão para imprimir.
-                        </p>
+                <div class="trajetoria-info">
+
+                    <div class="trajetoria-info-item">
+
+                        <i class="fas fa-calendar-days"></i>
+
+                        <div>
+
+                            <strong>Datas importantes</strong>
+
+                            <p>
+                                Organize consultas, avaliações, reuniões e outros
+                                acontecimentos importantes.
+                            </p>
+
+                        </div>
+
                     </div>
+
+
+                    <div class="trajetoria-info-item">
+
+                        <i class="fas fa-notes-medical"></i>
+
+                        <div>
+
+                            <strong>Acompanhamentos</strong>
+
+                            <p>
+                                Registre informações sobre diagnóstico, terapias,
+                                profissionais e acompanhamentos.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="trajetoria-info-item">
+
+                        <i class="fas fa-school"></i>
+
+                        <div>
+
+                            <strong>Escola e rotina</strong>
+
+                            <p>
+                                Anote reuniões, observações, mudanças e situações
+                                importantes do dia a dia.
+                            </p>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
 
-                <div class="ferramenta">
-                    <span class="ferramenta-icone">
-                        <i class="fas fa-file-arrow-down"></i>
-                    </span>
+                <div class="trajetoria-checklist">
 
-                    <div>
-                        <h4>Materiais de apoio</h4>
-                        <p>
-                            Encontre fichas, planners, registros e
-                            outros materiais disponíveis na Biblioteca.
-                        </p>
+                    <div class="checklist-topo">
+
+                        <div>
+
+                            <span>CHECKLISTS</span>
+
+                            <h4>Acompanhe sua trajetória</h4>
+
+                        </div>
+
+                        <i class="fas fa-list-check"></i>
+
                     </div>
+
+
+                    <div class="progresso-info">
+
+                        <span>
+                            <?php echo $checklists_concluidas; ?>
+                            de
+                            <?php echo $total_checklists; ?>
+                            concluídas
+                        </span>
+
+                        <strong>
+                            <?php echo $progresso_trajetoria; ?>%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="barra-progresso">
+
+                        <div
+                            style="width: <?php echo $progresso_trajetoria; ?>%;">
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="minha-trajetoria.php"
+                        class="checklist-link"
+                    >
+
+                        Ver minhas checklists
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </a>
+
                 </div>
 
+            </div>
 
-                <div class="ferramenta">
-                    <span class="ferramenta-icone">
-                        <i class="fas fa-user"></i>
-                    </span>
+        </div>
 
-                    <div>
-                        <h4>Tudo no seu perfil</h4>
-                        <p>
-                            Seus registros e checklists preenchidos
-                            podem ficar vinculados à sua conta.
-                        </p>
-                    </div>
-                </div>
+
+        <div class="trajetoria-nota">
+
+            <i class="fas fa-lock"></i>
+
+            <div>
+
+                <strong>Seus registros ficam vinculados à sua conta</strong>
+
+                <p>
+                    Entre no ForTEA para registrar sua trajetória e acessar
+                    essas informações novamente pelo seu perfil.
+                </p>
 
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 </main>
