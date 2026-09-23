@@ -273,13 +273,12 @@ if ($daltonismo !== 'nenhum') {
 
     <title>ForTEA</title>
 
-
     <link
-        rel="icon"
-        type="image"
-        href="img/logoo.png"
-    >
-
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="img/logonavegador.png"
+>
 
     
 
@@ -366,11 +365,10 @@ new window.VLibras.Widget(
         <div class="logo">
 
             <img
-                src="img/logoo.png"
+                src="img/logoatualizada.png"
                 alt="Logo ForTEA"
             >
 
-            <h2>ForTEA</h2>
 
         </div>
 

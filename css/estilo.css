@@ -107,6 +107,36 @@ header a {
     margin: 0;
 }
 
+/* ========================================
+LOGO MENOR DO HEADER
+======================================== */
+
+.logo img {
+    width: auto;
+    height: 40px;
+    object-fit: contain;
+    }
+    
+    /* Tablet */
+    @media (max-width: 900px) {
+    .logo img {
+    height: 50px;
+    }
+    }
+    
+    /* Celular */
+    @media (max-width: 600px) {
+    .logo img {
+    height: 45px;
+    }
+    }
+    
+    /* Celular pequeno */
+    @media (max-width: 400px) {
+    .logo img {
+    height: 40px;
+    }
+    }
 
 /* ========================================
    AÇÕES DO HEADER
@@ -5027,3 +5057,4 @@ main {
     }
 
 }
+
