@@ -607,7 +607,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 </main>
-<button id="topBtn">
 
 <i class="fa-solid fa-arrow-up"></i>
 
